@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect x="40" y="40" width="120" height="120" rx="10" ry="10" fill="#ff6633" stroke="#333" stroke-width="3"/>
+  <text x="100" y="110" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">OCT</text>
+  <path d="M90 70 A10 10 0 0 1 110 70 A10 10 0 0 1 90 70" fill="#000" stroke="none"/>
+  <path d="M90 80 A10 10 0 0 0 110 80 A10 10 0 0 0 90 80" fill="#000" stroke="none"/>
+</svg>

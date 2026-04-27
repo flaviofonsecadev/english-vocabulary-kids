@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Círculo de fundo para o ícone -->
+    <circle cx="50" cy="50" r="48" fill="#F5F5DC" stroke="#D2B48C" stroke-width="2"/>
+
+    <!-- Livro Aberto -->
+    <g id="book">
+        <!-- Lombada -->
+        <path d="M 50 20 L 50 80" stroke="#8B4513" stroke-width="4"/>
+
+        <!-- Página Esquerda -->
+        <path d="M 50 20 C 20 25, 20 75, 50 80 L 50 20 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+        <!-- Página Direita -->
+        <path d="M 50 20 C 80 25, 80 75, 50 80 L 50 20 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1"/>
+
+        <!-- Linhas de texto (simuladas) -->
+        <g stroke="#A9A9A9" stroke-width="1">
+            <!-- Página Esquerda -->
+            <path d="M 30 35 H 45"/>
+            <path d="M 30 45 H 48"/>
+            <path d="M 30 55 H 45"/>
+            <path d="M 30 65 H 48"/>
+            <!-- Página Direita -->
+            <path d="M 55 35 H 70"/>
+            <path d="M 55 45 H 73"/>
+            <path d="M 55 55 H 70"/>
+            <path d="M 55 65 H 73"/>
+        </g>
+
+        <!-- Marcador de página -->
+        <path d="M 60 20 L 60 40 L 55 35 Z" fill="#FF4500">
+            <animateTransform 
+                attributeName="transform" 
+                type="translate" 
+                from="0 0" 
+                to="0 5" 
+                dur="1.5s" 
+                repeatCount="indefinite" 
+                direction="alternate"/>
+        </path>
+    </g>
+
+    <!-- Pena e tinteiro (opcional) -->
+    <g transform="translate(75, 70)">
+        <!-- Tinteiro -->
+        <rect x="-5" y="0" width="10" height="10" fill="#696969"/>
+        <circle cx="0" cy="2" r="3" fill="#000000"/>
+        <!-- Pena -->
+        <path d="M -2 0 L -8 -15 L 0 -12 L -2 0" fill="#FFFFFF" stroke="#000000" stroke-width="0.5" transform="rotate(20)"/>
+    </g>
+</svg>

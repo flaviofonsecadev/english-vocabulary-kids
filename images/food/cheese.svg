@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Círculo de fundo para o ícone -->
+    <circle cx="50" cy="50" r="48" fill="#FFD700" stroke="#DAA520" stroke-width="2"/>
+
+    <!-- Fatia de Queijo -->
+    <path d="M 20 60 L 80 60 L 50 20 Z" fill="#FFEC8B"/>
+
+    <!-- Sombra da fatia -->
+    <path d="M 20 60 L 50 65 L 80 60 L 50 20 Z" fill="#000000" opacity="0.1"/>
+
+    <!-- Buracos do Queijo -->
+    <g fill="#DAA520">
+        <!-- Buraco 1 -->
+        <circle cx="40" cy="45" r="5">
+            <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" begin="0s"/>
+        </circle>
+        <!-- Buraco 2 -->
+        <circle cx="60" cy="50" r="7">
+            <animate attributeName="r" values="7;8;7" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <!-- Buraco 3 -->
+        <circle cx="50" cy="30" r="4">
+            <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+        <!-- Buraco 4 (menor) -->
+        <circle cx="30" cy="55" r="3"/>
+        <!-- Buraco 5 (menor) -->
+        <circle cx="70" cy="55" r="3.5"/>
+    </g>
+
+    <!-- Rato (opcional, para contexto) -->
+    <g transform="translate(75, 75)">
+        <!-- Corpo -->
+        <path d="M 0 0 C -10 -15, -20 -10, -20 0 Z" fill="#A9A9A9"/>
+        <!-- Orelha -->
+        <circle cx="-15" cy="-8" r="4" fill="#C0C0C0"/>
+        <!-- Olho -->
+        <circle cx="-5" cy="-5" r="1" fill="black"/>
+        <!-- Rabo -->
+        <path d="M 0 0 Q 10 5, 15 -5" stroke="#A9A9A9" stroke-width="1" fill="none"/>
+    </g>
+
+    <!-- Tábua de queijos (fundo) -->
+    <rect x="10" y="60" width="80" height="20" fill="#8B4513" rx="2" transform="skewX(-10)"/>
+    <line x1="15" y1="65" x2="85" y2="65" stroke="#A0522D" stroke-width="1" transform="skewX(-10)"/>
+    <line x1="15" y1="70" x2="85" y2="70" stroke="#A0522D" stroke-width="1" transform="skewX(-10)"/>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+  
+  <!-- Bed -->
+  <rect x="30" y="120" width="140" height="50" rx="5" fill="#8d6e63"/>
+  <rect x="35" y="115" width="130" height="15" rx="3" fill="#5d4037"/>
+  
+  <!-- Pillow -->
+  <ellipse cx="60" cy="125" rx="25" ry="8" fill="#fff"/>
+  <ellipse cx="60" cy="125" rx="25" ry="8" fill="#e1f5fe" opacity="0.5"/>
+  
+  <!-- Blanket -->
+  <path d="M35 135 Q100 130 165 135 L165 160 Q100 155 35 160 Z" fill="#2196f3"/>
+  <path d="M35 140 Q100 135 165 140 L165 165 Q100 160 35 165 Z" fill="#1976d2"/>
+  
+  <!-- Sleeping person -->
+  <!-- Head on pillow -->
+  <circle cx="60" cy="120" r="12" fill="#ffdbcb" stroke="#333" stroke-width="2"/>
+  
+  <!-- Hair -->
+  <path d="M48 110 Q60 105 72 110 Q72 115 60 120 Q48 115 48 110" fill="#8b4513"/>
+  
+  <!-- Closed eyes -->
+  <path d="M55 118 Q58 116 61 118" stroke="#333" stroke-width="1.5" fill="none"/>
+  <path d="M59 118 Q62 116 65 118" stroke="#333" stroke-width="1.5" fill="none"/>
+  
+  <!-- Peaceful mouth -->
+  <path d="M58 123 Q60 124 62 123" stroke="#333" stroke-width="1" fill="none"/>
+  
+  <!-- Body under blanket (suggested shape) -->
+  <ellipse cx="100" cy="145" rx="40" ry="15" fill="#1565c0" opacity="0.7"/>
+  
+  <!-- ZZZ sleep symbols -->
+  <text x="120" y="80" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#666">Z</text>
+  <text x="130" y="65" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#666">Z</text>
+  <text x="145" y="45" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#666">Z</text>
+  
+  <!-- Moon and stars in background -->
+  <circle cx="150" cy="40" r="12" fill="#fff9c4"/>
+  <path d="M150 28 Q155 35 150 42 Q145 35 150 28" fill="#37474f"/>
+  
+  <!-- Stars -->
+  <path d="M130 30 L132 35 L137 35 L133 38 L135 43 L130 40 L125 43 L127 38 L123 35 L128 35 Z" fill="#fff9c4"/>
+  <path d="M170 55 L171 58 L174 58 L172 60 L173 63 L170 61 L167 63 L168 60 L166 58 L169 58 Z" fill="#fff9c4"/>
+  
+  <!-- Bed legs -->
+  <rect x="35" y="170" width="6" height="15" fill="#5d4037"/>
+  <rect x="159" y="170" width="6" height="15" fill="#5d4037"/>
+</svg>

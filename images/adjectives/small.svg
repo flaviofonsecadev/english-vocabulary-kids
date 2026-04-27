@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  
+  <!-- Small mouse in center -->
+  <!-- Body -->
+  <ellipse cx="100" cy="110" rx="15" ry="10" fill="#8d6e63"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="90" r="12" fill="#8d6e63"/>
+  
+  <!-- Ears -->
+  <circle cx="92" cy="82" r="6" fill="#a1887f"/>
+  <circle cx="108" cy="82" r="6" fill="#a1887f"/>
+  <circle cx="92" cy="82" r="3" fill="#d7ccc8"/>
+  <circle cx="108" cy="82" r="3" fill="#d7ccc8"/>
+  
+  <!-- Eyes -->
+  <circle cx="96" cy="88" r="2" fill="#333"/>
+  <circle cx="104" cy="88" r="2" fill="#333"/>
+  <circle cx="97" cy="87" r="0.5" fill="#fff"/>
+  <circle cx="105" cy="87" r="0.5" fill="#fff"/>
+  
+  <!-- Nose -->
+  <circle cx="100" cy="92" r="1" fill="#333"/>
+  
+  <!-- Whiskers -->
+  <line x1="85" y1="90" x2="75" y2="88" stroke="#333" stroke-width="1"/>
+  <line x1="85" y1="93" x2="75" y2="93" stroke="#333" stroke-width="1"/>
+  <line x1="115" y1="90" x2="125" y2="88" stroke="#333" stroke-width="1"/>
+  <line x1="115" y1="93" x2="125" y2="93" stroke="#333" stroke-width="1"/>
+  
+  <!-- Tail -->
+  <path d="M115 110 Q130 115 140 125 Q145 130 140 135 Q135 130 125 125" 
+        stroke="#8d6e63" stroke-width="3" fill="none" stroke-linecap="round"/>
+  
+  <!-- Legs -->
+  <circle cx="92" cy="118" r="2" fill="#8d6e63"/>
+  <circle cx="98" cy="120" r="2" fill="#8d6e63"/>
+  <circle cx="102" cy="120" r="2" fill="#8d6e63"/>
+  <circle cx="108" cy="118" r="2" fill="#8d6e63"/>
+  
+  <!-- Large objects for comparison -->
+  <!-- Large tree -->
+  <rect x="30" y="60" width="8" height="40" fill="#8d6e63"/>
+  <circle cx="34" cy="55" r="15" fill="#4caf50"/>
+  
+  <!-- Large house -->
+  <rect x="150" y="80" width="30" height="25" fill="#f44336"/>
+  <polygon points="150,80 165,65 180,80" fill="#8d6e63"/>
+  <rect x="155" y="90" width="6" height="10" fill="#8d6e63"/>
+  <rect x="165" y="85" width="8" height="8" fill="#2196f3"/>
+  
+  <!-- Size comparison arrows -->
+  <defs>
+    <marker id="arrowhead-small" markerWidth="8" markerHeight="6" 
+            refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e91e63"/>
+    </marker>
+  </defs>
+  
+  <!-- Arrow pointing to mouse -->
+  <line x1="100" y1="140" x2="100" y2="125" stroke="#e91e63" stroke-width="2" marker-end="url(#arrowhead-small)"/>
+  <text x="85" y="155" font-family="Arial" font-size="14" fill="#e91e63" font-weight="bold">SMALL</text>
+  
+  <!-- Labels for large objects -->
+  <text x="20" y="45" font-family="Arial" font-size="10" fill="#666">big tree</text>
+  <text x="145" y="125" font-family="Arial" font-size="10" fill="#666">big house</text>
+  
+  <!-- Magnifying glass effect around mouse -->
+  <circle cx="100" cy="100" r="35" fill="none" stroke="#2196f3" stroke-width="2" stroke-dasharray="5,5" opacity="0.6"/>
+  <text x="75" y="175" font-family="Arial" font-size="10" fill="#2196f3">magnified view</text>
+</svg>

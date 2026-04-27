@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Círculo de fundo para o ícone -->
+    <circle cx="50" cy="50" r="48" fill="#F5F5DC" stroke="#DEB887" stroke-width="2"/>
+
+    <!-- Mesa -->
+    <g id="table" stroke="#8B4513" stroke-width="4">
+        <!-- Tampo da mesa -->
+        <rect x="15" y="40" width="70" height="10" fill="#D2B48C"/>
+
+        <!-- Pernas -->
+        <g stroke-linecap="round">
+            <!-- Perna Esquerda -->
+            <line x1="25" y1="50" x2="25" y2="80"/>
+            <!-- Perna Direita -->
+            <line x1="75" y1="50" x2="75" y2="80"/>
+        </g>
+    </g>
+
+    <!-- Objeto na mesa (opcional, uma maçã) -->
+    <g transform="translate(50, 32)">
+        <circle cx="0" cy="0" r="8" fill="#FF4136"/>
+        <path d="M 0 -8 L 1 -12" stroke="#8B4513" stroke-width="1.5"/>
+        <path d="M 1 -12 C 2 -15, 5 -15, 4 -11 Z" fill="#2E8B57"/>
+    </g>
+
+    <!-- Sombra -->
+    <g opacity="0.1" fill="#000000">
+        <ellipse cx="50" cy="82" rx="35" ry="5"/>
+    </g>
+
+    <!-- Animação sutil -->
+    <animateTransform 
+        xlink:href="#table"
+        attributeName="transform" 
+        type="translate" 
+        from="0 0" 
+        to="0 -1" 
+        dur="3s" 
+        repeatCount="indefinite" 
+        direction="alternate"/>
+</svg>

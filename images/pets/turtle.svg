@@ -1,0 +1,28 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Casco -->
+  <ellipse cx="50" cy="55" rx="25" ry="20" fill="#228B22"/>
+  <ellipse cx="50" cy="55" rx="20" ry="15" fill="#32CD32"/>
+  
+  <!-- Cabeça -->
+  <ellipse cx="50" cy="35" rx="8" ry="6" fill="#228B22"/>
+  
+  <!-- Olhos -->
+  <circle cx="47" cy="33" r="1.5" fill="black"/>
+  <circle cx="53" cy="33" r="1.5" fill="black"/>
+  
+  <!-- Patas -->
+  <ellipse cx="30" cy="55" rx="6" ry="4" fill="#228B22"/>
+  <ellipse cx="70" cy="55" rx="6" ry="4" fill="#228B22"/>
+  <ellipse cx="40" cy="70" rx="6" ry="4" fill="#228B22"/>
+  <ellipse cx="60" cy="70" rx="6" ry="4" fill="#228B22"/>
+  
+  <!-- Rabo -->
+  <ellipse cx="50" cy="75" rx="4" ry="2" fill="#228B22"/>
+  
+  <!-- Padrão no casco -->
+  <circle cx="50" cy="55" r="5" fill="#006400" opacity="0.5"/>
+  <circle cx="40" cy="50" r="3" fill="#006400" opacity="0.5"/>
+  <circle cx="60" cy="50" r="3" fill="#006400" opacity="0.5"/>
+  <circle cx="40" cy="60" r="3" fill="#006400" opacity="0.5"/>
+  <circle cx="60" cy="60" r="3" fill="#006400" opacity="0.5"/>
+</svg>

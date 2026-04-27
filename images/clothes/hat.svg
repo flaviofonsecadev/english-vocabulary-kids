@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#ffebee" stroke="#e91e63" stroke-width="2"/>
+  
+  <!-- Baseball cap -->
+  <!-- Brim/visor -->
+  <ellipse cx="100" cy="120" rx="40" ry="12" fill="#1976d2"/>
+  
+  <!-- Crown/top part -->
+  <path d="M70 120 Q100 80 130 120 Q130 110 100 90 Q70 110 70 120" fill="#2196f3"/>
+  
+  <!-- Front panel -->
+  <path d="M85 120 Q100 95 115 120 Q115 115 100 100 Q85 115 85 120" fill="#1e88e5"/>
+  
+  <!-- Side panels -->
+  <path d="M70 120 Q80 105 85 120" fill="#1976d2"/>
+  <path d="M115 120 Q120 105 130 120" fill="#1976d2"/>
+  
+  <!-- Top button -->
+  <circle cx="100" cy="95" r="3" fill="#0d47a1"/>
+  
+  <!-- Stitching lines -->
+  <path d="M85 120 Q100 95 115 120" stroke="#0d47a1" stroke-width="1" fill="none"/>
+  <path d="M70 120 Q80 105 85 120" stroke="#0d47a1" stroke-width="1" fill="none"/>
+  <path d="M115 120 Q120 105 130 120" stroke="#0d47a1" stroke-width="1" fill="none"/>
+  
+  <!-- Brim stitching -->
+  <ellipse cx="100" cy="120" rx="38" ry="10" fill="none" stroke="#0d47a1" stroke-width="1"/>
+  
+  <!-- Adjustment strap at back -->
+  <rect x="128" y="115" width="8" height="3" rx="1" fill="#1976d2"/>
+  <rect x="130" y="116" width="4" height="1" fill="#fff"/>
+  
+  <!-- Logo/emblem on front -->
+  <circle cx="100" cy="110" r="6" fill="#fff" opacity="0.9"/>
+  <text x="100" y="113" font-family="Arial" font-size="8" fill="#1976d2" text-anchor="middle" font-weight="bold">★</text>
+  
+  <!-- Shadow under brim -->
+  <ellipse cx="100" cy="135" rx="35" ry="8" fill="#000" opacity="0.2"/>
+  
+  <!-- Eyelets for ventilation -->
+  <circle cx="90" cy="105" r="1" fill="#0d47a1"/>
+  <circle cx="110" cy="105" r="1" fill="#0d47a1"/>
+  
+  <!-- Size adjustment -->
+  <rect x="125" y="118" width="3" height="1" fill="#fff"/>
+  <rect x="125" y="116" width="3" height="1" fill="#fff"/>
+  
+  <!-- Fabric texture -->
+  <line x1="75" y1="115" x2="75" y2="125" stroke="#42a5f5" stroke-width="0.5" opacity="0.3"/>
+  <line x1="85" y1="110" x2="85" y2="125" stroke="#42a5f5" stroke-width="0.5" opacity="0.3"/>
+  <line x1="95" y1="105" x2="95" y2="125" stroke="#42a5f5" stroke-width="0.5" opacity="0.3"/>
+  <line x1="105" y1="105" x2="105" y2="125" stroke="#42a5f5" stroke-width="0.5" opacity="0.3"/>
+  <line x1="115" y1="110" x2="115" y2="125" stroke="#42a5f5" stroke-width="0.5" opacity="0.3"/>
+  <line x1="125" y1="115" x2="125" y2="125" stroke="#42a5f5" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Head silhouette (to show it's being worn) -->
+  <ellipse cx="100" cy="140" rx="25" ry="15" fill="#ffdbcb" opacity="0.6"/>
+  <circle cx="100" cy="135" r="20" fill="#ffdbcb" opacity="0.6"/>
+</svg>

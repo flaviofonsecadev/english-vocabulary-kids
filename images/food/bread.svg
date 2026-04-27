@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Círculo de fundo para o ícone -->
+    <circle cx="50" cy="50" r="48" fill="#F5DEB3" stroke="#DEB887" stroke-width="2"/>
+
+    <!-- Pão (forma principal) -->
+    <path d="M 20 70 C 15 50, 25 30, 50 30 C 75 30, 85 50, 80 70 Z" fill="#D2B48C"/>
+
+    <!-- Crosta do pão (mais escura) -->
+    <path d="M 20 70 C 15 50, 25 30, 50 30 C 75 30, 85 50, 80 70" 
+          stroke="#8B4513" stroke-width="3" fill="none"/>
+
+    <!-- Cortes na crosta do pão -->
+    <g stroke="#A0522D" stroke-width="1.5">
+        <path d="M 30 45 Q 40 40, 50 45" fill="none"/>
+        <path d="M 50 45 Q 60 40, 70 45" fill="none"/>
+        <path d="M 40 55 Q 50 50, 60 55" fill="none"/>
+    </g>
+
+    <!-- Sombra na base do pão -->
+    <path d="M 20 70 Q 50 75, 80 70" fill="#000000" opacity="0.1"/>
+
+    <!-- Farinha polvilhada (pequenos pontos) -->
+    <g fill="#F5F5DC">
+        <circle cx="40" cy="40" r="0.8"/>
+        <circle cx="55" cy="38" r="1"/>
+        <circle cx="65" cy="45" r="0.7"/>
+        <circle cx="35" cy="55" r="0.9"/>
+        <circle cx="50" cy="60" r="1.1"/>
+    </g>
+
+    <!-- Faca de pão (opcional, para contexto) -->
+    <g transform="rotate(-15, 80, 60)">
+        <!-- Lâmina -->
+        <path d="M 70 50 L 90 45 L 90 50 L 70 55 Z" fill="#C0C0C0" stroke="#A9A9A9" stroke-width="1"/>
+        <!-- Cabo -->
+        <rect x="60" y="51" width="10" height="8" fill="#8B4513"/>
+    </g>
+
+    <!-- Tábua de corte (fundo) -->
+    <rect x="10" y="70" width="80" height="15" fill="#A0522D" rx="2"/>
+    <line x1="10" y1="75" x2="90" y2="75" stroke="#8B4513" stroke-width="1"/>
+    <line x1="10" y1="80" x2="90" y2="80" stroke="#8B4513" stroke-width="1"/>
+</svg>

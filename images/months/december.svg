@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect x="40" y="40" width="120" height="120" rx="10" ry="10" fill="#ccccff" stroke="#333" stroke-width="3"/>
+  <text x="100" y="110" font-family="Arial" font-size="24" text-anchor="middle" fill="#333">DEC</text>
+  <path d="M80 60 L120 60 L120 80 L80 80 Z" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <path d="M90 70 L110 70" stroke="#333" stroke-width="1"/>
+  <path d="M100 60 L100 80" stroke="#333" stroke-width="1"/>
+</svg>

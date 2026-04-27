@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Círculo de fundo para o ícone (céu azul claro) -->
+    <circle cx="50" cy="50" r="48" fill="#ADD8E6" stroke="#87CEEB" stroke-width="2"/>
+
+    <!-- Arco-Íris -->
+    <g id="rainbow" transform="translate(50, 80)">
+        <!-- Vermelho -->
+        <path d="M -40 0 A 40 40 0 0 1 40 0" stroke="#FF0000" stroke-width="5" fill="none"/>
+        <!-- Laranja -->
+        <path d="M -35 0 A 35 35 0 0 1 35 0" stroke="#FFA500" stroke-width="5" fill="none"/>
+        <!-- Amarelo -->
+        <path d="M -30 0 A 30 30 0 0 1 30 0" stroke="#FFFF00" stroke-width="5" fill="none"/>
+        <!-- Verde -->
+        <path d="M -25 0 A 25 25 0 0 1 25 0" stroke="#008000" stroke-width="5" fill="none"/>
+        <!-- Azul -->
+        <path d="M -20 0 A 20 20 0 0 1 20 0" stroke="#0000FF" stroke-width="5" fill="none"/>
+        <!-- Anil -->
+        <path d="M -15 0 A 15 15 0 0 1 15 0" stroke="#4B0082" stroke-width="5" fill="none"/>
+        <!-- Violeta -->
+        <path d="M -10 0 A 10 10 0 0 1 10 0" stroke="#EE82EE" stroke-width="5" fill="none"/>
+    </g>
+
+    <!-- Nuvens nas extremidades do arco-íris -->
+    <g id="clouds">
+        <!-- Nuvem Esquerda -->
+        <g transform="translate(10, 75)">
+            <circle cx="0" cy="0" r="10" fill="white"/>
+            <circle cx="10" cy="-5" r="12" fill="white"/>
+            <circle cx="20" cy="0" r="10" fill="white"/>
+            <rect x="-5" y="0" width="30" height="10" fill="white"/>
+        </g>
+        <!-- Nuvem Direita -->
+        <g transform="translate(65, 75)">
+            <circle cx="0" cy="0" r="10" fill="white"/>
+            <circle cx="10" cy="-5" r="12" fill="white"/>
+            <circle cx="20" cy="0" r="10" fill="white"/>
+            <rect x="-5" y="0" width="30" height="10" fill="white"/>
+        </g>
+    </g>
+
+    <!-- Sol (parcialmente visível) -->
+    <circle cx="85" cy="25" r="12" fill="#FFD700" opacity="0.9"/>
+
+    <!-- Gotas de chuva com brilho (opcional) -->
+    <g id="sparkling-rain">
+        <!-- Gota 1 -->
+        <circle cx="30" cy="40" r="1.5" fill="#FFFFFF" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite" begin="0s"/>
+        </circle>
+        <!-- Gota 2 -->
+        <circle cx="50" cy="30" r="1.5" fill="#FFFFFF" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <!-- Gota 3 -->
+        <circle cx="70" cy="40" r="1.5" fill="#FFFFFF" opacity="0.8">
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="1.5s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+    </g>
+</svg>

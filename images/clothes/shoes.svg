@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#fff8e1" stroke="#f57c00" stroke-width="2"/>
+  
+  <!-- Pair of shoes -->
+  <!-- Left shoe -->
+  <!-- Sole -->
+  <ellipse cx="70" cy="140" rx="25" ry="8" fill="#3e2723"/>
+  
+  <!-- Upper part -->
+  <path d="M50 135 Q70 120 90 135 Q90 140 70 145 Q50 140 50 135" fill="#8d6e63"/>
+  
+  <!-- Toe cap -->
+  <path d="M50 135 Q60 125 70 135 Q65 140 50 135" fill="#6d4c41"/>
+  
+  <!-- Laces -->
+  <line x1="60" y1="128" x2="80" y2="128" stroke="#fff" stroke-width="2"/>
+  <line x1="62" y1="132" x2="78" y2="132" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Eyelets -->
+  <circle cx="62" cy="128" r="1.5" fill="#333"/>
+  <circle cx="68" cy="128" r="1.5" fill="#333"/>
+  <circle cx="72" cy="128" r="1.5" fill="#333"/>
+  <circle cx="78" cy="128" r="1.5" fill="#333"/>
+  
+  <!-- Right shoe -->
+  <!-- Sole -->
+  <ellipse cx="130" cy="140" rx="25" ry="8" fill="#3e2723"/>
+  
+  <!-- Upper part -->
+  <path d="M110 135 Q130 120 150 135 Q150 140 130 145 Q110 140 110 135" fill="#8d6e63"/>
+  
+  <!-- Toe cap -->
+  <path d="M110 135 Q120 125 130 135 Q125 140 110 135" fill="#6d4c41"/>
+  
+  <!-- Laces -->
+  <line x1="120" y1="128" x2="140" y2="128" stroke="#fff" stroke-width="2"/>
+  <line x1="122" y1="132" x2="138" y2="132" stroke="#fff" stroke-width="2"/>
+  
+  <!-- Eyelets -->
+  <circle cx="122" cy="128" r="1.5" fill="#333"/>
+  <circle cx="128" cy="128" r="1.5" fill="#333"/>
+  <circle cx="132" cy="128" r="1.5" fill="#333"/>
+  <circle cx="138" cy="128" r="1.5" fill="#333"/>
+  
+  <!-- Shoe details -->
+  <!-- Left shoe stitching -->
+  <path d="M52 137 Q70 122 88 137" stroke="#5d4037" stroke-width="1" fill="none" stroke-dasharray="2,1"/>
+  
+  <!-- Right shoe stitching -->
+  <path d="M112 137 Q130 122 148 137" stroke="#5d4037" stroke-width="1" fill="none" stroke-dasharray="2,1"/>
+  
+  <!-- Heel reinforcement -->
+  <path d="M85 135 Q90 130 90 140" stroke="#6d4c41" stroke-width="3" stroke-linecap="round"/>
+  <path d="M145 135 Q150 130 150 140" stroke="#6d4c41" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Brand logo (simple) -->
+  <circle cx="75" cy="130" r="3" fill="#fff" opacity="0.8"/>
+  <path d="M73 130 Q75 128 77 130" stroke="#8d6e63" stroke-width="1" fill="none"/>
+  
+  <circle cx="125" cy="130" r="3" fill="#fff" opacity="0.8"/>
+  <path d="M123 130 Q125 128 127 130" stroke="#8d6e63" stroke-width="1" fill="none"/>
+  
+  <!-- Shadows -->
+  <ellipse cx="70" cy="150" rx="20" ry="4" fill="#000" opacity="0.3"/>
+  <ellipse cx="130" cy="150" rx="20" ry="4" fill="#000" opacity="0.3"/>
+  
+  <!-- Shoe box (background element) -->
+  <rect x="30" y="60" width="140" height="20" rx="2" fill="#d7ccc8" opacity="0.5"/>
+  <rect x="32" y="62" width="136" height="16" rx="1" fill="#fff" opacity="0.7"/>
+  <text x="95" y="72" font-family="Arial" font-size="8" fill="#5d4037" text-anchor="middle">SHOES</text>
+  
+  <!-- Size labels -->
+  <rect x="45" y="150" width="8" height="5" fill="#fff" stroke="#333" stroke-width="0.5"/>
+  <text x="47" y="154" font-family="Arial" font-size="4" fill="#333">8</text>
+  
+  <rect x="147" y="150" width="8" height="5" fill="#fff" stroke="#333" stroke-width="0.5"/>
+  <text x="149" y="154" font-family="Arial" font-size="4" fill="#333">8</text>
+</svg>

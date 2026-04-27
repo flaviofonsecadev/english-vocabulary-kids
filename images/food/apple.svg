@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <!-- Círculo de fundo para o ícone -->
+    <circle cx="50" cy="50" r="48" fill="#F0FFF0" stroke="#98FB98" stroke-width="2"/>
+
+    <!-- Maçã -->
+    <g id="apple">
+        <!-- Corpo da maçã -->
+        <path d="M 50 30 C 20 30, 20 70, 50 70 C 80 70, 80 30, 50 30 Z" fill="#FF4136"/>
+        <path d="M 50 30 C 40 25, 60 25, 50 30" fill="#FF4136"/> <!-- Topo -->
+        <path d="M 50 70 C 40 75, 60 75, 50 70" fill="#FF4136"/> <!-- Base -->
+
+        <!-- Brilho na maçã -->
+        <path d="M 60 40 A 15 15 0 0 1 65 55 A 20 20 0 0 0 60 40" fill="#FFFFFF" opacity="0.7">
+            <animate attributeName="opacity" values="0.7;0.5;0.7" dur="3s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Caule -->
+        <path d="M 50 30 L 52 20" stroke="#8B4513" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Folha -->
+        <path d="M 52 20 C 55 15, 65 15, 60 25 Z" fill="#2E8B57" stroke="#3CB371" stroke-width="1">
+            <animateTransform 
+                attributeName="transform" 
+                type="rotate" 
+                from="0 52 20" 
+                to="10 52 20" 
+                dur="2s" 
+                repeatCount="indefinite" 
+                additive="sum" 
+                accumulate="sum"/>
+        </path>
+    </g>
+
+    <!-- Minhoca (opcional, para contexto) -->
+    <g id="worm" transform="translate(30, 40)">
+        <!-- Corpo -->
+        <path d="M 0 0 C 5 5, 10 -5, 15 0" stroke="#FFC0CB" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Cabeça -->
+        <circle cx="15" cy="0" r="2" fill="#FF69B4"/>
+        <!-- Olho -->
+        <circle cx="16" cy="-0.5" r="0.5" fill="black"/>
+    </g>
+
+    <!-- Fundo de prado (opcional) -->
+    <rect x="0" y="70" width="100" height="30" fill="#90EE90"/>
+    <path d="M 0 70 Q 25 65, 50 70 T 100 70" stroke="#3CB371" stroke-width="2" fill="none"/>
+</svg>

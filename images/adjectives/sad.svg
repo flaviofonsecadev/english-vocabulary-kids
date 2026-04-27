@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  
+  <!-- Sad face -->
+  <!-- Main face circle -->
+  <circle cx="100" cy="100" r="60" fill="#90caf9" stroke="#1976d2" stroke-width="3"/>
+  
+  <!-- Eyes (droopy/sad eyes) -->
+  <path d="M75 85 Q80 95 85 85" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M115 85 Q120 95 125 85" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Tears -->
+  <ellipse cx="70" cy="95" rx="3" ry="8" fill="#64b5f6"/>
+  <ellipse cx="130" cy="95" rx="3" ry="8" fill="#64b5f6"/>
+  <ellipse cx="68" cy="110" rx="2" ry="6" fill="#64b5f6"/>
+  <ellipse cx="132" cy="110" rx="2" ry="6" fill="#64b5f6"/>
+  
+  <!-- Sad mouth (downward curve) -->
+  <path d="M75 125 Q100 110 125 125" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Eyebrows (angled down for sadness) -->
+  <line x1="70" y1="75" x2="85" y2="80" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+  <line x1="115" y1="80" x2="130" y2="75" stroke="#333" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Rain clouds above -->
+  <ellipse cx="60" cy="40" rx="15" ry="8" fill="#607d8b"/>
+  <ellipse cx="75" cy="35" rx="12" ry="6" fill="#607d8b"/>
+  <ellipse cx="90" cy="40" rx="10" ry="5" fill="#607d8b"/>
+  
+  <ellipse cx="110" cy="35" rx="10" ry="5" fill="#607d8b"/>
+  <ellipse cx="125" cy="40" rx="12" ry="6" fill="#607d8b"/>
+  <ellipse cx="140" cy="40" rx="15" ry="8" fill="#607d8b"/>
+  
+  <!-- Rain drops -->
+  <ellipse cx="65" cy="55" rx="1.5" ry="4" fill="#64b5f6"/>
+  <ellipse cx="80" cy="50" rx="1.5" ry="4" fill="#64b5f6"/>
+  <ellipse cx="95" cy="55" rx="1.5" ry="4" fill="#64b5f6"/>
+  <ellipse cx="105" cy="50" rx="1.5" ry="4" fill="#64b5f6"/>
+  <ellipse cx="120" cy="55" rx="1.5" ry="4" fill="#64b5f6"/>
+  <ellipse cx="135" cy="50" rx="1.5" ry="4" fill="#64b5f6"/>
+  
+  <!-- More rain drops falling -->
+  <ellipse cx="70" cy="65" rx="1" ry="3" fill="#64b5f6"/>
+  <ellipse cx="85" cy="60" rx="1" ry="3" fill="#64b5f6"/>
+  <ellipse cx="100" cy="65" rx="1" ry="3" fill="#64b5f6"/>
+  <ellipse cx="115" cy="60" rx="1" ry="3" fill="#64b5f6"/>
+  <ellipse cx="130" cy="65" rx="1" ry="3" fill="#64b5f6"/>
+  
+  <!-- Puddle of tears at bottom -->
+  <ellipse cx="100" cy="175" rx="25" ry="5" fill="#64b5f6" opacity="0.6"/>
+  
+  <!-- Wilted flower for extra sadness -->
+  <line x1="40" y1="160" x2="40" y2="180" stroke="#4caf50" stroke-width="2"/>
+  <ellipse cx="40" cy="155" rx="5" ry="3" fill="#ffeb3b" transform="rotate(-30 40 155)"/>
+  <ellipse cx="35" cy="158" rx="3" ry="2" fill="#ffeb3b" transform="rotate(-45 35 158)"/>
+  <ellipse cx="45" cy="158" rx="3" ry="2" fill="#ffeb3b" transform="rotate(-15 45 158)"/>
+  
+  <!-- Drooping elements -->
+  <path d="M160 120 Q165 130 160 140" stroke="#607d8b" stroke-width="2" fill="none"/>
+  <path d="M170 110 Q175 125 170 135" stroke="#607d8b" stroke-width="2" fill="none"/>
+  
+  <!-- Sad atmosphere lines -->
+  <line x1="20" y1="80" x2="30" y2="90" stroke="#607d8b" stroke-width="1" opacity="0.5"/>
+  <line x1="25" y1="120" x2="35" y2="130" stroke="#607d8b" stroke-width="1" opacity="0.5"/>
+  <line x1="170" y1="80" x2="180" y2="90" stroke="#607d8b" stroke-width="1" opacity="0.5"/>
+  <line x1="165" y1="160" x2="175" y2="170" stroke="#607d8b" stroke-width="1" opacity="0.5"/>
+</svg>

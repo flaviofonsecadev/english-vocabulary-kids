@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulário Inglês para Crianças</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>English Games</h1>
+        <h2>Teacher Flávio</h2>
+        <div class="header-actions">
+            <button id="home-icon" title="Home"><i class="fas fa-home"></i></button>
+            <button id="back-icon" title="Voltar Página"><i class="fas fa-arrow-left"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home visível por padrão; categorias ocultas até escolher o modo -->
+        <section class="home-menu" style="display: block;">
+            <h2>Escolha um modo</h2>
+            <div class="home-options">
+                <button id="mode-vocabulary" class="game-btn">Vocabulary</button>
+                <button id="mode-conversation" class="game-btn">Conversation</button>
+                <button id="mode-phrases" class="game-btn">Phrases</button>
+            </div>
+        </section>
+
+        <section id="categories" class="categories" style="display: none;">
+            <h2>Escolha uma categoria</h2>
+            <div class="category-grid">
+                <!-- Categorias Originais -->
+                <div class="category-card" data-category="fruits">
+                    <i class="fas fa-apple-alt"></i>
+                    <h3>Frutas</h3>
+                    <button class="audio-btn" data-word="Fruits"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="colors">
+                    <i class="fas fa-palette"></i>
+                    <h3>Cores</h3>
+                    <button class="audio-btn" data-word="Colors"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="numbers-10">
+                    <i class="fas fa-sort-numeric-up"></i>
+                    <h3>Números 0-10</h3>
+                    <button class="audio-btn" data-word="Numbers from zero to ten"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="numbers-29">
+                    <i class="fas fa-sort-numeric-up-alt"></i>
+                    <h3>Números 11-29</h3>
+                    <button class="audio-btn" data-word="Numbers from eleven to twenty nine"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="numbers-100">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Números 0-100</h3>
+                    <button class="audio-btn" data-word="Numbers from zero to one hundred"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="farm-animals">
+                    <i class="fas fa-horse"></i>
+                    <h3>Animais da Fazenda</h3>
+                    <button class="audio-btn" data-word="Farm Animals"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="zoo-animals">
+                    <i class="fas fa-hippo"></i>
+                    <h3>Animais do Zoológico</h3>
+                    <button class="audio-btn" data-word="Zoo Animals"><i class="fas fa-volume-up"></i></button>
+                </div>
+                
+                <!-- Novas Categorias -->
+                <div class="category-card" data-category="school-supplies">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>Objetos Escolares</h3>
+                    <button class="audio-btn" data-word="School Supplies"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="toys">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Brinquedos</h3>
+                    <button class="audio-btn" data-word="Toys"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="body-parts">
+                    <i class="fas fa-child"></i>
+                    <h3>Partes do Corpo</h3>
+                    <button class="audio-btn" data-word="Body Parts"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="nature">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Natureza</h3>
+                    <button class="audio-btn" data-word="Nature"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="clothes">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Roupas</h3>
+                    <button class="audio-btn" data-word="Clothes"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="weather">
+                    <i class="fas fa-cloud-sun"></i>
+                    <h3>Clima</h3>
+                    <button class="audio-btn" data-word="Weather"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="weekdays">
+                    <i class="fas fa-calendar-day"></i>
+                    <h3>Dias da Semana</h3>
+                    <button class="audio-btn" data-word="Days of the Week"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="months">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Meses do Ano</h3>
+                    <button class="audio-btn" data-word="Months of the Year"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="vegetables">
+                    <i class="fas fa-carrot"></i>
+                    <h3>Vegetais</h3>
+                    <button class="audio-btn" data-word="Vegetables"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="emotions">
+                    <i class="fas fa-smile"></i>
+                    <h3>Emoções</h3>
+                    <button class="audio-btn" data-word="Emotions"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="pets">
+                    <i class="fas fa-dog"></i>
+                    <h3>Pets</h3>
+                    <button class="audio-btn" data-word="Pets"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="action-verbs">
+                    <i class="fas fa-running"></i>
+                    <h3>Verbos de Ação</h3>
+                    <button class="audio-btn" data-word="Action Verbs"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="adjectives">
+                    <i class="fas fa-star"></i>
+                    <h3>Adjetivos</h3>
+                    <button class="audio-btn" data-word="Adjectives"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="shapes">
+                    <i class="fas fa-shapes"></i>
+                    <h3>Formas</h3>
+                    <button class="audio-btn" data-word="Shapes"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="food">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Comidas</h3>
+                    <button class="audio-btn" data-word="Food"><i class="fas fa-volume-up"></i></button>
+                </div>
+                <div class="category-card" data-category="family">
+                    <i class="fas fa-users"></i>
+                    <h3>Família</h3>
+                    <button class="audio-btn" data-word="Family"><i class="fas fa-volume-up"></i></button>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Seção de frases (tópicos): escondida por padrão -->
+        <section class="phrases-categories" style="display: none;">
+            <h2>Phrases - Tópicos</h2>
+            <div class="category-grid">
+                <!-- Use o mesmo estilo de cartões, mas com data-mode="phrases" -->
+                <div class="category-card" data-category="phrases-greetings" data-mode="phrases">
+                    <img src="images/objects/house.svg" alt="Greetings">
+                    <div class="card-content">
+                        <h3>Greetings</h3>
+                        <button class="audio-btn" data-word="Greetings"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-classroom" data-mode="phrases">
+                    <img src="images/school-supplies/pencil.svg" alt="Classroom">
+                    <div class="card-content">
+                        <h3>Classroom</h3>
+                        <button class="audio-btn" data-word="Classroom"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-shopping" data-mode="phrases">
+                    <img src="images/objects/table.svg" alt="Shopping">
+                    <div class="card-content">
+                        <h3>Shopping</h3>
+                        <button class="audio-btn" data-word="Shopping"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+
+                <!-- Novos tópicos de Phrases -->
+                <div class="category-card" data-category="phrases-travel" data-mode="phrases">
+                    <img src="images/objects/car.svg" alt="Travel">
+                    <div class="card-content">
+                        <h3>Travel</h3>
+                        <button class="audio-btn" data-word="Travel"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-restaurant" data-mode="phrases">
+                    <img src="images/food/pizza.svg" alt="Restaurant">
+                    <div class="card-content">
+                        <h3>Restaurant</h3>
+                        <button class="audio-btn" data-word="Restaurant"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-directions" data-mode="phrases">
+                    <img src="images/objects/house.svg" alt="Directions">
+                    <div class="card-content">
+                        <h3>Directions</h3>
+                        <button class="audio-btn" data-word="Directions"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-daily-routine" data-mode="phrases">
+                    <img src="images/action-verbs/read.svg" alt="Daily Routine">
+                    <div class="card-content">
+                        <h3>Daily Routine</h3>
+                        <button class="audio-btn" data-word="Daily Routine"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-health" data-mode="phrases">
+                    <img src="images/emotions/tired.svg" alt="Health">
+                    <div class="card-content">
+                        <h3>Health</h3>
+                        <button class="audio-btn" data-word="Health"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-weather" data-mode="phrases">
+                    <img src="images/weather/sunny.svg" alt="Weather">
+                    <div class="card-content">
+                        <h3>Weather</h3>
+                        <button class="audio-btn" data-word="Weather"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-family" data-mode="phrases">
+                    <img src="images/family/family.png" alt="Family">
+                    <div class="card-content">
+                        <h3>Family</h3>
+                        <button class="audio-btn" data-word="Family"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+                <div class="category-card" data-category="phrases-emotions" data-mode="phrases">
+                    <img src="images/emotions/happy.svg" alt="Emotions">
+                    <div class="card-content">
+                        <h3>Emotions</h3>
+                        <button class="audio-btn" data-word="Emotions"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <!-- Conversation: escondida por padrão -->
+        <section id="conversation-container" class="game-container" style="display: none;">
+            <h2>Conversation</h2>
+            <div class="conversation-layout">
+                <div class="conversation-topics">
+                    <div class="conversation-topic-card" data-topic="greetings">
+                        <h3>Greetings</h3>
+                    </div>
+                    <div class="conversation-topic-card" data-topic="at-school">
+                        <h3>At School</h3>
+                    </div>
+                    <div class="conversation-topic-card" data-topic="at-the-store">
+                        <h3>At the Store</h3>
+                    </div>
+                </div>
+                <div class="conversation-viewer">
+                    <div class="dialogue-lines"></div>
+                    <div class="conversation-controls">
+                        <button id="play-conversation" class="action-btn"><i class="fas fa-volume-up"></i> Ouvir diálogo</button>
+                    </div>
+                </div>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <!-- Seção de seleção de jogos existente (reutilizada para Vocabulary e Phrases) -->
+        <section class="game-selection" style="display: none;">
+            <h2>Escolha um jogo</h2>
+            <div class="game-buttons">
+                <button id="memory-game" class="game-btn">Jogo da Memória</button>
+                <button id="word-match" class="game-btn">Jogo de Palavras</button>
+                <button id="categorization-game" class="game-btn">Jogo de Categorização</button>
+                <button id="pronunciation-game" class="game-btn">Jogo de Pronúncia</button>
+                <button id="learn-mode" class="game-btn">Modo Aprender</button>
+                <button id="listening-quiz" class="game-btn">Prática de Escuta</button>
+                <button id="two-choice-quiz" class="game-btn">Quiz 2 Alternativas</button>
+                <button id="image-quiz" class="game-btn">Image Quiz</button>
+                <button id="word-search" class="game-btn">Caça-Palavras</button>
+                <button id="back-to-categories" class="back-btn">Voltar</button>
+            </div>
+        </section>
+
+        <section id="memory-game-container" class="game-container" style="display: none;">
+            <h2>Jogo da Memória</h2>
+            <!-- Controles de quantidade de pares -->
+            <div class="game-controls">
+                <label for="memory-pairs-count">Número de pares:</label>
+                <select id="memory-pairs-count">
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8" selected>8</option>
+                </select>
+            </div>
+            <div class="game-board memory-board"></div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="word-match-container" class="game-container" style="display: none;">
+            <h2>Jogo de Palavras</h2>
+            <div class="game-board word-match-board">
+                <div class="words-column"></div>
+                <div class="images-column"></div>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="categorization-game-container" class="game-container" style="display: none;">
+            <h2>Jogo de Categorização</h2>
+            <div class="categorization-instructions">
+                <p>Arraste as palavras para as categorias corretas!</p>
+            </div>
+            <div class="game-board categorization-board">
+                <div class="categories-container"></div>
+                <div class="words-container"></div>
+            </div>
+            <div class="game-controls">
+                <button id="check-categories" class="action-btn">Verificar</button>
+                <button id="reset-categories" class="action-btn">Reiniciar</button>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="pronunciation-game-container" class="game-container" style="display: none;">
+            <h2>Jogo de Pronúncia</h2>
+            <div class="pronunciation-instructions">
+                <p>Ouça a palavra e depois clique em "Gravar" para pronunciá-la!</p>
+            </div>
+            <div class="game-board pronunciation-board">
+                <div class="word-display">
+                    <div class="current-word"></div>
+                    <div class="word-image"></div>
+                    <button id="listen-word" class="action-btn"><i class="fas fa-volume-up"></i> Ouvir</button>
+                </div>
+                <div class="recording-controls">
+                    <button id="record-pronunciation" class="action-btn"><i class="fas fa-microphone"></i> Gravar</button>
+                    <button id="stop-recording" class="action-btn" disabled><i class="fas fa-stop"></i> Parar</button>
+                    <button id="play-recording" class="action-btn" disabled><i class="fas fa-play"></i> Reproduzir</button>
+                    <div id="recording-status">Pronto para gravar</div>
+                </div>
+                <div class="game-score">
+                    <span>Pontuação: <span id="pronunciation-score">0</span></span>
+                </div>
+                <div class="game-controls">
+                    <button id="next-word" class="action-btn">Próxima Palavra</button>
+                </div>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="learn-mode-container" class="game-container" style="display: none;">
+            <h2>Modo Aprender</h2>
+            <div class="flashcard-container">
+                <div class="flashcard">
+                    <div class="flashcard-front">
+                        <img id="flashcard-image" src="" alt="">
+                        <div id="flashcard-front-text"></div>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3 id="flashcard-word"></h3>
+                        <h4 id="flashcard-translation"></h4>
+                        <button id="flashcard-audio" class="action-btn"><i class="fas fa-volume-up"></i> Ouvir</button>
+                    </div>
+                </div>
+                <div class="flashcard-controls">
+                    <button id="prev-flashcard" class="action-btn"><i class="fas fa-chevron-left"></i> Anterior</button>
+                    <span id="flashcard-counter">1 / 10</span>
+                    <button id="next-flashcard" class="action-btn">Próximo <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="listening-quiz-container" class="game-container" style="display: none;">
+            <div class="quiz-header">
+                <h2><i class="fas fa-question-circle"></i> Qual é a palavra?</h2>
+                <div class="quiz-controls">
+                    <label for="listening-mode">Modo:</label>
+                    <select id="listening-mode">
+                        <option value="general">Geral</option>
+                        <option value="category">Categoria atual</option>
+                    </select>
+                    <button id="play-sound-btn" title="Reproduzir a palavra"><i class="fas fa-volume-up"></i></button>
+                    <div class="quiz-stats"><span id="listening-score">0</span>/<span id="listening-round">0</span></div>
+                    <button id="listening-next" class="action-btn">Próxima</button>
+                </div>
+            </div>
+            <div id="quiz-options" class="quiz-options">
+                <!-- As opções de imagem serão inseridas aqui pelo JavaScript -->
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="two-choice-quiz-container" class="game-container" style="display: none;">
+            <div class="quiz-header">
+                <h2><i class="fas fa-question-circle"></i> Quiz 2 Alternativas</h2>
+                <div class="quiz-controls">
+                    <label for="two-choice-category">Categoria:</label>
+                    <select id="two-choice-category">
+                        <option value="pets">Animais</option>
+                        <option value="farm-animals">Animais da Fazenda</option>
+                        <option value="zoo-animals">Animais do Zoológico</option>
+                        <option value="numbers-10">Números (0–10)</option>
+                        <option value="numbers-29">Números (0–29)</option>
+                        <option value="numbers-100">Números (0–100)</option>
+                    </select>
+                    <div class="quiz-stats"><span id="two-choice-score">0</span>/<span id="two-choice-round">0</span></div>
+                    <button id="two-choice-next" class="action-btn">Próxima</button>
+                    <button id="two-choice-play" title="Ouvir a pergunta"><i class="fas fa-volume-up"></i></button>
+                </div>
+            </div>
+            <div id="two-choice-question" class="quiz-question">
+                <div class="question-en"></div>
+                <div class="question-pt"></div>
+            </div>
+            <div id="two-choice-options" class="quiz-options">
+                <!-- Duas alternativas com imagem, palavra e áudio -->
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="image-quiz-container" class="game-container" style="display: none;">
+            <div class="quiz-header">
+                <h2><i class="fas fa-image"></i> Image Quiz</h2>
+                <div class="quiz-controls">
+                    <label for="image-quiz-count">Opções:</label>
+                    <select id="image-quiz-count">
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <div class="quiz-stats"><span id="image-quiz-score">0</span>/<span id="image-quiz-round">0</span></div>
+                    <button id="image-quiz-next" class="action-btn">Próxima</button>
+                </div>
+            </div>
+            <div class="image-quiz-top">
+                <img id="image-quiz-image" alt="Imagem da pergunta">
+                <!-- Card de frase exibido quando o modo for Phrases -->
+                <div id="image-quiz-card" style="display:none;">
+                    <div class="phrase-card">
+                        <div class="phrase-en" id="image-quiz-phrase-en"></div>
+                        <button class="audio-btn" id="image-quiz-play" title="Ouvir a frase"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="image-quiz-options" class="quiz-options">
+                <!-- Alternativas com nome e áudio -->
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="word-search-container" class="game-container" style="display: none;">
+            <h2>Caça-Palavras</h2>
+            <div class="game-board word-search-board">
+                <div class="word-grid"></div>
+                <div class="word-search-controls">
+                    <div class="difficulty-controls">
+                        <label for="word-search-difficulty">Nível:</label>
+                        <select id="word-search-difficulty">
+                            <option value="easy">Fácil</option>
+                            <option value="normal" selected>Normal</option>
+                        </select>
+                    </div>
+                    <h3>Palavras</h3>
+                    <div class="word-list"></div>
+                </div>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Flavio Fonseca - 2025</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="words.js"></script>
+</body>
+</html>
