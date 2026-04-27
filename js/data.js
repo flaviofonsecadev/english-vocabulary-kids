@@ -238,14 +238,14 @@ const vocabularyData = {
     
     // Verbos de ação
     'action-verbs': [
-        { english: 'Run', portuguese: 'Correr', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20running%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' },
-        { english: 'Jump', portuguese: 'Pular', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20jumping%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' },
-        { english: 'Swim', portuguese: 'Nadar', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20swimming%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' },
-        { english: 'Eat', portuguese: 'Comer', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20eating%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' },
-        { english: 'Sleep', portuguese: 'Dormir', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20sleeping%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' },
-        { english: 'Play', portuguese: 'Brincar', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20playing%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' },
-        { english: 'Read', portuguese: 'Ler', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20reading%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' },
-        { english: 'Write', portuguese: 'Escrever', image: 'https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=a%20vibrant%2C%20flat%20vector%20illustration%20of%20a%20person%20writing%2C%20colorful%20and%20playful%20style%2C%20isolated%20on%20a%20clean%20white%20background%2C%20educational%20graphic%20for%20children&image_size=square' }
+        { english: 'Run', portuguese: 'Correr', image: 'images/action-verbs/run.png' },
+        { english: 'Jump', portuguese: 'Pular', image: 'images/action-verbs/jump.png' },
+        { english: 'Swim', portuguese: 'Nadar', image: 'images/action-verbs/swim.png' },
+        { english: 'Eat', portuguese: 'Comer', image: 'images/action-verbs/eat.png' },
+        { english: 'Sleep', portuguese: 'Dormir', image: 'images/action-verbs/sleep.png' },
+        { english: 'Play', portuguese: 'Brincar', image: 'images/action-verbs/play.png' },
+        { english: 'Read', portuguese: 'Ler', image: 'images/action-verbs/read.png' },
+        { english: 'Write', portuguese: 'Escrever', image: 'images/action-verbs/write.png' }
     ],
     
     // Adjetivos
