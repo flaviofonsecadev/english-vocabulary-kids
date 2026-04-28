@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <path d="M100,40 L120,160 L80,160 Z" fill="#ff9f1c" stroke="#333" stroke-width="3"/>
-  <path d="M100,40 Q90,30 100,20 Q110,30 100,40" fill="#4ecdc4" stroke="#333" stroke-width="2"/>
-  <path d="M90,30 Q80,20 85,10 Q95,20 90,30" fill="#4ecdc4" stroke="#333" stroke-width="2"/>
-  <path d="M110,30 Q120,20 115,10 Q105,20 110,30" fill="#4ecdc4" stroke="#333" stroke-width="2"/>
-  <path d="M90,80 L110,80" stroke="#333" stroke-width="2"/>
-  <path d="M90,100 L110,100" stroke="#333" stroke-width="2"/>
-  <path d="M90,120 L110,120" stroke="#333" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+    <path d="M64 18 C52 26 48 44 56 54 C44 64 44 92 64 112 C84 92 84 64 72 54 C80 44 76 26 64 18 Z" fill="#ffb74d" stroke="#2b2b2b"/>
+    <path d="M64 18 C56 10 52 10 46 14" stroke="#81c784" stroke-width="8"/>
+    <path d="M64 18 C72 10 76 10 82 14" stroke="#81c784" stroke-width="8"/>
+    <path d="M56 68 H72" stroke="#2b2b2b" stroke-width="3" opacity="0.5"/>
+    <path d="M56 84 H70" stroke="#2b2b2b" stroke-width="3" opacity="0.5"/>
+  </g>
 </svg>
