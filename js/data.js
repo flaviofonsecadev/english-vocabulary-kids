@@ -294,6 +294,30 @@ const vocabularyData = {
         { english: 'Grandfather', portuguese: 'Avô', image: 'images/family/grandfather.png' },
         { english: 'Baby', portuguese: 'Bebê', image: 'images/family/baby.png' },
         { english: 'Family', portuguese: 'Família', image: 'images/family/family.png' }
+    ],
+
+    // Jobs & Occupations 1
+    'jobs-occupations-1': [
+        { english: 'Doctor', portuguese: 'Médico(a)', image: 'images/objects/book.svg' },
+        { english: 'Teacher', portuguese: 'Professor(a)', image: 'images/objects/book.svg' },
+        { english: 'Police Officer', portuguese: 'Policial', image: 'images/objects/book.svg' },
+        { english: 'Firefighter', portuguese: 'Bombeiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Nurse', portuguese: 'Enfermeiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Chef', portuguese: 'Cozinheiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Pilot', portuguese: 'Piloto(a)', image: 'images/objects/book.svg' },
+        { english: 'Farmer', portuguese: 'Fazendeiro(a)', image: 'images/objects/book.svg' }
+    ],
+
+    // Jobs & Occupations 2
+    'jobs-occupations-2': [
+        { english: 'Engineer', portuguese: 'Engenheiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Dentist', portuguese: 'Dentista', image: 'images/objects/book.svg' },
+        { english: 'Driver', portuguese: 'Motorista', image: 'images/objects/book.svg' },
+        { english: 'Builder', portuguese: 'Construtor(a)', image: 'images/objects/book.svg' },
+        { english: 'Scientist', portuguese: 'Cientista', image: 'images/objects/book.svg' },
+        { english: 'Artist', portuguese: 'Artista', image: 'images/objects/book.svg' },
+        { english: 'Mechanic', portuguese: 'Mecânico(a)', image: 'images/objects/book.svg' },
+        { english: 'Veterinarian', portuguese: 'Veterinário(a)', image: 'images/objects/book.svg' }
     ]
 };
 
