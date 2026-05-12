@@ -1,11 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="16" fill="#e8eaf6"/>
-  <!-- handles -->
-  <circle cx="44" cy="76" r="12" fill="#5c6bc0"/>
-  <circle cx="60" cy="88" r="12" fill="#5c6bc0"/>
-  <!-- blades -->
-  <g fill="#b0bec5">
-    <rect x="62" y="64" width="46" height="8" rx="4"/>
-    <rect x="62" y="76" width="46" height="8" rx="4" transform="rotate(20 85 80)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5">
+    <circle cx="44" cy="84" r="12" fill="#e1bee7" stroke="#2b2b2b"/>
+    <circle cx="70" cy="84" r="12" fill="#e1bee7" stroke="#2b2b2b"/>
+    <path d="M48 78 L92 34" stroke="#2b2b2b"/>
+    <path d="M66 78 L28 40" stroke="#2b2b2b"/>
   </g>
 </svg>

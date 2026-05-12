@@ -133,7 +133,9 @@ const categoryLabels = {
     'adjectives': 'Adjetivos',
     'shapes': 'Formas',
     'food': 'Comidas',
-    'family': 'Família'
+    'family': 'Família',
+    'jobs-occupations-1': 'Jobs & Occupations 1',
+    'jobs-occupations-2': 'Jobs & Occupations 2'
 };
 
 function humanizeCategoryKey(key) {

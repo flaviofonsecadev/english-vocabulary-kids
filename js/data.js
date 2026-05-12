@@ -91,26 +91,26 @@ const vocabularyData = {
     
     // Animais do zoológico
     'zoo-animals': [
-        { english: 'Lion', portuguese: 'Leão', image: 'images/zoo-animals/lion.png' },
-        { english: 'Elephant', portuguese: 'Elefante', image: 'images/zoo-animals/elephant.png' },
-        { english: 'Giraffe', portuguese: 'Girafa', image: 'images/zoo-animals/giraffe.png' },
-        { english: 'Monkey', portuguese: 'Macaco', image: 'images/zoo-animals/monkey.png' },
-        { english: 'Zebra', portuguese: 'Zebra', image: 'images/zoo-animals/zebra.png' },
-        { english: 'Hippo', portuguese: 'Hipopótamo', image: 'images/zoo-animals/hippo.png' },
-        { english: 'Tiger', portuguese: 'Tigre', image: 'images/zoo-animals/tiger.png' },
-        { english: 'Penguin', portuguese: 'Pinguim', image: 'images/zoo-animals/penguin.png' }
+        { english: 'Lion', portuguese: 'Leão', image: 'images/zoo-animals/lion.svg' },
+        { english: 'Elephant', portuguese: 'Elefante', image: 'images/zoo-animals/elephant.svg' },
+        { english: 'Giraffe', portuguese: 'Girafa', image: 'images/zoo-animals/giraffe.svg' },
+        { english: 'Monkey', portuguese: 'Macaco', image: 'images/zoo-animals/monkey.svg' },
+        { english: 'Zebra', portuguese: 'Zebra', image: 'images/zoo-animals/zebra.svg' },
+        { english: 'Hippo', portuguese: 'Hipopótamo', image: 'images/zoo-animals/hippo.svg' },
+        { english: 'Tiger', portuguese: 'Tigre', image: 'images/zoo-animals/tiger.svg' },
+        { english: 'Penguin', portuguese: 'Pinguim', image: 'images/zoo-animals/penguin.svg' }
     ],
     
     // Objetos escolares
     'school-supplies': [
-        { english: 'Pencil', portuguese: 'Lápis', image: 'images/school-supplies/pencil.png' },
-        { english: 'Pen', portuguese: 'Caneta', image: 'images/school-supplies/pen.png' },
-        { english: 'Notebook', portuguese: 'Caderno', image: 'images/school-supplies/notebook.png' },
-        { english: 'Eraser', portuguese: 'Borracha', image: 'images/school-supplies/eraser.png' },
-        { english: 'Ruler', portuguese: 'Régua', image: 'images/school-supplies/ruler.png' },
-        { english: 'Scissors', portuguese: 'Tesoura', image: 'images/school-supplies/scissors.png' },
-        { english: 'Backpack', portuguese: 'Mochila', image: 'images/school-supplies/backpack.png' },
-        { english: 'Book', portuguese: 'Livro', image: 'images/school-supplies/book.png' }
+        { english: 'Pencil', portuguese: 'Lápis', image: 'images/school-supplies/pencil.svg' },
+        { english: 'Pen', portuguese: 'Caneta', image: 'images/school-supplies/pen.svg' },
+        { english: 'Notebook', portuguese: 'Caderno', image: 'images/school-supplies/notebook.svg' },
+        { english: 'Eraser', portuguese: 'Borracha', image: 'images/school-supplies/eraser.svg' },
+        { english: 'Ruler', portuguese: 'Régua', image: 'images/school-supplies/ruler.svg' },
+        { english: 'Scissors', portuguese: 'Tesoura', image: 'images/school-supplies/scissors.svg' },
+        { english: 'Backpack', portuguese: 'Mochila', image: 'images/school-supplies/backpack.svg' },
+        { english: 'Book', portuguese: 'Livro', image: 'images/school-supplies/book.svg' }
     ],
     
     // Brinquedos
@@ -202,14 +202,14 @@ const vocabularyData = {
     
     // Vegetais
     'vegetables': [
-        { english: 'Carrot', portuguese: 'Cenoura', image: 'images/vegetables/carrot.png' },
-        { english: 'Tomato', portuguese: 'Tomate', image: 'images/vegetables/tomato.png' },
-        { english: 'Potato', portuguese: 'Batata', image: 'images/vegetables/potato.png' },
-        { english: 'Broccoli', portuguese: 'Brócolis', image: 'images/vegetables/broccoli.png' },
-        { english: 'Corn', portuguese: 'Milho', image: 'images/vegetables/corn.png' },
-        { english: 'Cucumber', portuguese: 'Pepino', image: 'images/vegetables/cucumber.png' },
-        { english: 'Lettuce', portuguese: 'Alface', image: 'images/vegetables/lettuce.png' },
-        { english: 'Onion', portuguese: 'Cebola', image: 'images/vegetables/onion.png' }
+        { english: 'Carrot', portuguese: 'Cenoura', image: 'images/vegetables/carrot.svg' },
+        { english: 'Tomato', portuguese: 'Tomate', image: 'images/vegetables/tomato.svg' },
+        { english: 'Potato', portuguese: 'Batata', image: 'images/vegetables/potato.svg' },
+        { english: 'Broccoli', portuguese: 'Brócolis', image: 'images/vegetables/broccoli.svg' },
+        { english: 'Corn', portuguese: 'Milho', image: 'images/vegetables/corn.svg' },
+        { english: 'Cucumber', portuguese: 'Pepino', image: 'images/vegetables/cucumber.svg' },
+        { english: 'Lettuce', portuguese: 'Alface', image: 'images/vegetables/lettuce.svg' },
+        { english: 'Onion', portuguese: 'Cebola', image: 'images/vegetables/onion.svg' }
     ],
     
     // Emoções
@@ -238,14 +238,14 @@ const vocabularyData = {
     
     // Verbos de ação
     'action-verbs': [
-        { english: 'Run', portuguese: 'Correr', image: 'images/action-verbs/run.png' },
-        { english: 'Jump', portuguese: 'Pular', image: 'images/action-verbs/jump.png' },
-        { english: 'Swim', portuguese: 'Nadar', image: 'images/action-verbs/swim.png' },
-        { english: 'Eat', portuguese: 'Comer', image: 'images/action-verbs/eat.png' },
-        { english: 'Sleep', portuguese: 'Dormir', image: 'images/action-verbs/sleep.png' },
-        { english: 'Play', portuguese: 'Brincar', image: 'images/action-verbs/play.png' },
-        { english: 'Read', portuguese: 'Ler', image: 'images/action-verbs/read.png' },
-        { english: 'Write', portuguese: 'Escrever', image: 'images/action-verbs/write.png' }
+        { english: 'Run', portuguese: 'Correr', image: 'images/action-verbs/run.svg' },
+        { english: 'Jump', portuguese: 'Pular', image: 'images/action-verbs/jump.svg' },
+        { english: 'Swim', portuguese: 'Nadar', image: 'images/action-verbs/swim.svg' },
+        { english: 'Eat', portuguese: 'Comer', image: 'images/action-verbs/eat.svg' },
+        { english: 'Sleep', portuguese: 'Dormir', image: 'images/action-verbs/sleep.svg' },
+        { english: 'Play', portuguese: 'Brincar', image: 'images/action-verbs/play.svg' },
+        { english: 'Read', portuguese: 'Ler', image: 'images/action-verbs/read.svg' },
+        { english: 'Write', portuguese: 'Escrever', image: 'images/action-verbs/write.svg' }
     ],
     
     // Adjetivos
@@ -294,6 +294,30 @@ const vocabularyData = {
         { english: 'Grandfather', portuguese: 'Avô', image: 'images/family/grandfather.png' },
         { english: 'Baby', portuguese: 'Bebê', image: 'images/family/baby.png' },
         { english: 'Family', portuguese: 'Família', image: 'images/family/family.png' }
+    ],
+
+    // Jobs & Occupations 1
+    'jobs-occupations-1': [
+        { english: 'Doctor', portuguese: 'Médico(a)', image: 'images/objects/book.svg' },
+        { english: 'Teacher', portuguese: 'Professor(a)', image: 'images/objects/book.svg' },
+        { english: 'Police Officer', portuguese: 'Policial', image: 'images/objects/book.svg' },
+        { english: 'Firefighter', portuguese: 'Bombeiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Nurse', portuguese: 'Enfermeiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Chef', portuguese: 'Cozinheiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Pilot', portuguese: 'Piloto(a)', image: 'images/objects/book.svg' },
+        { english: 'Farmer', portuguese: 'Fazendeiro(a)', image: 'images/objects/book.svg' }
+    ],
+
+    // Jobs & Occupations 2
+    'jobs-occupations-2': [
+        { english: 'Engineer', portuguese: 'Engenheiro(a)', image: 'images/objects/book.svg' },
+        { english: 'Dentist', portuguese: 'Dentista', image: 'images/objects/book.svg' },
+        { english: 'Driver', portuguese: 'Motorista', image: 'images/objects/book.svg' },
+        { english: 'Builder', portuguese: 'Construtor(a)', image: 'images/objects/book.svg' },
+        { english: 'Scientist', portuguese: 'Cientista', image: 'images/objects/book.svg' },
+        { english: 'Artist', portuguese: 'Artista', image: 'images/objects/book.svg' },
+        { english: 'Mechanic', portuguese: 'Mecânico(a)', image: 'images/objects/book.svg' },
+        { english: 'Veterinarian', portuguese: 'Veterinário(a)', image: 'images/objects/book.svg' }
     ]
 };
 
