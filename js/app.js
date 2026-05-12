@@ -1555,18 +1555,21 @@ function setupWordSearchGame(category) {
         return;
     }
 
-    // Selecionar até 8 palavras da categoria respeitando o tamanho da grade
+    // Selecionar palavras da categoria
     const categoryData = [...vocabularyData[category]];
-    let size = (wordSearchDifficulty === 'easy') ? 10 : 12;
+    
+    // Encontrar a maior palavra para definir o tamanho mínimo da grade
+    const maxWordLength = Math.max(...categoryData.map(item => item.english.replace(/\s+/g, '').length));
+    
+    // Definir tamanho da grade: mínimo de 10, mas suficiente para a maior palavra + 2 de margem
+    let size = Math.max(10, maxWordLength + 2);
+    
+    // Limitar o tamanho máximo para não quebrar o layout (ex: 15)
+    size = Math.min(15, size);
+
+    // Filtrar palavras que cabem na grade definida
     const fits = categoryData.filter(item => item.english.replace(/\s+/g, '').length <= size);
-    let selected = [];
-    if (fits.length >= 8) {
-        selected = fits.slice(0, 8);
-    } else {
-        // Não há palavras suficientes que caibam na grade fácil, usar grade 12x12
-        size = 12;
-        selected = categoryData.slice(0, Math.min(8, categoryData.length));
-    }
+    let selected = fits.slice(0, Math.min(8, fits.length));
 
     // Preparar palavras (remover espaços para posicionamento)
     const wordsForPlacement = selected.map(item => ({
@@ -1574,7 +1577,7 @@ function setupWordSearchGame(category) {
         normalized: item.english.replace(/\s+/g, '').toUpperCase()
     }));
 
-    // Criar grade vazia conforme dificuldade
+    // Criar grade vazia
     wordSearchGrid = Array.from({ length: size }, () => Array.from({ length: size }, () => ''));
     placedWords = [];
     foundWordsCount = 0;
