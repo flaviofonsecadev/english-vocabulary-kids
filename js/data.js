@@ -51,15 +51,15 @@ const vocabularyData = {
         { english: 'Eighteen', portuguese: 'Dezoito', image: 'images/numbers/18.svg' },
         { english: 'Nineteen', portuguese: 'Dezenove', image: 'images/numbers/19.svg' },
         { english: 'Twenty', portuguese: 'Vinte', image: 'images/numbers/20.svg' },
-        { english: 'Twenty One', portuguese: 'Vinte e Um', image: 'images/numbers/21.svg' },
-        { english: 'Twenty Two', portuguese: 'Vinte e Dois', image: 'images/numbers/22.svg' },
-        { english: 'Twenty Three', portuguese: 'Vinte e Três', image: 'images/numbers/23.svg' },
-        { english: 'Twenty Four', portuguese: 'Vinte e Quatro', image: 'images/numbers/24.svg' },
-        { english: 'Twenty Five', portuguese: 'Vinte e Cinco', image: 'images/numbers/25.svg' },
-        { english: 'Twenty Six', portuguese: 'Vinte e Seis', image: 'images/numbers/26.svg' },
-        { english: 'Twenty Seven', portuguese: 'Vinte e Sete', image: 'images/numbers/27.svg' },
-        { english: 'Twenty Eight', portuguese: 'Vinte e Oito', image: 'images/numbers/28.svg' },
-        { english: 'Twenty Nine', portuguese: 'Vinte e Nove', image: 'images/numbers/29.svg' }
+        { english: 'Twenty-One', portuguese: 'Vinte e Um', image: 'images/numbers/21.svg' },
+        { english: 'Twenty-Two', portuguese: 'Vinte e Dois', image: 'images/numbers/22.svg' },
+        { english: 'Twenty-Three', portuguese: 'Vinte e Três', image: 'images/numbers/23.svg' },
+        { english: 'Twenty-Four', portuguese: 'Vinte e Quatro', image: 'images/numbers/24.svg' },
+        { english: 'Twenty-Five', portuguese: 'Vinte e Cinco', image: 'images/numbers/25.svg' },
+        { english: 'Twenty-Six', portuguese: 'Vinte e Seis', image: 'images/numbers/26.svg' },
+        { english: 'Twenty-Seven', portuguese: 'Vinte e Sete', image: 'images/numbers/27.svg' },
+        { english: 'Twenty-Eight', portuguese: 'Vinte e Oito', image: 'images/numbers/28.svg' },
+        { english: 'Twenty-Nine', portuguese: 'Vinte e Nove', image: 'images/numbers/29.svg' }
     ],
     
     // Números 0-100 (selecionados)
@@ -91,14 +91,15 @@ const vocabularyData = {
     
     // Animais do zoológico
     'zoo-animals': [
-        { english: 'Lion', portuguese: 'Leão', image: 'images/zoo-animals/lion.svg' },
-        { english: 'Elephant', portuguese: 'Elefante', image: 'images/zoo-animals/elephant.svg' },
-        { english: 'Giraffe', portuguese: 'Girafa', image: 'images/zoo-animals/giraffe.svg' },
-        { english: 'Monkey', portuguese: 'Macaco', image: 'images/zoo-animals/monkey.svg' },
-        { english: 'Zebra', portuguese: 'Zebra', image: 'images/zoo-animals/zebra.svg' },
-        { english: 'Hippo', portuguese: 'Hipopótamo', image: 'images/zoo-animals/hippo.svg' },
-        { english: 'Tiger', portuguese: 'Tigre', image: 'images/zoo-animals/tiger.svg' },
-        { english: 'Penguin', portuguese: 'Pinguim', image: 'images/zoo-animals/penguin.svg' }
+        { english: 'Lion', portuguese: 'Leão', image: 'images/zoo-animals/lion.png' },
+        { english: 'Elephant', portuguese: 'Elefante', image: 'images/zoo-animals/elephant.png' },
+        { english: 'Monkey', portuguese: 'Macaco', image: 'images/zoo-animals/monkey.png' },
+        { english: 'Tiger', portuguese: 'Tigre', image: 'images/zoo-animals/tiger.png' },
+        { english: 'Snake', portuguese: 'Cobra', image: 'images/zoo-animals/snake.png' },
+        { english: 'Bird', portuguese: 'Pássaro', image: 'images/zoo-animals/bird.png' },
+        { english: 'Zebra', portuguese: 'Zebra', image: 'images/zoo-animals/zebra.png' },
+        { english: 'Bear', portuguese: 'Urso', image: 'images/zoo-animals/bear.png' },
+        { english: 'Panda', portuguese: 'Panda', image: 'images/zoo-animals/panda.png' }
     ],
     
     // Objetos escolares
