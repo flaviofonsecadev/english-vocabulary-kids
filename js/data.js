@@ -79,14 +79,14 @@ const vocabularyData = {
     
     // Animais da fazenda
     'farm-animals': [
-        { english: 'Cow', portuguese: 'Vaca', image: 'images/farm-animals/cow.svg' },
-        { english: 'Horse', portuguese: 'Cavalo', image: 'images/farm-animals/horse.svg' },
-        { english: 'Pig', portuguese: 'Porco', image: 'images/farm-animals/pig.svg' },
-        { english: 'Chicken', portuguese: 'Galinha', image: 'images/farm-animals/chicken.svg' },
-        { english: 'Sheep', portuguese: 'Ovelha', image: 'images/farm-animals/sheep.svg' },
-        { english: 'Goat', portuguese: 'Cabra', image: 'images/farm-animals/goat.svg' },
-        { english: 'Duck', portuguese: 'Pato', image: 'images/farm-animals/duck.svg' },
-        { english: 'Rabbit', portuguese: 'Coelho', image: 'images/farm-animals/rabbit.svg' }
+        { english: 'Cow', portuguese: 'Vaca', image: 'images/farm-animals/cow.png' },
+        { english: 'Horse', portuguese: 'Cavalo', image: 'images/farm-animals/horse.png' },
+        { english: 'Pig', portuguese: 'Porco', image: 'images/farm-animals/pig.png' },
+        { english: 'Chicken', portuguese: 'Galinha', image: 'images/farm-animals/chicken.png' },
+        { english: 'Sheep', portuguese: 'Ovelha', image: 'images/farm-animals/sheep.png' },
+        { english: 'Goat', portuguese: 'Cabra', image: 'images/farm-animals/goat.png' },
+        { english: 'Duck', portuguese: 'Pato', image: 'images/farm-animals/duck.png' },
+        { english: 'Rabbit', portuguese: 'Coelho', image: 'images/farm-animals/rabbit.png' }
     ],
     
     // Animais do zoológico
@@ -104,74 +104,74 @@ const vocabularyData = {
     
     // Objetos escolares
     'school-supplies': [
-        { english: 'Pencil', portuguese: 'Lápis', image: 'images/school-supplies/pencil.svg' },
-        { english: 'Pen', portuguese: 'Caneta', image: 'images/school-supplies/pen.svg' },
-        { english: 'Notebook', portuguese: 'Caderno', image: 'images/school-supplies/notebook.svg' },
-        { english: 'Eraser', portuguese: 'Borracha', image: 'images/school-supplies/eraser.svg' },
-        { english: 'Ruler', portuguese: 'Régua', image: 'images/school-supplies/ruler.svg' },
-        { english: 'Scissors', portuguese: 'Tesoura', image: 'images/school-supplies/scissors.svg' },
-        { english: 'Backpack', portuguese: 'Mochila', image: 'images/school-supplies/backpack.svg' },
-        { english: 'Book', portuguese: 'Livro', image: 'images/school-supplies/book.svg' }
+        { english: 'Pencil', portuguese: 'Lápis', image: 'images/school-supplies/pencil.png' },
+        { english: 'Pen', portuguese: 'Caneta', image: 'images/school-supplies/pen.png' },
+        { english: 'Notebook', portuguese: 'Caderno', image: 'images/school-supplies/notebook.png' },
+        { english: 'Eraser', portuguese: 'Borracha', image: 'images/school-supplies/eraser.png' },
+        { english: 'Ruler', portuguese: 'Régua', image: 'images/school-supplies/ruler.png' },
+        { english: 'Scissors', portuguese: 'Tesoura', image: 'images/school-supplies/scissors.png' },
+        { english: 'Backpack', portuguese: 'Mochila', image: 'images/school-supplies/backpack.png' },
+        { english: 'Book', portuguese: 'Livro', image: 'images/school-supplies/book.png' }
     ],
     
     // Brinquedos
     'toys': [
-        { english: 'Ball', portuguese: 'Bola', image: 'images/toys/ball.svg' },
-        { english: 'Doll', portuguese: 'Boneca', image: 'images/toys/doll.svg' },
-        { english: 'Car', portuguese: 'Carro', image: 'images/toys/car.svg' },
-        { english: 'Teddy Bear', portuguese: 'Ursinho', image: 'images/toys/teddy-bear.svg' },
-        { english: 'Robot', portuguese: 'Robô', image: 'images/toys/robot.svg' },
-        { english: 'Blocks', portuguese: 'Blocos', image: 'images/toys/blocks.svg' },
-        { english: 'Puzzle', portuguese: 'Quebra-cabeça', image: 'images/toys/puzzle.svg' },
-        { english: 'Kite', portuguese: 'Pipa', image: 'images/toys/kite.svg' }
+        { english: 'Ball', portuguese: 'Bola', image: 'images/toys/ball.png' },
+        { english: 'Doll', portuguese: 'Boneca', image: 'images/toys/doll.png' },
+        { english: 'Car', portuguese: 'Carro', image: 'images/toys/car.png' },
+        { english: 'Teddy Bear', portuguese: 'Ursinho', image: 'images/toys/teddy-bear.png' },
+        { english: 'Robot', portuguese: 'Robô', image: 'images/toys/robot.png' },
+        { english: 'Blocks', portuguese: 'Blocos', image: 'images/toys/blocks.png' },
+        { english: 'Puzzle', portuguese: 'Quebra-cabeça', image: 'images/toys/puzzle.png' },
+        { english: 'Kite', portuguese: 'Pipa', image: 'images/toys/kite.png' }
     ],
     
     // Partes do corpo
     'body-parts': [
-        { english: 'Head', portuguese: 'Cabeça', image: 'images/body-parts/head.svg' },
-        { english: 'Eye', portuguese: 'Olho', image: 'images/body-parts/eye.svg' },
-        { english: 'Nose', portuguese: 'Nariz', image: 'images/body-parts/nose.svg' },
-        { english: 'Mouth', portuguese: 'Boca', image: 'images/body-parts/mouth.svg' },
-        { english: 'Ear', portuguese: 'Orelha', image: 'images/body-parts/ear.svg' },
-        { english: 'Hand', portuguese: 'Mão', image: 'images/body-parts/hand.svg' },
-        { english: 'Foot', portuguese: 'Pé', image: 'images/body-parts/foot.svg' },
-        { english: 'Arm', portuguese: 'Braço', image: 'images/body-parts/arm.svg' }
+        { english: 'Head', portuguese: 'Cabeça', image: 'images/body-parts/head.png' },
+        { english: 'Eye', portuguese: 'Olho', image: 'images/body-parts/eye.png' },
+        { english: 'Nose', portuguese: 'Nariz', image: 'images/body-parts/nose.png' },
+        { english: 'Mouth', portuguese: 'Boca', image: 'images/body-parts/mouth.png' },
+        { english: 'Ear', portuguese: 'Orelha', image: 'images/body-parts/ear.png' },
+        { english: 'Hand', portuguese: 'Mão', image: 'images/body-parts/hand.png' },
+        { english: 'Foot', portuguese: 'Pé', image: 'images/body-parts/foot.png' },
+        { english: 'Arm', portuguese: 'Braço', image: 'images/body-parts/arm.png' }
     ],
     
     // Natureza
     'nature': [
-        { english: 'Tree', portuguese: 'Árvore', image: 'images/nature/tree.svg' },
-        { english: 'Flower', portuguese: 'Flor', image: 'images/nature/flower.svg' },
-        { english: 'Mountain', portuguese: 'Montanha', image: 'images/nature/mountain.svg' },
-        { english: 'River', portuguese: 'Rio', image: 'images/nature/river.svg' },
-        { english: 'Sun', portuguese: 'Sol', image: 'images/nature/sun.svg' },
-        { english: 'Moon', portuguese: 'Lua', image: 'images/nature/moon.svg' },
-        { english: 'Star', portuguese: 'Estrela', image: 'images/nature/star.svg' },
-        { english: 'Cloud', portuguese: 'Nuvem', image: 'images/nature/cloud.svg' }
+        { english: 'Tree', portuguese: 'Árvore', image: 'images/nature/tree.png' },
+        { english: 'Flower', portuguese: 'Flor', image: 'images/nature/flower.png' },
+        { english: 'Mountain', portuguese: 'Montanha', image: 'images/nature/mountain.png' },
+        { english: 'River', portuguese: 'Rio', image: 'images/nature/river.png' },
+        { english: 'Sun', portuguese: 'Sol', image: 'images/nature/sun.png' },
+        { english: 'Moon', portuguese: 'Lua', image: 'images/nature/moon.png' },
+        { english: 'Star', portuguese: 'Estrela', image: 'images/nature/star.png' },
+        { english: 'Cloud', portuguese: 'Nuvem', image: 'images/nature/cloud.png' }
     ],
     
     // Roupas
     'clothes': [
-        { english: 'Shirt', portuguese: 'Camisa', image: 'images/clothes/shirt.svg' },
-        { english: 'Pants', portuguese: 'Calça', image: 'images/clothes/pants.svg' },
-        { english: 'Dress', portuguese: 'Vestido', image: 'images/clothes/dress.svg' },
-        { english: 'Shoes', portuguese: 'Sapatos', image: 'images/clothes/shoes.svg' },
-        { english: 'Hat', portuguese: 'Chapéu', image: 'images/clothes/hat.svg' },
-        { english: 'Socks', portuguese: 'Meias', image: 'images/clothes/socks.svg' },
-        { english: 'Jacket', portuguese: 'Jaqueta', image: 'images/clothes/jacket.svg' },
-        { english: 'Scarf', portuguese: 'Cachecol', image: 'images/clothes/scarf.svg' }
+        { english: 'Shirt', portuguese: 'Camisa', image: 'images/clothes/shirt.png' },
+        { english: 'Pants', portuguese: 'Calça', image: 'images/clothes/pants.png' },
+        { english: 'Dress', portuguese: 'Vestido', image: 'images/clothes/dress.png' },
+        { english: 'Shoes', portuguese: 'Sapatos', image: 'images/clothes/shoes.png' },
+        { english: 'Hat', portuguese: 'Chapéu', image: 'images/clothes/hat.png' },
+        { english: 'Socks', portuguese: 'Meias', image: 'images/clothes/socks.png' },
+        { english: 'Jacket', portuguese: 'Jaqueta', image: 'images/clothes/jacket.png' },
+        { english: 'Scarf', portuguese: 'Cachecol', image: 'images/clothes/scarf.png' }
     ],
     
     // Clima
     'weather': [
-        { english: 'Sunny', portuguese: 'Ensolarado', image: 'images/weather/sunny.svg' },
-        { english: 'Rainy', portuguese: 'Chuvoso', image: 'images/weather/rainy.svg' },
-        { english: 'Cloudy', portuguese: 'Nublado', image: 'images/weather/cloudy.svg' },
-        { english: 'Snowy', portuguese: 'Nevado', image: 'images/weather/snowy.svg' },
-        { english: 'Windy', portuguese: 'Ventoso', image: 'images/weather/windy.svg' },
-        { english: 'Stormy', portuguese: 'Tempestuoso', image: 'images/weather/stormy.svg' },
-        { english: 'Foggy', portuguese: 'Nebuloso', image: 'images/weather/foggy.svg' },
-        { english: 'Rainbow', portuguese: 'Arco-íris', image: 'images/weather/rainbow.svg' }
+        { english: 'Sunny', portuguese: 'Ensolarado', image: 'images/weather/sunny.png' },
+        { english: 'Rainy', portuguese: 'Chuvoso', image: 'images/weather/rainy.png' },
+        { english: 'Cloudy', portuguese: 'Nublado', image: 'images/weather/cloudy.png' },
+        { english: 'Snowy', portuguese: 'Nevado', image: 'images/weather/snowy.png' },
+        { english: 'Windy', portuguese: 'Ventoso', image: 'images/weather/windy.png' },
+        { english: 'Stormy', portuguese: 'Tempestuoso', image: 'images/weather/stormy.png' },
+        { english: 'Foggy', portuguese: 'Nebuloso', image: 'images/weather/foggy.png' },
+        { english: 'Rainbow', portuguese: 'Arco-íris', image: 'images/weather/rainbow.png' }
     ],
     
     // Dias da semana
@@ -203,86 +203,86 @@ const vocabularyData = {
     
     // Vegetais
     'vegetables': [
-        { english: 'Carrot', portuguese: 'Cenoura', image: 'images/vegetables/carrot.svg' },
-        { english: 'Tomato', portuguese: 'Tomate', image: 'images/vegetables/tomato.svg' },
-        { english: 'Potato', portuguese: 'Batata', image: 'images/vegetables/potato.svg' },
-        { english: 'Broccoli', portuguese: 'Brócolis', image: 'images/vegetables/broccoli.svg' },
-        { english: 'Corn', portuguese: 'Milho', image: 'images/vegetables/corn.svg' },
-        { english: 'Cucumber', portuguese: 'Pepino', image: 'images/vegetables/cucumber.svg' },
-        { english: 'Lettuce', portuguese: 'Alface', image: 'images/vegetables/lettuce.svg' },
-        { english: 'Onion', portuguese: 'Cebola', image: 'images/vegetables/onion.svg' }
+        { english: 'Carrot', portuguese: 'Cenoura', image: 'images/vegetables/carrot.png' },
+        { english: 'Tomato', portuguese: 'Tomate', image: 'images/vegetables/tomato.png' },
+        { english: 'Potato', portuguese: 'Batata', image: 'images/vegetables/potato.png' },
+        { english: 'Broccoli', portuguese: 'Brócolis', image: 'images/vegetables/broccoli.png' },
+        { english: 'Corn', portuguese: 'Milho', image: 'images/vegetables/corn.png' },
+        { english: 'Cucumber', portuguese: 'Pepino', image: 'images/vegetables/cucumber.png' },
+        { english: 'Lettuce', portuguese: 'Alface', image: 'images/vegetables/lettuce.png' },
+        { english: 'Onion', portuguese: 'Cebola', image: 'images/vegetables/onion.png' }
     ],
     
     // Emoções
     'emotions': [
-        { english: 'Happy', portuguese: 'Feliz', image: 'images/emotions/happy.svg' },
-        { english: 'Sad', portuguese: 'Triste', image: 'images/emotions/sad.svg' },
-        { english: 'Angry', portuguese: 'Bravo', image: 'images/emotions/angry.svg' },
-        { english: 'Scared', portuguese: 'Assustado', image: 'images/emotions/scared.svg' },
-        { english: 'Surprised', portuguese: 'Surpreso', image: 'images/emotions/surprised.svg' },
-        { english: 'Tired', portuguese: 'Cansado', image: 'images/emotions/tired.svg' },
-        { english: 'Excited', portuguese: 'Animado', image: 'images/emotions/excited.svg' },
-        { english: 'Confused', portuguese: 'Confuso', image: 'images/emotions/confused.svg' }
+        { english: 'Happy', portuguese: 'Feliz', image: 'images/emotions/happy.png' },
+        { english: 'Sad', portuguese: 'Triste', image: 'images/emotions/sad.png' },
+        { english: 'Angry', portuguese: 'Bravo', image: 'images/emotions/angry.png' },
+        { english: 'Scared', portuguese: 'Assustado', image: 'images/emotions/scared.png' },
+        { english: 'Surprised', portuguese: 'Surpreso', image: 'images/emotions/surprised.png' },
+        { english: 'Tired', portuguese: 'Cansado', image: 'images/emotions/tired.png' },
+        { english: 'Excited', portuguese: 'Animado', image: 'images/emotions/excited.png' },
+        { english: 'Confused', portuguese: 'Confuso', image: 'images/emotions/confused.png' }
     ],
     
     // Animais de estimação
     'pets': [
-        { english: 'Dog', portuguese: 'Cachorro', image: 'images/pets/dog.svg' },
-        { english: 'Cat', portuguese: 'Gato', image: 'images/pets/cat.svg' },
-        { english: 'Fish', portuguese: 'Peixe', image: 'images/pets/fish.svg' },
-        { english: 'Bird', portuguese: 'Pássaro', image: 'images/pets/bird.svg' },
-        { english: 'Rabbit', portuguese: 'Coelho', image: 'images/pets/rabbit.svg' },
-        { english: 'Hamster', portuguese: 'Hamster', image: 'images/pets/hamster.svg' },
-        { english: 'Turtle', portuguese: 'Tartaruga', image: 'images/pets/turtle.svg' },
-        { english: 'Guinea Pig', portuguese: 'Porquinho da Índia', image: 'images/pets/guinea-pig.svg' }
+        { english: 'Dog', portuguese: 'Cachorro', image: 'images/pets/dog.png' },
+        { english: 'Cat', portuguese: 'Gato', image: 'images/pets/cat.png' },
+        { english: 'Fish', portuguese: 'Peixe', image: 'images/pets/fish.png' },
+        { english: 'Bird', portuguese: 'Pássaro', image: 'images/pets/bird.png' },
+        { english: 'Rabbit', portuguese: 'Coelho', image: 'images/pets/rabbit.png' },
+        { english: 'Hamster', portuguese: 'Hamster', image: 'images/pets/hamster.png' },
+        { english: 'Turtle', portuguese: 'Tartaruga', image: 'images/pets/turtle.png' },
+        { english: 'Guinea Pig', portuguese: 'Porquinho da Índia', image: 'images/pets/guinea-pig.png' }
     ],
     
     // Verbos de ação
     'action-verbs': [
-        { english: 'Run', portuguese: 'Correr', image: 'images/action-verbs/run.svg' },
-        { english: 'Jump', portuguese: 'Pular', image: 'images/action-verbs/jump.svg' },
-        { english: 'Swim', portuguese: 'Nadar', image: 'images/action-verbs/swim.svg' },
-        { english: 'Eat', portuguese: 'Comer', image: 'images/action-verbs/eat.svg' },
-        { english: 'Sleep', portuguese: 'Dormir', image: 'images/action-verbs/sleep.svg' },
-        { english: 'Play', portuguese: 'Brincar', image: 'images/action-verbs/play.svg' },
-        { english: 'Read', portuguese: 'Ler', image: 'images/action-verbs/read.svg' },
-        { english: 'Write', portuguese: 'Escrever', image: 'images/action-verbs/write.svg' }
+        { english: 'Run', portuguese: 'Correr', image: 'images/action-verbs/run.png' },
+        { english: 'Jump', portuguese: 'Pular', image: 'images/action-verbs/jump.png' },
+        { english: 'Swim', portuguese: 'Nadar', image: 'images/action-verbs/swim.png' },
+        { english: 'Eat', portuguese: 'Comer', image: 'images/action-verbs/eat.png' },
+        { english: 'Sleep', portuguese: 'Dormir', image: 'images/action-verbs/sleep.png' },
+        { english: 'Play', portuguese: 'Brincar', image: 'images/action-verbs/play.png' },
+        { english: 'Read', portuguese: 'Ler', image: 'images/action-verbs/read.png' },
+        { english: 'Write', portuguese: 'Escrever', image: 'images/action-verbs/write.png' }
     ],
     
     // Adjetivos
     'adjectives': [
-        { english: 'Big', portuguese: 'Grande', image: 'images/adjectives/big.svg' },
-        { english: 'Small', portuguese: 'Pequeno', image: 'images/adjectives/small.svg' },
-        { english: 'Hot', portuguese: 'Quente', image: 'images/adjectives/hot.svg' },
-        { english: 'Cold', portuguese: 'Frio', image: 'images/adjectives/cold.svg' },
-        { english: 'Fast', portuguese: 'Rápido', image: 'images/adjectives/fast.svg' },
-        { english: 'Slow', portuguese: 'Lento', image: 'images/adjectives/slow.svg' },
-        { english: 'Tall', portuguese: 'Alto', image: 'images/adjectives/tall.svg' },
-        { english: 'Short', portuguese: 'Baixo', image: 'images/adjectives/short.svg' }
+        { english: 'Big', portuguese: 'Grande', image: 'images/adjectives/big.png' },
+        { english: 'Small', portuguese: 'Pequeno', image: 'images/adjectives/small.png' },
+        { english: 'Hot', portuguese: 'Quente', image: 'images/adjectives/hot.png' },
+        { english: 'Cold', portuguese: 'Frio', image: 'images/adjectives/cold.png' },
+        { english: 'Fast', portuguese: 'Rápido', image: 'images/adjectives/fast.png' },
+        { english: 'Slow', portuguese: 'Lento', image: 'images/adjectives/slow.png' },
+        { english: 'Tall', portuguese: 'Alto', image: 'images/adjectives/tall.png' },
+        { english: 'Short', portuguese: 'Baixo', image: 'images/adjectives/short.png' }
     ],
     
     // Formas
     'shapes': [
-        { english: 'Circle', portuguese: 'Círculo', image: 'images/shapes/circle.svg' },
-        { english: 'Square', portuguese: 'Quadrado', image: 'images/shapes/square.svg' },
-        { english: 'Triangle', portuguese: 'Triângulo', image: 'images/shapes/triangle.svg' },
-        { english: 'Rectangle', portuguese: 'Retângulo', image: 'images/shapes/rectangle.svg' },
-        { english: 'Star', portuguese: 'Estrela', image: 'images/shapes/star.svg' },
-        { english: 'Heart', portuguese: 'Coração', image: 'images/shapes/heart.svg' },
-        { english: 'Diamond', portuguese: 'Diamante', image: 'images/shapes/diamond.svg' },
-        { english: 'Oval', portuguese: 'Oval', image: 'images/shapes/oval.svg' }
+        { english: 'Circle', portuguese: 'Círculo', image: 'images/shapes/circle.png' },
+        { english: 'Square', portuguese: 'Quadrado', image: 'images/shapes/square.png' },
+        { english: 'Triangle', portuguese: 'Triângulo', image: 'images/shapes/triangle.png' },
+        { english: 'Rectangle', portuguese: 'Retângulo', image: 'images/shapes/rectangle.png' },
+        { english: 'Star', portuguese: 'Estrela', image: 'images/shapes/star.png' },
+        { english: 'Heart', portuguese: 'Coração', image: 'images/shapes/heart.png' },
+        { english: 'Diamond', portuguese: 'Diamante', image: 'images/shapes/diamond.png' },
+        { english: 'Oval', portuguese: 'Oval', image: 'images/shapes/oval.png' }
     ],
     
     // Comidas
     'food': [
-        { english: 'Bread', portuguese: 'Pão', image: 'images/food/bread.svg' },
-        { english: 'Cheese', portuguese: 'Queijo', image: 'images/food/cheese.svg' },
-        { english: 'Egg', portuguese: 'Ovo', image: 'images/food/egg.svg' },
-        { english: 'Milk', portuguese: 'Leite', image: 'images/food/milk.svg' },
-        { english: 'Rice', portuguese: 'Arroz', image: 'images/food/rice.svg' },
-        { english: 'Chicken', portuguese: 'Frango', image: 'images/food/chicken.svg' },
-        { english: 'Pizza', portuguese: 'Pizza', image: 'images/food/pizza.svg' },
-        { english: 'Ice Cream', portuguese: 'Sorvete', image: 'images/food/ice-cream.svg' }
+        { english: 'Bread', portuguese: 'Pão', image: 'images/food/bread.png' },
+        { english: 'Cheese', portuguese: 'Queijo', image: 'images/food/cheese.png' },
+        { english: 'Egg', portuguese: 'Ovo', image: 'images/food/egg.png' },
+        { english: 'Milk', portuguese: 'Leite', image: 'images/food/milk.png' },
+        { english: 'Rice', portuguese: 'Arroz', image: 'images/food/rice.png' },
+        { english: 'Chicken', portuguese: 'Frango', image: 'images/food/chicken.png' },
+        { english: 'Pizza', portuguese: 'Pizza', image: 'images/food/pizza.png' },
+        { english: 'Ice Cream', portuguese: 'Sorvete', image: 'images/food/ice-cream.png' }
     ],
     
     // Família
@@ -311,14 +311,14 @@ const vocabularyData = {
 
     // Jobs & Occupations 2
     'jobs-occupations-2': [
-        { english: 'Engineer', portuguese: 'Engenheiro(a)', image: 'images/objects/book.svg' },
-        { english: 'Dentist', portuguese: 'Dentista', image: 'images/objects/book.svg' },
-        { english: 'Driver', portuguese: 'Motorista', image: 'images/objects/book.svg' },
-        { english: 'Pilot', portuguese: 'Piloto(a)', image: 'images/objects/book.svg' },
-        { english: 'Scientist', portuguese: 'Cientista', image: 'images/objects/book.svg' },
-        { english: 'Artist', portuguese: 'Artista', image: 'images/objects/book.svg' },
-        { english: 'Mechanic', portuguese: 'Mecânico(a)', image: 'images/objects/book.svg' },
-        { english: 'Firefighter', portuguese: 'Bombeiro(a)', image: 'images/objects/book.svg' }
+        { english: 'Engineer', portuguese: 'Engenheiro(a)', image: 'images/objects/book.png' },
+        { english: 'Dentist', portuguese: 'Dentista', image: 'images/objects/book.png' },
+        { english: 'Driver', portuguese: 'Motorista', image: 'images/objects/book.png' },
+        { english: 'Pilot', portuguese: 'Piloto(a)', image: 'images/objects/book.png' },
+        { english: 'Scientist', portuguese: 'Cientista', image: 'images/objects/book.png' },
+        { english: 'Artist', portuguese: 'Artista', image: 'images/objects/book.png' },
+        { english: 'Mechanic', portuguese: 'Mecânico(a)', image: 'images/objects/book.png' },
+        { english: 'Firefighter', portuguese: 'Bombeiro(a)', image: 'images/objects/book.png' }
     ]
 };
 
