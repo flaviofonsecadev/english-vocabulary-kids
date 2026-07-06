@@ -130,7 +130,7 @@ const vocabularyData = {
     'body-parts': [
         { english: 'Head', portuguese: 'Cabeça', image: 'images/body-parts/head.png' },
         { english: 'Eye', portuguese: 'Olho', image: 'images/body-parts/eye.png' },
-        { english: 'Nose', portuguese: 'Nariz', image: 'images/body-parts/nose.png' },
+        { english: 'Nose', portuguese: 'Nariz', image: 'images/body-parts/nose.jpg' },
         { english: 'Mouth', portuguese: 'Boca', image: 'images/body-parts/mouth.png' },
         { english: 'Ear', portuguese: 'Orelha', image: 'images/body-parts/ear.png' },
         { english: 'Hand', portuguese: 'Mão', image: 'images/body-parts/hand.png' },
