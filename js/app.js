@@ -90,8 +90,32 @@ const playConversationBtn = document.getElementById('play-conversation');
 
 // Ícones do header
 const homeIconBtn = document.getElementById('home-icon');
+const teamsIconBtn = document.getElementById('teams-icon');
+const gameTrackerIconBtn = document.getElementById('game-tracker-icon');
 const backIconBtn = document.getElementById('back-icon');
 const wordSearchDifficultySelect = document.getElementById('word-search-difficulty');
+
+// TEAM MANAGEMENT VARIABLES
+const STORAGE_KEY = 'english-games-teams';
+let teams = [];
+let activeTeamId = null;
+
+// DOM elements for team management
+const teamsSection = document.getElementById('teams-management');
+const teamsListContainer = document.getElementById('teams-list');
+const teamNameInput = document.getElementById('team-name-input');
+const addTeamBtn = document.getElementById('add-team-btn');
+
+// DOM elements for game tracker
+const gameTrackerSection = document.getElementById('game-tracker');
+const trackerScoreboardContainer = document.getElementById('tracker-scoreboard');
+const pointValueSelect = document.getElementById('point-value-select');
+const resetAllScoresBtn = document.getElementById('reset-all-scores');
+
+// DOM elements for in-game scoreboard
+const scoreboardSection = document.getElementById('scoreboard-section');
+const scoreboardContainer = document.getElementById('scoreboard-container');
+const currentTeamDisplay = document.getElementById('current-team-display');
 
 // Inicialização da API de síntese de voz
 const speechSynthesis = window.speechSynthesis;
@@ -175,8 +199,422 @@ let matchedPairs = 0;
 let totalPairs = 0;
 let lockBoard = false;
 
+// Helper function to hide all sections
+function hideAllSections() {
+    const allSections = [
+        homeMenu,
+        categoriesSection,
+        gameSelectionSection,
+        memoryGameContainer,
+        wordMatchContainer,
+        categorizationGameContainer,
+        pronunciationGameContainer,
+        learnModeContainer,
+        listeningQuizContainer,
+        twoChoiceQuizContainer,
+        imageQuizContainer,
+        wordSearchContainer,
+        phrasesCategoriesSection,
+        conversationContainer,
+        teamsSection,
+        gameTrackerSection
+    ];
+    allSections.forEach(sec => {
+        if (sec) sec.style.display = 'none';
+    });
+}
+
+// ========== TEAM MANAGEMENT FUNCTIONS ==========
+function loadTeamsFromStorage() {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+        teams = JSON.parse(stored);
+    }
+}
+
+function saveTeamsToStorage() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(teams));
+}
+
+function generateTeamId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
+function addTeam(name) {
+    const team = {
+        id: generateTeamId(),
+        name: name,
+        members: [],
+        score: 0
+    };
+    teams.push(team);
+    saveTeamsToStorage();
+    renderTeamsList();
+    renderAllScoreboards();
+}
+
+function deleteTeam(teamId) {
+    if (confirm('Tem certeza que deseja deletar esta equipe?')) {
+        teams = teams.filter(t => t.id !== teamId);
+        if (activeTeamId === teamId) {
+            activeTeamId = teams.length > 0 ? teams[0].id : null;
+        }
+        saveTeamsToStorage();
+        renderTeamsList();
+        renderAllScoreboards();
+    }
+}
+
+function updateTeamName(teamId, newName) {
+    const team = teams.find(t => t.id === teamId);
+    if (team) {
+        team.name = newName;
+        saveTeamsToStorage();
+        renderTeamsList();
+        renderAllScoreboards();
+    }
+}
+
+function addMemberToTeam(teamId, memberName) {
+    const team = teams.find(t => t.id === teamId);
+    if (team && memberName.trim()) {
+        team.members.push(memberName.trim());
+        saveTeamsToStorage();
+        renderTeamsList();
+    }
+}
+
+function removeMemberFromTeam(teamId, memberIndex) {
+    const team = teams.find(t => t.id === teamId);
+    if (team) {
+        team.members.splice(memberIndex, 1);
+        saveTeamsToStorage();
+        renderTeamsList();
+    }
+}
+
+function addPointsToTeam(teamId, points) {
+    const team = teams.find(t => t.id === teamId);
+    if (team) {
+        team.score += points;
+        if (team.score < 0) team.score = 0;
+        saveTeamsToStorage();
+        renderAllScoreboards();
+    }
+}
+
+function setActiveTeam(teamId) {
+    activeTeamId = teamId;
+    saveTeamsToStorage();
+    renderAllScoreboards();
+}
+
+function resetAllScores() {
+    if (confirm('Tem certeza que deseja zerar a pontuação de todas as equipes?')) {
+        teams.forEach(t => t.score = 0);
+        saveTeamsToStorage();
+        renderAllScoreboards();
+    }
+}
+
+function renderTeamsList() {
+    teamsListContainer.innerHTML = '';
+    teams.forEach(team => {
+        const teamCard = document.createElement('div');
+        teamCard.className = 'team-card';
+        
+        const teamHeader = document.createElement('div');
+        teamHeader.className = 'team-card-header';
+        
+        const nameDisplay = document.createElement('div');
+        nameDisplay.className = 'team-card-name';
+        nameDisplay.contentEditable = true;
+        nameDisplay.textContent = team.name;
+        nameDisplay.addEventListener('blur', () => {
+            updateTeamName(team.id, nameDisplay.textContent);
+        });
+        
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'team-card-actions';
+        
+        const deleteBtn = document.createElement('button');
+        deleteBtn.className = 'delete-btn';
+        deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        deleteBtn.title = 'Deletar Equipe';
+        deleteBtn.addEventListener('click', () => deleteTeam(team.id));
+        
+        actionsDiv.appendChild(deleteBtn);
+        teamHeader.appendChild(nameDisplay);
+        teamHeader.appendChild(actionsDiv);
+        
+        const membersSection = document.createElement('div');
+        membersSection.className = 'team-members-section';
+        
+        if (team.members.length > 0) {
+            const membersLabel = document.createElement('div');
+            membersLabel.textContent = 'Alunos:';
+            membersLabel.style.fontWeight = 'bold';
+            membersLabel.style.marginBottom = '0.3rem';
+            membersSection.appendChild(membersLabel);
+            
+            const membersList = document.createElement('div');
+            membersList.className = 'team-members-list';
+            
+            team.members.forEach((member, idx) => {
+                const memberDiv = document.createElement('div');
+                memberDiv.className = 'team-member';
+                memberDiv.textContent = member;
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'remove-member-btn';
+                removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                removeBtn.addEventListener('click', () => removeMemberFromTeam(team.id, idx));
+                
+                memberDiv.appendChild(removeBtn);
+                membersList.appendChild(memberDiv);
+            });
+            membersSection.appendChild(membersList);
+        }
+        
+        const addMemberControls = document.createElement('div');
+        addMemberControls.className = 'add-member-controls';
+        
+        const memberInput = document.createElement('input');
+        memberInput.className = 'add-member-input';
+        memberInput.placeholder = 'Nome do aluno';
+        
+        const addMemberBtn = document.createElement('button');
+        addMemberBtn.className = 'add-member-btn';
+        addMemberBtn.textContent = 'Adicionar Aluno';
+        addMemberBtn.addEventListener('click', () => {
+            if (memberInput.value.trim()) {
+                addMemberToTeam(team.id, memberInput.value);
+                memberInput.value = '';
+            }
+        });
+        memberInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addMemberBtn.click();
+            }
+        });
+        
+        addMemberControls.appendChild(memberInput);
+        addMemberControls.appendChild(addMemberBtn);
+        membersSection.appendChild(addMemberControls);
+        
+        teamCard.appendChild(teamHeader);
+        teamCard.appendChild(membersSection);
+        teamsListContainer.appendChild(teamCard);
+    });
+}
+
+function renderAllScoreboards() {
+    renderInGameScoreboard();
+    renderTrackerScoreboard();
+}
+
+function renderInGameScoreboard() {
+    scoreboardContainer.innerHTML = '';
+    if (teams.length === 0) {
+        scoreboardSection.style.display = 'none';
+        return;
+    }
+    scoreboardSection.style.display = 'block';
+    
+    teams.forEach(team => {
+        const teamDiv = document.createElement('div');
+        teamDiv.className = 'scoreboard-team' + (team.id === activeTeamId ? ' active' : '');
+        
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'scoreboard-team-name';
+        nameDiv.textContent = team.name;
+        
+        const scoreDiv = document.createElement('div');
+        scoreDiv.className = 'scoreboard-team-score';
+        scoreDiv.contentEditable = 'true';
+        scoreDiv.textContent = team.score;
+        scoreDiv.addEventListener('blur', (e) => {
+            const newScore = parseInt(e.target.textContent) || 0;
+            team.score = newScore;
+            saveTeamsToStorage();
+            renderAllScoreboards();
+        });
+        // Allow only numbers
+        scoreDiv.addEventListener('keydown', (e) => {
+            // Allow: backspace, delete, tab, escape, enter
+            if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
+                // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+                (e.keyCode === 65 && (e.ctrlKey || e.metaKey)) ||
+                (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
+                (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
+                (e.keyCode === 88 && (e.ctrlKey || e.metaKey)) ||
+                // Allow: home, end, left, right
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+        scoreDiv.addEventListener('input', (e) => {
+            // Remove non-numeric characters
+            e.target.textContent = e.target.textContent.replace(/[^0-9]/g, '');
+        });
+        // Click on score to edit, don't select team
+        scoreDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        teamDiv.appendChild(nameDiv);
+        teamDiv.appendChild(scoreDiv);
+        teamDiv.style.cursor = 'pointer';
+        teamDiv.addEventListener('click', () => setActiveTeam(team.id));
+        
+        scoreboardContainer.appendChild(teamDiv);
+    });
+    
+    if (activeTeamId) {
+        const activeTeam = teams.find(t => t.id === activeTeamId);
+        if (activeTeam) {
+            currentTeamDisplay.innerHTML = `<strong>Equipe jogando:</strong> ${activeTeam.name} <span style="font-size: 0.8em; color: #00ffff;"></span>`;
+        }
+    } else {
+        currentTeamDisplay.innerHTML = 'Clique em uma equipe para selecionar <span style="font-size: 0.8em; color: #00ffff;"></span>';
+    }
+}
+
+function renderTrackerScoreboard() {
+    trackerScoreboardContainer.innerHTML = '';
+    if (teams.length === 0) {
+        trackerScoreboardContainer.innerHTML = '<p style="color: #fff; text-align: center;">Nenhuma equipe cadastrada. Adicione equipes no menu de gerenciamento!</p>';
+        return;
+    }
+    
+    const pointValue = parseInt(pointValueSelect.value);
+    
+    teams.forEach(team => {
+        const teamCard = document.createElement('div');
+        teamCard.className = 'tracker-team-card' + (team.id === activeTeamId ? ' active' : '');
+        
+        const header = document.createElement('div');
+        header.className = 'tracker-team-header';
+        
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'tracker-team-name';
+        nameDiv.textContent = team.name;
+        
+        const scoreDiv = document.createElement('div');
+        scoreDiv.className = 'tracker-team-score';
+        scoreDiv.contentEditable = 'true';
+        scoreDiv.textContent = team.score;
+        scoreDiv.addEventListener('blur', (e) => {
+            const newScore = parseInt(e.target.textContent) || 0;
+            team.score = newScore;
+            saveTeamsToStorage();
+            renderAllScoreboards();
+        });
+        // Allow only numbers
+        scoreDiv.addEventListener('keydown', (e) => {
+            if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
+                (e.keyCode === 65 && (e.ctrlKey || e.metaKey)) ||
+                (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
+                (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
+                (e.keyCode === 88 && (e.ctrlKey || e.metaKey)) ||
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                return;
+            }
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+        scoreDiv.addEventListener('input', (e) => {
+            e.target.textContent = e.target.textContent.replace(/[^0-9]/g, '');
+        });
+        scoreDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        header.appendChild(nameDiv);
+        header.appendChild(scoreDiv);
+        
+        const controls = document.createElement('div');
+        controls.className = 'tracker-team-controls';
+        
+        const pointBtns = document.createElement('div');
+        pointBtns.className = 'tracker-point-buttons';
+        
+        const addBtn = document.createElement('button');
+        addBtn.className = 'tracker-point-btn add';
+        addBtn.innerHTML = `<i class="fas fa-plus"></i> +${pointValue}`;
+        addBtn.addEventListener('click', () => addPointsToTeam(team.id, pointValue));
+        
+        const subtractBtn = document.createElement('button');
+        subtractBtn.className = 'tracker-point-btn subtract';
+        subtractBtn.innerHTML = `<i class="fas fa-minus"></i> -${pointValue}`;
+        subtractBtn.addEventListener('click', () => addPointsToTeam(team.id, -pointValue));
+        
+        pointBtns.appendChild(addBtn);
+        pointBtns.appendChild(subtractBtn);
+        
+        const activeBtn = document.createElement('button');
+        activeBtn.className = 'tracker-set-active-btn' + (team.id === activeTeamId ? ' active' : '');
+        activeBtn.textContent = team.id === activeTeamId ? 'Jogando' : 'Selecionar';
+        activeBtn.addEventListener('click', () => setActiveTeam(team.id));
+        
+        controls.appendChild(pointBtns);
+        controls.appendChild(activeBtn);
+        
+        teamCard.appendChild(header);
+        teamCard.appendChild(controls);
+        trackerScoreboardContainer.appendChild(teamCard);
+    });
+}
+
+// ========== INITIALIZATION ==========
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
+    // Load teams from storage
+    loadTeamsFromStorage();
+    
+    // Initialize active team if not set
+    if (!activeTeamId && teams.length > 0) {
+        activeTeamId = teams[0].id;
+        saveTeamsToStorage();
+    }
+    
+    // Render initial state
+    renderTeamsList();
+    renderAllScoreboards();
+    
+    // Team management event listeners
+    addTeamBtn.addEventListener('click', () => {
+        if (teamNameInput.value.trim()) {
+            addTeam(teamNameInput.value.trim());
+            teamNameInput.value = '';
+        }
+    });
+    teamNameInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            addTeamBtn.click();
+        }
+    });
+    pointValueSelect.addEventListener('change', renderTrackerScoreboard);
+    resetAllScoresBtn.addEventListener('click', resetAllScores);
+    
+    // Header navigation for teams and tracker
+    teamsIconBtn.addEventListener('click', () => {
+        hideAllSections();
+        teamsSection.style.display = 'block';
+        scoreboardSection.style.display = teams.length > 0 ? 'block' : 'none';
+    });
+    gameTrackerIconBtn.addEventListener('click', () => {
+        hideAllSections();
+        gameTrackerSection.style.display = 'block';
+        scoreboardSection.style.display = teams.length > 0 ? 'block' : 'none';
+    });
+    
     // Popular seletor do Quiz 2 Alternativas com todas as categorias
     populateTwoChoiceCategorySelect();
     
@@ -195,6 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'none';
             categoriesSection.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
         });
     }
     if (modeConversationBtn) {
@@ -203,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'none';
             conversationContainer.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
         });
     }
     if (modePhrasesBtn) {
@@ -211,6 +651,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'none';
             phrasesCategoriesSection.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
         });
     }
     // Conversation: eventos dos tópicos
@@ -264,6 +705,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 phrasesCategoriesSection.style.display = 'none';
             }
             gameSelectionSection.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
         });
     });
     
@@ -281,6 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
     memoryGameBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         memoryGameContainer.style.display = 'block';
+        if (teams.length > 0) scoreboardSection.style.display = 'block';
         setupMemoryGame(currentCategory);
     });
 
@@ -296,24 +739,28 @@ document.addEventListener('DOMContentLoaded', () => {
     wordMatchBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         wordMatchContainer.style.display = 'block';
+        if (teams.length > 0) scoreboardSection.style.display = 'block';
         setupWordMatchGame(currentCategory);
     });
     
     categorizationGameBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         categorizationGameContainer.style.display = 'block';
+        if (teams.length > 0) scoreboardSection.style.display = 'block';
         setupCategorizationGame();
     });
     
     pronunciationGameBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         pronunciationGameContainer.style.display = 'block';
+        if (teams.length > 0) scoreboardSection.style.display = 'block';
         setupPronunciationGame(currentCategory);
     });
     
     learnModeBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         learnModeContainer.style.display = 'block';
+        if (teams.length > 0) scoreboardSection.style.display = 'block';
         setupLearnMode(currentCategory);
     });
 
@@ -321,6 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
     listeningQuizBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         listeningQuizContainer.style.display = 'block';
+        if (teams.length > 0) scoreboardSection.style.display = 'block';
         startListeningQuiz();
     });
 
@@ -329,7 +777,26 @@ document.addEventListener('DOMContentLoaded', () => {
         wordSearchBtn.addEventListener('click', () => {
             gameSelectionSection.style.display = 'none';
             wordSearchContainer.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
             setupWordSearchGame(currentCategory);
+        });
+    }
+
+    // Quiz buttons
+    if (twoChoiceQuizBtn) {
+        twoChoiceQuizBtn.addEventListener('click', () => {
+            gameSelectionSection.style.display = 'none';
+            twoChoiceQuizContainer.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            startTwoChoiceQuiz();
+        });
+    }
+    if (imageQuizBtn) {
+        imageQuizBtn.addEventListener('click', () => {
+            gameSelectionSection.style.display = 'none';
+            imageQuizContainer.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            startImageQuiz();
         });
     }
 
@@ -438,11 +905,14 @@ function handleBackButton(event) {
         parentSection.classList.contains('categories') ||
         parentSection.classList.contains('phrases-categories') ||
         parentSection.id === 'conversation-container' ||
-        parentSection.id === 'game-selection'
+        parentSection.id === 'game-selection' ||
+        parentSection.id === 'teams-management' ||
+        parentSection.id === 'game-tracker'
     )) {
         parentSection.style.display = 'none';
         const homeMenu = document.querySelector('.home-menu');
         if (homeMenu) homeMenu.style.display = 'block';
+        scoreboardSection.style.display = 'none';
         currentMode = null;
         return;
     }
@@ -487,17 +957,25 @@ function handleBackButton(event) {
     if (parentSection.classList.contains('game-container')) {
         // Voltando de um jogo: mostrar seleção de jogos
         gameSelectionSection.style.display = 'block';
+        // Keep scoreboard visible if we have teams
+        if (teams.length > 0) {
+            scoreboardSection.style.display = 'block';
+        }
     } else {
         // Outras seções: voltar para o menu do modo atual, ou home se não definido
         if (currentMode === 'vocabulary') {
             categoriesSection.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
         } else if (currentMode === 'phrases') {
             phrasesCategoriesSection.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
         } else if (currentMode === 'conversation') {
             conversationContainer.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
         } else {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'block';
+            scoreboardSection.style.display = 'none';
         }
     }
 }
@@ -2496,12 +2974,9 @@ function updateImageQuizStats() {
 }
 
 function goHome() {
-    // Esconder todos os containers de jogo e seções
-    document.querySelectorAll('.game-container').forEach(sec => sec.style.display = 'none');
-    gameSelectionSection.style.display = 'none';
-    if (categoriesSection) categoriesSection.style.display = 'none';
-    if (phrasesCategoriesSection) phrasesCategoriesSection.style.display = 'none';
-    if (conversationContainer) conversationContainer.style.display = 'none';
+    // Hide all sections including our new ones
+    hideAllSections();
+    scoreboardSection.style.display = 'none';
     // Mostrar Home
     const homeMenu = document.querySelector('.home-menu');
     if (homeMenu) homeMenu.style.display = 'block';

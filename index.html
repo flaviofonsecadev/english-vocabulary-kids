@@ -13,11 +13,20 @@
         <h2>By Teacher Flavio</h2>
         <div class="header-actions">
             <button id="home-icon" title="Home"><i class="fas fa-home"></i></button>
+            <button id="teams-icon" title="Gerenciar Equipes"><i class="fas fa-users"></i></button>
+            <button id="game-tracker-icon" title="Acompanhamento de Partidas"><i class="fas fa-trophy"></i></button>
             <button id="back-icon" title="Voltar Página"><i class="fas fa-arrow-left"></i></button>
         </div>
     </header>
 
     <main>
+        <!-- Seção de pontuação em tempo real (visível em todas as telas de jogo) -->
+        <section id="scoreboard-section" class="scoreboard-section" style="display: none;">
+            <h3>Placar da Partida</h3>
+            <div id="scoreboard-container" class="scoreboard-container"></div>
+            <div id="current-team-display" class="current-team-display"></div>
+        </section>
+
         <!-- Home visível por padrão; categorias ocultas até escolher o modo -->
         <section class="home-menu" style="display: block;">
             <div class="home-options">
@@ -25,6 +34,34 @@
                 <button id="mode-conversation" class="game-btn">Conversation</button>
                 <button id="mode-phrases" class="game-btn">Phrases</button>
             </div>
+        </section>
+
+        <!-- Seção de gerenciamento de equipes -->
+        <section id="teams-management" class="game-container" style="display: none;">
+            <h2>Gerenciar Equipes</h2>
+            <div class="teams-controls">
+                <input type="text" id="team-name-input" placeholder="Nome da Equipe" class="team-input">
+                <button id="add-team-btn" class="action-btn">Adicionar Equipe</button>
+            </div>
+            <div id="teams-list" class="teams-list"></div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <!-- Seção de acompanhamento de partidas -->
+        <section id="game-tracker" class="game-container" style="display: none;">
+            <h2>Acompanhamento de Partidas</h2>
+            <div class="tracker-controls">
+                <label for="point-value-select">Valor do ponto:</label>
+                <select id="point-value-select">
+                    <option value="1">1</option>
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                </select>
+                <button id="reset-all-scores" class="action-btn back-btn">Zerar Pontuação</button>
+            </div>
+            <div id="tracker-scoreboard" class="tracker-scoreboard"></div>
+            <button class="back-btn">Voltar</button>
         </section>
 
         <section id="categories" class="categories" style="display: none;">

@@ -1230,3 +1230,360 @@ footer {
     color: #fff;
     box-shadow: 0 0 10px rgba(0,255,255,0.1);
 }
+
+/* ========== TEAM MANAGEMENT STYLES ========== */
+.scoreboard-section {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #1a1a3a, #2a2a5a);
+    border-bottom: 3px solid #00ffff;
+}
+
+.scoreboard-section h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
+
+.scoreboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.scoreboard-team {
+    background: linear-gradient(145deg, #1a1a3a, #2a2a5a);
+    border: 2px solid rgba(0,255,255,0.4);
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.scoreboard-team.active {
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px rgba(255,0,255,0.6);
+    transform: scale(1.05);
+}
+
+.scoreboard-team-name {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.scoreboard-team-score {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0,255,255,0.7);
+    cursor: text;
+    min-width: 60px;
+    display: inline-block;
+    outline: none;
+    border: 2px dashed transparent;
+    border-radius: 8px;
+    padding: 0.2rem 0.5rem;
+    transition: all 0.2s;
+}
+
+.scoreboard-team-score:hover,
+.scoreboard-team-score:focus {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 255, 0.1);
+}
+
+.current-team-display {
+    margin-top: 0.8rem;
+    font-size: 1.1rem;
+    color: #ff00ff;
+    text-shadow: 0 0 8px rgba(255,0,255,0.6);
+}
+
+.teams-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.team-input {
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    border: 2px solid rgba(0,255,255,0.4);
+    background: #1a1a3a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+    min-width: 200px;
+}
+
+.team-input:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+
+.teams-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: linear-gradient(145deg, #1a1a3a, #2a2a5a);
+    border: 2px solid rgba(0,255,255,0.4);
+    border-radius: 15px;
+    padding: 1.2rem;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0,255,255,0.15);
+}
+
+.team-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.team-card-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0,255,255,0.5);
+}
+
+.team-card-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.team-card-actions button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.team-card-actions button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.team-card-actions .delete-btn:hover {
+    background: rgba(244,67,54,0.3);
+    color: #ff5252;
+}
+
+.team-members-section {
+    margin-top: 0.8rem;
+}
+
+.team-members-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.team-member {
+    background: rgba(0,255,255,0.15);
+    border: 1px solid rgba(0,255,255,0.3);
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.team-member .remove-member-btn {
+    background: none;
+    border: none;
+    color: #ff5252;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0 0.2rem;
+}
+
+.add-member-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.add-member-input {
+    flex: 1;
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0,255,255,0.4);
+    background: #1a1a3a;
+    color: #fff;
+    outline: none;
+}
+
+.add-member-input:focus {
+    border-color: #00ffff;
+}
+
+.add-member-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #00ffff;
+    background: transparent;
+    color: #00ffff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-member-btn:hover {
+    background: rgba(0,255,255,0.2);
+}
+
+.tracker-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.tracker-controls select {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 2px solid rgba(0,255,255,0.4);
+    background: #1a1a3a;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.tracker-scoreboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.tracker-team-card {
+    background: linear-gradient(145deg, #1a1a3a, #2a2a5a);
+    border: 2px solid rgba(0,255,255,0.4);
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: all 0.3s;
+}
+
+.tracker-team-card.active {
+    border-color: #ff00ff;
+    box-shadow: 0 0 25px rgba(255,0,255,0.5);
+}
+
+.tracker-team-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tracker-team-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0,255,255,0.5);
+}
+
+.tracker-team-score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0,255,255,0.7);
+    cursor: text;
+    min-width: 60px;
+    display: inline-block;
+    outline: none;
+    border: 2px dashed transparent;
+    border-radius: 8px;
+    padding: 0.2rem 0.5rem;
+    transition: all 0.2s;
+}
+
+.tracker-team-score:hover,
+.tracker-team-score:focus {
+    border-color: #00ffff;
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.tracker-team-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tracker-point-buttons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.tracker-point-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.tracker-point-btn.add {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: #fff;
+}
+
+.tracker-point-btn.add:hover {
+    box-shadow: 0 0 18px rgba(46,204,113,0.6);
+    transform: scale(1.05);
+}
+
+.tracker-point-btn.subtract {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #fff;
+}
+
+.tracker-point-btn.subtract:hover {
+    box-shadow: 0 0 18px rgba(231,76,60,0.6);
+    transform: scale(1.05);
+}
+
+.tracker-set-active-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid #ff00ff;
+    color: #ff00ff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tracker-set-active-btn:hover {
+    background: rgba(255,0,255,0.2);
+    box-shadow: 0 0 15px rgba(255,0,255,0.4);
+}
+
+.tracker-set-active-btn.active {
+    background: rgba(255,0,255,0.3);
+}
+
