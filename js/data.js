@@ -319,6 +319,18 @@ const vocabularyData = {
         { english: 'Artist', portuguese: 'Artista', image: 'images/objects/book.png' },
         { english: 'Mechanic', portuguese: 'Mecânico(a)', image: 'images/objects/book.png' },
         { english: 'Firefighter', portuguese: 'Bombeiro(a)', image: 'images/objects/book.png' }
+    ],
+
+    'heart-fruits': [
+        { english: 'Love', portuguese: 'Amor', image: 'images/heart-fruits/love.png' },
+        { english: 'Joy', portuguese: 'Alegria', image: 'images/heart-fruits/joy.png' },
+        { english: 'Peace', portuguese: 'Paz', image: 'images/heart-fruits/peace.png' },
+        { english: 'Patience', portuguese: 'Paciência', image: 'images/heart-fruits/patience.png' },
+        { english: 'Kindness', portuguese: 'Gentileza', image: 'images/heart-fruits/kindness.png' },
+        { english: 'Goodness', portuguese: 'Bondade', image: 'images/heart-fruits/goodness.png' },
+        { english: 'Faithfulness', portuguese: 'Fidelidade', image: 'images/heart-fruits/faithfulness.png' },
+        { english: 'Gentleness', portuguese: 'Mansidão', image: 'images/heart-fruits/gentleness.png' },
+        { english: 'Self-Control', portuguese: 'Domínio Próprio (ou Autocontrole)', image: 'images/heart-fruits/self-control.png' }
     ]
 };
 
@@ -450,6 +462,17 @@ const phrasesData = {
         { english: 'I am tired.', portuguese: 'Eu estou cansado.' },
         { english: 'I feel better now.', portuguese: 'Eu me sinto melhor agora.' },
         { english: 'Don’t worry.', portuguese: 'Não se preocupe.' }
+    ],
+    'phrases-heart-fruits': [
+        { english: 'Sharing your toys with a friend and helping someone in need.', portuguese: 'Compartilhar seus brinquedos com um amigo e ajudar alguém que está precisando.' },
+        { english: 'Smiling and being cheerful even when you get a bad grade or lose a game.', portuguese: 'Sorrir e permanecer alegre mesmo quando você tira uma nota baixa ou perde um jogo.' },
+        { english: 'Taking a deep breath instead of fighting when someone takes your turn in the soccer game.', portuguese: 'Respirar fundo em vez de brigar quando alguém pega a sua vez no jogo de futebol.' },
+        { english: 'Waiting quietly for your turn in line or during a game.', portuguese: 'Esperar calmamente a sua vez na fila ou durante um jogo.' },
+        { english: "Saying 'please' and 'thank you', and speaking nicely to everyone.", portuguese: "Dizer 'por favor' e 'obrigado', e falar com educação e gentileza com todos." },
+        { english: 'Helping an elderly person carry something or donating unused toys.', portuguese: 'Ajudar uma pessoa idosa a carregar algo ou doar brinquedos que você não usa mais.' },
+        { english: 'Keeping a promise made to your parents or teachers.', portuguese: 'Cumprir uma promessa feita aos seus pais ou professores.' },
+        { english: 'Speaking softly and forgiving someone who made a mistake.', portuguese: 'Falar com calma e perdoar alguém que cometeu um erro.' },
+        { english: 'Stopping yourself before shouting when you feel angry.', portuguese: 'Controlar-se antes de gritar quando você sentir raiva.' }
     ]
 };
 

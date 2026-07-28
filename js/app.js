@@ -159,7 +159,8 @@ const categoryLabels = {
     'food': 'Comidas',
     'family': 'Família',
     'jobs-occupations-1': 'Jobs & Occupations 1',
-    'jobs-occupations-2': 'Jobs & Occupations 2'
+    'jobs-occupations-2': 'Jobs & Occupations 2',
+    'heart-fruits': 'Frutos do Coração'
 };
 
 function humanizeCategoryKey(key) {
