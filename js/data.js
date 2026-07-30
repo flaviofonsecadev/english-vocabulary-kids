@@ -326,10 +326,10 @@ const vocabularyData = {
         { english: 'Joy', portuguese: 'Alegria', image: 'images/heart-fruits/joy.png' },
         { english: 'Peace', portuguese: 'Paz', image: 'images/heart-fruits/peace.png' },
         { english: 'Patience', portuguese: 'Paciência', image: 'images/heart-fruits/patience.png' },
-        { english: 'Kindness', portuguese: 'Gentileza', image: 'images/heart-fruits/kindness.png' },
-        { english: 'Goodness', portuguese: 'Bondade', image: 'images/heart-fruits/goodness.png' },
+        { english: 'Gentleness', portuguese: 'Gentileza', image: 'images/heart-fruits/gentleness.png' },
+        { english: 'Kindness', portuguese: 'Bondade', image: 'images/heart-fruits/kindness.png' },
         { english: 'Faithfulness', portuguese: 'Fidelidade', image: 'images/heart-fruits/faithfulness.png' },
-        { english: 'Gentleness', portuguese: 'Mansidão', image: 'images/heart-fruits/gentleness.png' },
+        { english: 'Meekness', portuguese: 'Mansidão', image: 'images/heart-fruits/meekness.png' },
         { english: 'Self-Control', portuguese: 'Domínio Próprio (ou Autocontrole)', image: 'images/heart-fruits/self-control.png' }
     ]
 };
