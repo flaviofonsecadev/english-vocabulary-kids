@@ -336,6 +336,7 @@
                 <button id="listening-quiz" class="game-btn">Prática de Escuta</button>
                 <button id="two-choice-quiz" class="game-btn">Quiz 2 Alternativas</button>
                 <button id="image-quiz" class="game-btn">Image Quiz</button>
+                <button id="word-find-puzzle" class="game-btn">Word Find Puzzle</button>
                 <button id="word-search" class="game-btn">Caça-Palavras</button>
                 <button id="back-to-categories" class="back-btn">Voltar</button>
             </div>
@@ -504,6 +505,30 @@
             </div>
             <div id="image-quiz-options" class="quiz-options">
                 <!-- Alternativas com nome e áudio -->
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
+        <section id="word-find-puzzle-container" class="game-container" style="display: none;">
+            <div class="quiz-header">
+                <h2><i class="fas fa-spell-check"></i> Word Find Puzzle</h2>
+                <div class="quiz-controls">
+                    <label for="word-find-mode">Modo:</label>
+                    <select id="word-find-mode"></select>
+                    <button id="word-find-next" class="action-btn">Próxima</button>
+                </div>
+            </div>
+            <div class="word-find-layout">
+                <div id="word-find-hint" class="word-find-hint">
+                    <img id="word-find-hint-image" alt="Dica" style="display:none;">
+                    <div id="word-find-hint-text" class="word-find-hint-text" style="display:none;"></div>
+                </div>
+                <div id="word-find-answer" class="word-find-answer"></div>
+                <div id="word-find-bank" class="word-find-bank"></div>
+                <div class="word-find-actions">
+                    <button id="word-find-backspace" class="action-btn">Apagar</button>
+                    <button id="word-find-clear" class="action-btn back-btn">Limpar</button>
+                </div>
             </div>
             <button class="back-btn">Voltar</button>
         </section>

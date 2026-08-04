@@ -77,6 +77,16 @@ const imageQuizCountSelect = document.getElementById('image-quiz-count');
 const imageQuizCard = document.getElementById('image-quiz-card');
 const imageQuizPhraseEn = document.getElementById('image-quiz-phrase-en');
 const imageQuizPlayBtn = document.getElementById('image-quiz-play');
+const wordFindPuzzleBtn = document.getElementById('word-find-puzzle');
+const wordFindPuzzleContainer = document.getElementById('word-find-puzzle-container');
+const wordFindModeSelect = document.getElementById('word-find-mode');
+const wordFindNextBtn = document.getElementById('word-find-next');
+const wordFindHintImage = document.getElementById('word-find-hint-image');
+const wordFindHintText = document.getElementById('word-find-hint-text');
+const wordFindAnswerEl = document.getElementById('word-find-answer');
+const wordFindBankEl = document.getElementById('word-find-bank');
+const wordFindBackspaceBtn = document.getElementById('word-find-backspace');
+const wordFindClearBtn = document.getElementById('word-find-clear');
 const memoryPairsCountSelect = document.getElementById('memory-pairs-count');
 
 // Referências da nova home e seções
@@ -214,6 +224,7 @@ function hideAllSections() {
         listeningQuizContainer,
         twoChoiceQuizContainer,
         imageQuizContainer,
+        wordFindPuzzleContainer,
         wordSearchContainer,
         phrasesCategoriesSection,
         conversationContainer,
@@ -223,6 +234,16 @@ function hideAllSections() {
     allSections.forEach(sec => {
         if (sec) sec.style.display = 'none';
     });
+}
+
+function placeCaretAtEnd(el) {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    range.collapse(false);
+    const selection = window.getSelection();
+    if (!selection) return;
+    selection.removeAllRanges();
+    selection.addRange(range);
 }
 
 // ========== TEAM MANAGEMENT FUNCTIONS ==========
@@ -435,35 +456,32 @@ function renderInGameScoreboard() {
         scoreDiv.contentEditable = 'true';
         scoreDiv.textContent = team.score;
         scoreDiv.addEventListener('blur', (e) => {
-            const newScore = parseInt(e.target.textContent) || 0;
-            team.score = newScore;
+            const raw = String(e.target.textContent || '');
+            const cleaned = raw.replace(/[^\d-]/g, '');
+            const normalized = cleaned.startsWith('-')
+                ? ('-' + cleaned.slice(1).replace(/-/g, ''))
+                : cleaned.replace(/-/g, '');
+            const newScore = (normalized === '' || normalized === '-') ? 0 : parseInt(normalized, 10);
+            team.score = Number.isFinite(newScore) ? newScore : 0;
+            e.target.textContent = String(team.score);
             saveTeamsToStorage();
             renderAllScoreboards();
         });
-        // Allow only numbers
         scoreDiv.addEventListener('keydown', (e) => {
-            // Allow: backspace, delete, tab, escape, enter
             if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
-                // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
                 (e.keyCode === 65 && (e.ctrlKey || e.metaKey)) ||
                 (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
                 (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
                 (e.keyCode === 88 && (e.ctrlKey || e.metaKey)) ||
-                // Allow: home, end, left, right
-                (e.keyCode >= 35 && e.keyCode <= 39)) {
-                // let it happen, don't do anything
+                (e.keyCode >= 35 && e.keyCode <= 39) ||
+                e.keyCode === 189 || e.keyCode === 109) {
                 return;
             }
-            // Ensure that it is a number and stop the keypress
             if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
                 e.preventDefault();
             }
         });
-        scoreDiv.addEventListener('input', (e) => {
-            // Remove non-numeric characters
-            e.target.textContent = e.target.textContent.replace(/[^0-9]/g, '');
-        });
-        // Click on score to edit, don't select team
+        scoreDiv.addEventListener('focus', () => placeCaretAtEnd(scoreDiv));
         scoreDiv.addEventListener('click', (e) => {
             e.stopPropagation();
         });
@@ -511,28 +529,32 @@ function renderTrackerScoreboard() {
         scoreDiv.contentEditable = 'true';
         scoreDiv.textContent = team.score;
         scoreDiv.addEventListener('blur', (e) => {
-            const newScore = parseInt(e.target.textContent) || 0;
-            team.score = newScore;
+            const raw = String(e.target.textContent || '');
+            const cleaned = raw.replace(/[^\d-]/g, '');
+            const normalized = cleaned.startsWith('-')
+                ? ('-' + cleaned.slice(1).replace(/-/g, ''))
+                : cleaned.replace(/-/g, '');
+            const newScore = (normalized === '' || normalized === '-') ? 0 : parseInt(normalized, 10);
+            team.score = Number.isFinite(newScore) ? newScore : 0;
+            e.target.textContent = String(team.score);
             saveTeamsToStorage();
             renderAllScoreboards();
         });
-        // Allow only numbers
         scoreDiv.addEventListener('keydown', (e) => {
             if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
                 (e.keyCode === 65 && (e.ctrlKey || e.metaKey)) ||
                 (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
                 (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
                 (e.keyCode === 88 && (e.ctrlKey || e.metaKey)) ||
-                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                (e.keyCode >= 35 && e.keyCode <= 39) ||
+                e.keyCode === 189 || e.keyCode === 109) {
                 return;
             }
             if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
                 e.preventDefault();
             }
         });
-        scoreDiv.addEventListener('input', (e) => {
-            e.target.textContent = e.target.textContent.replace(/[^0-9]/g, '');
-        });
+        scoreDiv.addEventListener('focus', () => placeCaretAtEnd(scoreDiv));
         scoreDiv.addEventListener('click', (e) => {
             e.stopPropagation();
         });
@@ -800,6 +822,34 @@ document.addEventListener('DOMContentLoaded', () => {
             startImageQuiz();
         });
     }
+    if (wordFindPuzzleBtn) {
+        wordFindPuzzleBtn.addEventListener('click', () => {
+            gameSelectionSection.style.display = 'none';
+            wordFindPuzzleContainer.style.display = 'block';
+            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            startWordFindPuzzle();
+        });
+    }
+    if (wordFindModeSelect) {
+        wordFindModeSelect.addEventListener('change', () => {
+            startWordFindPuzzle();
+        });
+    }
+    if (wordFindNextBtn) {
+        wordFindNextBtn.addEventListener('click', () => {
+            startWordFindPuzzle();
+        });
+    }
+    if (wordFindBackspaceBtn) {
+        wordFindBackspaceBtn.addEventListener('click', () => {
+            backspaceWordFind();
+        });
+    }
+    if (wordFindClearBtn) {
+        wordFindClearBtn.addEventListener('click', () => {
+            clearWordFindInput();
+        });
+    }
 
     // Nível do Caça-Palavras
     if (wordSearchDifficultySelect) {
@@ -945,6 +995,9 @@ function handleBackButton(event) {
             break;
         case 'image-quiz-container':
             resetImageQuiz();
+            break;
+        case 'word-find-puzzle-container':
+            resetWordFindPuzzle();
             break;
         case 'listening-quiz-container':
             if (typeof resetListeningQuiz === 'function') resetListeningQuiz();
@@ -2015,6 +2068,247 @@ function resetLearnMode() {
     flashcard.classList.remove('flipped');
 }
 
+const WORD_FIND_PHRASES_LIMIT = 20;
+let wordFindCurrent = null;
+let wordFindAnswerLetters = [];
+let wordFindInput = [];
+let wordFindBankButtons = [];
+
+function getWordFindModes() {
+    if (currentMode === 'phrases') {
+        return [
+            { value: 'pt-en', label: 'Português → Inglês' },
+            { value: 'en-pt', label: 'Inglês → Português' }
+        ];
+    }
+    return [
+        { value: 'image-en', label: 'Imagem → Inglês' },
+        { value: 'pt-en', label: 'Português → Inglês' },
+        { value: 'en-pt', label: 'Inglês → Português' }
+    ];
+}
+
+function normalizeWordFindLetters(text) {
+    return Array.from(String(text).toUpperCase().replace(/[^\p{L}]/gu, ''));
+}
+
+function syncWordFindModeSelect() {
+    if (!wordFindModeSelect) return;
+    const prev = wordFindModeSelect.value;
+    const modes = getWordFindModes();
+    wordFindModeSelect.innerHTML = '';
+    modes.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.value;
+        opt.textContent = m.label;
+        wordFindModeSelect.appendChild(opt);
+    });
+    const stillExists = modes.some(m => m.value === prev);
+    wordFindModeSelect.value = stillExists ? prev : modes[0]?.value;
+}
+
+function buildWordFindPool(modeValue) {
+    const source = (currentMode === 'phrases')
+        ? (phrasesData[currentCategory] || [])
+        : (vocabularyData[currentCategory] || []);
+
+    const pool = [];
+    source.forEach(item => {
+        const en = item.english || '';
+        const pt = item.portuguese || '';
+        const img = item.image || '';
+
+        let hintType = 'text';
+        let hintText = '';
+        let hintImage = '';
+        let answerText = '';
+
+        if (modeValue === 'image-en') {
+            if (currentMode === 'phrases') return;
+            hintType = 'image';
+            hintImage = img;
+            answerText = en;
+        } else if (modeValue === 'pt-en') {
+            hintText = pt;
+            answerText = en;
+        } else {
+            hintText = en;
+            answerText = pt;
+        }
+
+        const letters = normalizeWordFindLetters(answerText);
+        if (letters.length === 0) return;
+        if (currentMode === 'phrases' && letters.length > WORD_FIND_PHRASES_LIMIT) return;
+
+        pool.push({
+            hintType,
+            hintText,
+            hintImage,
+            answerText,
+            answerLetters: letters
+        });
+    });
+    return pool;
+}
+
+function renderWordFindPuzzle() {
+    if (!wordFindCurrent) return;
+
+    if (wordFindHintImage) {
+        if (wordFindCurrent.hintType === 'image') {
+            wordFindHintImage.src = wordFindCurrent.hintImage;
+            wordFindHintImage.style.display = 'block';
+        } else {
+            wordFindHintImage.src = '';
+            wordFindHintImage.style.display = 'none';
+        }
+    }
+
+    if (wordFindHintText) {
+        if (wordFindCurrent.hintType === 'text') {
+            wordFindHintText.textContent = wordFindCurrent.hintText;
+            wordFindHintText.style.display = 'block';
+        } else {
+            wordFindHintText.textContent = '';
+            wordFindHintText.style.display = 'none';
+        }
+    }
+
+    if (wordFindAnswerEl) {
+        wordFindAnswerEl.classList.remove('correct', 'incorrect');
+        wordFindAnswerEl.innerHTML = '';
+        for (let i = 0; i < wordFindAnswerLetters.length; i++) {
+            const slot = document.createElement('div');
+            slot.className = 'word-find-slot';
+            slot.textContent = wordFindInput[i]?.letter || '';
+            wordFindAnswerEl.appendChild(slot);
+        }
+    }
+}
+
+function buildWordFindBankLetters() {
+    const answerLetters = [...wordFindAnswerLetters];
+    const pool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÁÀÂÃÃÄÉÈÊËÍÌÎÏÓÒÔÕÖÚÙÛÜÇ';
+    let targetCount = Math.max(16, answerLetters.length + 8);
+    targetCount = Math.min(32, targetCount);
+    targetCount = Math.ceil(targetCount / 8) * 8;
+
+    const letters = [...answerLetters];
+    while (letters.length < targetCount) {
+        letters.push(pool[Math.floor(Math.random() * pool.length)]);
+    }
+    shuffleArray(letters);
+    return letters;
+}
+
+function renderWordFindBank() {
+    if (!wordFindBankEl) return;
+    wordFindBankEl.innerHTML = '';
+    wordFindBankButtons = [];
+
+    const letters = buildWordFindBankLetters();
+    letters.forEach(letter => {
+        const btn = document.createElement('button');
+        btn.className = 'word-find-letter-btn';
+        btn.type = 'button';
+        btn.textContent = letter;
+        btn.addEventListener('click', () => onWordFindLetterClick(btn, letter));
+        wordFindBankButtons.push(btn);
+        wordFindBankEl.appendChild(btn);
+    });
+}
+
+function setWordFindAnswerClass(className) {
+    if (!wordFindAnswerEl) return;
+    wordFindAnswerEl.classList.remove('correct', 'incorrect');
+    if (className) wordFindAnswerEl.classList.add(className);
+}
+
+function clearWordFindInput() {
+    wordFindInput.forEach(i => {
+        if (i.btn) i.btn.disabled = false;
+    });
+    wordFindInput = [];
+    renderWordFindPuzzle();
+    setWordFindAnswerClass(null);
+}
+
+function backspaceWordFind() {
+    const last = wordFindInput.pop();
+    if (last?.btn) last.btn.disabled = false;
+    renderWordFindPuzzle();
+    setWordFindAnswerClass(null);
+}
+
+function onWordFindLetterClick(btn, letter) {
+    if (!wordFindCurrent) return;
+    if (wordFindInput.length >= wordFindAnswerLetters.length) return;
+    btn.disabled = true;
+    wordFindInput.push({ letter, btn });
+    renderWordFindPuzzle();
+    if (wordFindInput.length === wordFindAnswerLetters.length) {
+        const typed = wordFindInput.map(x => x.letter).join('');
+        const correct = wordFindAnswerLetters.join('');
+        if (typed === correct) {
+            setWordFindAnswerClass('correct');
+            playSuccessSound();
+            const speakValue = wordFindModeSelect?.value === 'en-pt'
+                ? (wordFindCurrent.hintText || wordFindCurrent.answerText)
+                : (wordFindCurrent.answerText || '');
+            if (speakValue) speakText(speakValue);
+            setTimeout(() => startWordFindPuzzle(), 900);
+        } else {
+            setWordFindAnswerClass('incorrect');
+            setTimeout(() => {
+                clearWordFindInput();
+            }, 650);
+        }
+    }
+}
+
+function startWordFindPuzzle() {
+    if (!currentCategory) {
+        alert('Selecione uma categoria primeiro.');
+        return;
+    }
+    syncWordFindModeSelect();
+    const modeValue = wordFindModeSelect?.value || getWordFindModes()[0]?.value;
+    const pool = buildWordFindPool(modeValue);
+    if (pool.length === 0) {
+        if (currentMode === 'phrases') {
+            alert(`Não há itens com até ${WORD_FIND_PHRASES_LIMIT} letras (sem espaços/pontuação) para este tópico.`);
+        } else {
+            alert('Não há itens suficientes nesta categoria para este jogo.');
+        }
+        return;
+    }
+    wordFindCurrent = pool[Math.floor(Math.random() * pool.length)];
+    wordFindAnswerLetters = [...wordFindCurrent.answerLetters];
+    wordFindInput = [];
+    renderWordFindPuzzle();
+    renderWordFindBank();
+}
+
+function resetWordFindPuzzle() {
+    wordFindCurrent = null;
+    wordFindAnswerLetters = [];
+    wordFindInput = [];
+    wordFindBankButtons = [];
+    if (wordFindHintImage) {
+        wordFindHintImage.src = '';
+        wordFindHintImage.style.display = 'none';
+    }
+    if (wordFindHintText) {
+        wordFindHintText.textContent = '';
+        wordFindHintText.style.display = 'none';
+    }
+    if (wordFindAnswerEl) {
+        wordFindAnswerEl.classList.remove('correct', 'incorrect');
+        wordFindAnswerEl.innerHTML = '';
+    }
+    if (wordFindBankEl) wordFindBankEl.innerHTML = '';
+}
+
 // ==========================
 // Caça-Palavras
 // ==========================
@@ -2990,6 +3284,7 @@ function goHome() {
     resetWordSearchGame();
     resetTwoChoiceQuiz();
     resetImageQuiz();
+    resetWordFindPuzzle();
     if (typeof resetListeningQuiz === 'function') {
         resetListeningQuiz();
     }
@@ -3018,6 +3313,8 @@ function goBackPage() {
             resetTwoChoiceQuiz();
         } else if (id === 'image-quiz-container') {
             resetImageQuiz();
+        } else if (id === 'word-find-puzzle-container') {
+            resetWordFindPuzzle();
         }
         visibleGameSection.style.display = 'none';
         gameSelectionSection.style.display = 'block';
