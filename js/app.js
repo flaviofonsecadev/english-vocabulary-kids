@@ -464,6 +464,40 @@ function addAluno(name) {
     saveData();
 }
 
+function addAlunosFromList(text) {
+    const turma = getActiveTurma();
+    if (!turma) {
+        alert('Crie ou selecione uma turma primeiro.');
+        return 0;
+    }
+    const names = String(text)
+        .split(/\r?\n/)
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+    if (names.length === 0) {
+        alert('Cole a lista de alunos primeiro (um por linha).');
+        return 0;
+    }
+    let added = 0;
+    const duplicados = [];
+    names.forEach(name => {
+        const exists = turma.alunos.some(a => a.name.toLowerCase() === name.toLowerCase());
+        if (exists) {
+            duplicados.push(name);
+            return;
+        }
+        turma.alunos.push({ id: generateId(), name: name, xp: 0 });
+        added++;
+    });
+    if (added > 0) {
+        refreshAll();
+        saveData();
+    }
+    alert(added + ' aluno(s) adicionado(s).' +
+        (duplicados.length > 0 ? '\n' + duplicados.length + ' já existiam e foram ignorados.' : ''));
+    return added;
+}
+
 function deleteAluno(turmaId, alunoId) {
     const turma = turmas.find(t => t.id === turmaId);
     if (!turma) return;
@@ -1080,6 +1114,24 @@ document.addEventListener('DOMContentLoaded', () => {
             addAlunoBtn.click();
         }
     });
+    if (addAlunosListBtn) {
+        addAlunosListBtn.addEventListener('click', () => {
+            if (alunosListTextarea && alunosListTextarea.value.trim()) {
+                addAlunosFromList(alunosListTextarea.value);
+                alunosListTextarea.value = '';
+            } else {
+                addAlunosFromList('');
+            }
+        });
+        if (alunosListTextarea) {
+            alunosListTextarea.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                    e.preventDefault();
+                    addAlunosListBtn.click();
+                }
+            });
+        }
+    }
     openXpBtn.addEventListener('click', () => openXpModal('aluno'));
     goTeamsFromTurmaBtn.addEventListener('click', () => {
         hideAllSections();
