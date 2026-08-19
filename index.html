@@ -13,6 +13,7 @@
         
         <div class="header-actions">
             <button id="home-icon" title="Home"><i class="fas fa-home"></i></button>
+            <button id="turmas-icon" title="Gerenciar Turmas e Alunos"><i class="fas fa-school"></i></button>
             <button id="teams-icon" title="Gerenciar Equipes"><i class="fas fa-users"></i></button>
             <button id="game-tracker-icon" title="Acompanhamento de Partidas"><i class="fas fa-trophy"></i></button>
             <button id="back-icon" title="Voltar Página"><i class="fas fa-arrow-left"></i></button>
@@ -22,7 +23,10 @@
     <main>
         <!-- Seção de pontuação em tempo real (visível em todas as telas de jogo) -->
         <section id="scoreboard-section" class="scoreboard-section" style="display: none;">
-            <h3>Placar da Partida</h3>
+            <div class="scoreboard-toolbar">
+                <h3>Placar da Partida <span id="scoreboard-turma-label"></span></h3>
+                <button id="scoreboard-xp-btn" class="xp-btn" title="Atribuir XP aos alunos"><i class="fas fa-star"></i> Atribuir XP</button>
+            </div>
             <div id="scoreboard-container" class="scoreboard-container"></div>
             <div id="current-team-display" class="current-team-display"></div>
         </section>
@@ -36,9 +40,37 @@
             </div>
         </section>
 
+        <!-- Seção de gerenciamento de turmas -->
+        <section id="turmas-management" class="game-container" style="display: none;">
+            <h2>Gerenciar Turmas</h2>
+            <div id="storage-status" class="storage-status"></div>
+            <div class="teams-controls">
+                <select id="turma-select" class="team-input" title="Turma selecionada"></select>
+                <input type="text" id="turma-name-input" placeholder="Nova Turma (ex: 6º Ano A)" class="team-input">
+                <button id="add-turma-btn" class="action-btn">Adicionar Turma</button>
+            </div>
+            <div class="alunos-section">
+                <h3>Alunos da Turma: <span id="alunos-turma-name"></span></h3>
+                <div class="teams-controls">
+                    <input type="text" id="aluno-name-input" placeholder="Nome do aluno" class="team-input">
+                    <button id="add-aluno-btn" class="action-btn">Adicionar Aluno</button>
+                    <button id="open-xp-btn" class="xp-btn"><i class="fas fa-star"></i> Atribuir XP</button>
+                </div>
+                <div class="bulk-alunos">
+                    <textarea id="alunos-list-input" class="team-textarea" placeholder="Cole a lista de alunos, um por linha:&#10;&#10;Maria&#10;João&#10;Ana&#10;Pedro"></textarea>
+                    <button id="add-alunos-list-btn" class="action-btn">Adicionar Alunos da Lista</button>
+                </div>
+                <div id="alunos-list" class="alunos-list"></div>
+            </div>
+            <div class="teams-controls">
+                <button id="go-teams-from-turma" class="action-btn">Gerenciar Equipes desta Turma</button>
+            </div>
+            <button class="back-btn">Voltar</button>
+        </section>
+
         <!-- Seção de gerenciamento de equipes -->
         <section id="teams-management" class="game-container" style="display: none;">
-            <h2>Gerenciar Equipes</h2>
+            <h2>Gerenciar Equipes <span id="teams-turma-label"></span></h2>
             <div class="teams-controls">
                 <input type="text" id="team-name-input" placeholder="Nome da Equipe" class="team-input">
                 <button id="add-team-btn" class="action-btn">Adicionar Equipe</button>
@@ -557,7 +589,35 @@
         <p>Flavio Fonseca - 2026</p>
     </footer>
 
+    <!-- Modal de atribuição de XP -->
+    <div id="xp-modal" class="xp-modal-overlay" style="display: none;">
+        <div class="xp-modal">
+            <h3><i class="fas fa-star"></i> Atribuir XP</h3>
+            <div class="xp-modal-type">
+                <button id="xp-type-aluno" class="xp-type-btn active">Aluno</button>
+                <button id="xp-type-equipe" class="xp-type-btn">Equipe inteira</button>
+            </div>
+            <label for="xp-target-select" class="xp-label">Destino:</label>
+            <select id="xp-target-select" class="team-input"></select>
+            <label for="xp-amount-input" class="xp-label">Quantidade de XP:</label>
+            <input type="number" id="xp-amount-input" class="team-input" value="5" min="1">
+            <div class="xp-presets">
+                <button data-xp="1">+1</button>
+                <button data-xp="5">+5</button>
+                <button data-xp="10">+10</button>
+                <button data-xp="20">+20</button>
+                <button data-xp="50">+50</button>
+            </div>
+            <p id="xp-modal-hint" class="xp-modal-hint"></p>
+            <div class="xp-modal-actions">
+                <button id="xp-apply-btn" class="xp-btn"><i class="fas fa-plus"></i> Adicionar</button>
+                <button id="xp-cancel-btn" class="back-btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
     <script src="js/app.js"></script>
     <script src="words.js"></script>
 </body>

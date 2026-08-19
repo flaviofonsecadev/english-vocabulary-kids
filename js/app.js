@@ -105,16 +105,35 @@ const gameTrackerIconBtn = document.getElementById('game-tracker-icon');
 const backIconBtn = document.getElementById('back-icon');
 const wordSearchDifficultySelect = document.getElementById('word-search-difficulty');
 
-// TEAM MANAGEMENT VARIABLES
-const STORAGE_KEY = 'english-games-teams';
-let teams = [];
+// TURMA / EQUIPE / XP MANAGEMENT VARIABLES
+const LEGACY_STORAGE_KEY = 'english-games-teams';
+const STORAGE_KEY = 'english-games-turmas';
+let turmas = [];
+let activeTurmaId = null;
 let activeTeamId = null;
+let teams = []; // Sempre aponta para as equipes da turma ativa
+
+// DOM elements for turma management
+const turmasSection = document.getElementById('turmas-management');
+const storageStatusEl = document.getElementById('storage-status');
+const turmaSelect = document.getElementById('turma-select');
+const turmaNameInput = document.getElementById('turma-name-input');
+const addTurmaBtn = document.getElementById('add-turma-btn');
+const alunosListContainer = document.getElementById('alunos-list');
+const alunosTurmaName = document.getElementById('alunos-turma-name');
+const alunoNameInput = document.getElementById('aluno-name-input');
+const addAlunoBtn = document.getElementById('add-aluno-btn');
+const alunosListTextarea = document.getElementById('alunos-list-input');
+const addAlunosListBtn = document.getElementById('add-alunos-list-btn');
+const openXpBtn = document.getElementById('open-xp-btn');
+const goTeamsFromTurmaBtn = document.getElementById('go-teams-from-turma');
 
 // DOM elements for team management
 const teamsSection = document.getElementById('teams-management');
 const teamsListContainer = document.getElementById('teams-list');
 const teamNameInput = document.getElementById('team-name-input');
 const addTeamBtn = document.getElementById('add-team-btn');
+const teamsTurmaLabel = document.getElementById('teams-turma-label');
 
 // DOM elements for game tracker
 const gameTrackerSection = document.getElementById('game-tracker');
@@ -126,6 +145,20 @@ const resetAllScoresBtn = document.getElementById('reset-all-scores');
 const scoreboardSection = document.getElementById('scoreboard-section');
 const scoreboardContainer = document.getElementById('scoreboard-container');
 const currentTeamDisplay = document.getElementById('current-team-display');
+const scoreboardTurmaLabel = document.getElementById('scoreboard-turma-label');
+const scoreboardXpBtn = document.getElementById('scoreboard-xp-btn');
+
+// DOM elements for XP modal
+const xpModal = document.getElementById('xp-modal');
+const xpTypeAlunoBtn = document.getElementById('xp-type-aluno');
+const xpTypeEquipeBtn = document.getElementById('xp-type-equipe');
+const xpTargetSelect = document.getElementById('xp-target-select');
+const xpAmountInput = document.getElementById('xp-amount-input');
+const xpApplyBtn = document.getElementById('xp-apply-btn');
+const xpCancelBtn = document.getElementById('xp-cancel-btn');
+const xpModalHint = document.getElementById('xp-modal-hint');
+
+let xpModalType = 'aluno';
 
 // Inicialização da API de síntese de voz
 const speechSynthesis = window.speechSynthesis;
@@ -228,6 +261,7 @@ function hideAllSections() {
         wordSearchContainer,
         phrasesCategoriesSection,
         conversationContainer,
+        turmasSection,
         teamsSection,
         gameTrackerSection
     ];
@@ -246,72 +280,298 @@ function placeCaretAtEnd(el) {
     selection.addRange(range);
 }
 
-// ========== TEAM MANAGEMENT FUNCTIONS ==========
-function loadTeamsFromStorage() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-        teams = JSON.parse(stored);
+// ========== PERSISTENCE ==========
+function getActiveTurma() {
+    if (!activeTurmaId) return null;
+    return turmas.find(t => t.id === activeTurmaId) || null;
+}
+
+function syncTeamsRef() {
+    const turma = getActiveTurma();
+    teams = turma ? turma.equipes : [];
+    return teams;
+}
+
+function hasGameData() {
+    const turma = getActiveTurma();
+    return !!(turma && (turma.alunos.length > 0 || turma.equipes.length > 0));
+}
+
+function syncActiveTeamId() {
+    if (activeTeamId && !teams.some(t => t.id === activeTeamId)) {
+        activeTeamId = null;
+    }
+    if (!activeTeamId && teams.length > 0) {
+        activeTeamId = teams[0].id;
     }
 }
 
-function saveTeamsToStorage() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(teams));
+function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2, 8);
 }
 
-function generateTeamId() {
-    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+function saveData() {
+    const payload = { turmas: turmas, activeTurmaId: activeTurmaId, activeTeamId: activeTeamId };
+    DataStore.save(payload);
+    updateStorageStatus();
 }
 
-function addTeam(name) {
-    const team = {
-        id: generateTeamId(),
+async function loadData() {
+    const loaded = await DataStore.load();
+    if (loaded.data && Array.isArray(loaded.data.turmas) && loaded.data.turmas.length >= 0) {
+        turmas = loaded.data.turmas || [];
+        activeTurmaId = loaded.data.activeTurmaId || null;
+        activeTeamId = loaded.data.activeTeamId || null;
+    } else {
+        migrateLegacyTeams();
+    }
+    refreshAll();
+    updateStorageStatus();
+}
+
+function migrateLegacyTeams() {
+    // Converte o formato antigo (equipes globais no localStorage) para turmas com alunos
+    let legacy = null;
+    try {
+        legacy = JSON.parse(localStorage.getItem(LEGACY_STORAGE_KEY) || 'null');
+    } catch (e) {
+        legacy = null;
+    }
+    if (!legacy || !Array.isArray(legacy) || legacy.length === 0) return;
+
+    const turma = {
+        id: generateId(),
+        name: 'Turma 1',
+        alunos: [],
+        equipes: []
+    };
+    legacy.forEach(oldTeam => {
+        const memberIds = [];
+        (oldTeam.members || []).forEach(rawName => {
+            if (typeof rawName !== 'string' || !rawName.trim()) return;
+            const name = rawName.trim();
+            let aluno = turma.alunos.find(a => a.name.toLowerCase() === name.toLowerCase());
+            if (!aluno) {
+                aluno = { id: generateId(), name: name, xp: 0 };
+                turma.alunos.push(aluno);
+            }
+            memberIds.push(aluno.id);
+        });
+        turma.equipes.push({
+            id: oldTeam.id || generateId(),
+            name: oldTeam.name || 'Equipe',
+            memberIds: memberIds,
+            score: typeof oldTeam.score === 'number' ? oldTeam.score : 0
+        });
+    });
+    turmas.push(turma);
+    activeTurmaId = turma.id;
+    activeTeamId = turma.equipes.length > 0 ? turma.equipes[0].id : null;
+    saveData();
+}
+
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function updateStorageStatus() {
+    if (!storageStatusEl) return;
+    const status = DataStore.status();
+    if (status.mode === 'file') {
+        storageStatusEl.innerHTML =
+            '<i class="fas fa-folder-open"></i> Dados salvos em: <strong>' +
+            escapeHtml(status.dirName) + '\\' + escapeHtml(status.fileName) +
+            '</strong> <button id="storage-connect-btn" class="storage-small-btn" title="Escolher outra pasta">Trocar pasta</button>';
+    } else {
+        storageStatusEl.innerHTML =
+            '<i class="fas fa-exclamation-triangle"></i> Salvando apenas no navegador (backup automático). ' +
+            '<button id="storage-connect-btn" class="storage-small-btn">Salvar na pasta do projeto</button>';
+    }
+    const connectBtn = document.getElementById('storage-connect-btn');
+    if (connectBtn) {
+        connectBtn.addEventListener('click', connectFolderAndSave);
+    }
+}
+
+async function connectFolderAndSave() {
+    try {
+        const dirName = await DataStore.connectFolder();
+        saveData();
+        alert('Pasta conectada! Os dados serão salvos em: ' + dirName + '/turmas.json');
+    } catch (err) {
+        if (err && err.name === 'AbortError') return;
+        alert('Não foi possível salvar na pasta: ' + (err && err.message ? err.message : err));
+        updateStorageStatus();
+    }
+}
+
+// ========== TURMA FUNCTIONS ==========
+function addTurma(name) {
+    const turma = {
+        id: generateId(),
         name: name,
-        members: [],
+        alunos: [],
+        equipes: []
+    };
+    turmas.push(turma);
+    activeTurmaId = turma.id;
+    activeTeamId = null;
+    refreshAll();
+    saveData();
+}
+
+function deleteTurma(turmaId) {
+    const turma = turmas.find(t => t.id === turmaId);
+    if (!turma) return;
+    if (!confirm('Tem certeza que deseja deletar a turma "' + turma.name + '"? Alunos e equipes dela serão removidos.')) return;
+    turmas = turmas.filter(t => t.id !== turmaId);
+    if (activeTurmaId === turmaId) {
+        activeTurmaId = turmas.length > 0 ? turmas[0].id : null;
+        activeTeamId = null;
+    }
+    refreshAll();
+    saveData();
+}
+
+function renameTurma(turmaId, newName) {
+    const turma = turmas.find(t => t.id === turmaId);
+    if (turma && newName.trim()) {
+        turma.name = newName.trim();
+        refreshAll();
+        saveData();
+    }
+}
+
+function setActiveTurma(turmaId) {
+    if (!turmas.some(t => t.id === turmaId)) return;
+    activeTurmaId = turmaId;
+    activeTeamId = null;
+    refreshAll();
+    saveData();
+}
+
+// ========== ALUNO FUNCTIONS ==========
+function addAluno(name) {
+    const turma = getActiveTurma();
+    if (!turma || !name.trim()) return;
+    turma.alunos.push({ id: generateId(), name: name.trim(), xp: 0 });
+    refreshAll();
+    saveData();
+}
+
+function deleteAluno(turmaId, alunoId) {
+    const turma = turmas.find(t => t.id === turmaId);
+    if (!turma) return;
+    turma.alunos = turma.alunos.filter(a => a.id !== alunoId);
+    turma.equipes.forEach(e => {
+        e.memberIds = e.memberIds.filter(id => id !== alunoId);
+    });
+    refreshAll();
+    saveData();
+}
+
+function renameAluno(turmaId, alunoId, newName) {
+    const turma = turmas.find(t => t.id === turmaId);
+    const aluno = turma && turma.alunos.find(a => a.id === alunoId);
+    if (aluno && newName.trim()) {
+        aluno.name = newName.trim();
+        refreshAll();
+        saveData();
+    }
+}
+
+function addXpToAluno(turmaId, alunoId, amount) {
+    const turma = turmas.find(t => t.id === turmaId);
+    const aluno = turma && turma.alunos.find(a => a.id === alunoId);
+    if (!aluno || !Number.isFinite(amount)) return;
+    aluno.xp = Math.max(0, (aluno.xp || 0) + amount);
+    refreshAll();
+    saveData();
+}
+
+function addXpToTeam(turmaId, equipeId, amount) {
+    const turma = turmas.find(t => t.id === turmaId);
+    const equipe = turma && turma.equipes.find(e => e.id === equipeId);
+    if (!equipe || !Number.isFinite(amount)) return 0;
+    let count = 0;
+    turma.alunos.forEach(aluno => {
+        if (equipe.memberIds.indexOf(aluno.id) !== -1) {
+            aluno.xp = Math.max(0, (aluno.xp || 0) + amount);
+            count++;
+        }
+    });
+    if (count > 0) {
+        refreshAll();
+        saveData();
+    }
+    return count;
+}
+
+// ========== TEAM FUNCTIONS ==========
+function addTeam(name) {
+    const turma = getActiveTurma();
+    if (!turma || !name.trim()) return;
+    const team = {
+        id: generateId(),
+        name: name.trim(),
+        memberIds: [],
         score: 0
     };
-    teams.push(team);
-    saveTeamsToStorage();
-    renderTeamsList();
-    renderAllScoreboards();
+    turma.equipes.push(team);
+    refreshAll();
+    saveData();
 }
 
 function deleteTeam(teamId) {
+    const turma = getActiveTurma();
+    if (!turma) return;
     if (confirm('Tem certeza que deseja deletar esta equipe?')) {
-        teams = teams.filter(t => t.id !== teamId);
+        turma.equipes = turma.equipes.filter(t => t.id !== teamId);
         if (activeTeamId === teamId) {
-            activeTeamId = teams.length > 0 ? teams[0].id : null;
+            activeTeamId = turma.equipes.length > 0 ? turma.equipes[0].id : null;
         }
-        saveTeamsToStorage();
-        renderTeamsList();
-        renderAllScoreboards();
+        refreshAll();
+        saveData();
     }
 }
 
 function updateTeamName(teamId, newName) {
     const team = teams.find(t => t.id === teamId);
-    if (team) {
-        team.name = newName;
-        saveTeamsToStorage();
-        renderTeamsList();
-        renderAllScoreboards();
+    if (team && newName.trim()) {
+        team.name = newName.trim();
+        refreshAll();
+        saveData();
     }
 }
 
 function addMemberToTeam(teamId, memberName) {
+    const turma = getActiveTurma();
     const team = teams.find(t => t.id === teamId);
-    if (team && memberName.trim()) {
-        team.members.push(memberName.trim());
-        saveTeamsToStorage();
-        renderTeamsList();
+    if (!turma || !team || !memberName.trim()) return;
+    const name = memberName.trim();
+    let aluno = turma.alunos.find(a => a.name.toLowerCase() === name.toLowerCase());
+    if (!aluno) {
+        aluno = { id: generateId(), name: name, xp: 0 };
+        turma.alunos.push(aluno);
     }
+    if (team.memberIds.indexOf(aluno.id) === -1) {
+        team.memberIds.push(aluno.id);
+    }
+    refreshAll();
+    saveData();
 }
 
-function removeMemberFromTeam(teamId, memberIndex) {
+function removeMemberFromTeam(teamId, memberId) {
     const team = teams.find(t => t.id === teamId);
     if (team) {
-        team.members.splice(memberIndex, 1);
-        saveTeamsToStorage();
-        renderTeamsList();
+        team.memberIds = team.memberIds.filter(id => id !== memberId);
+        refreshAll();
+        saveData();
     }
 }
 
@@ -320,91 +580,190 @@ function addPointsToTeam(teamId, points) {
     if (team) {
         team.score += points;
         if (team.score < 0) team.score = 0;
-        saveTeamsToStorage();
-        renderAllScoreboards();
+        refreshAll();
+        saveData();
     }
 }
 
 function setActiveTeam(teamId) {
+    if (!teams.some(t => t.id === teamId)) return;
     activeTeamId = teamId;
-    saveTeamsToStorage();
-    renderAllScoreboards();
+    refreshAll();
+    saveData();
 }
 
 function resetAllScores() {
     if (confirm('Tem certeza que deseja zerar a pontuação de todas as equipes?')) {
-        teams.forEach(t => t.score = 0);
-        saveTeamsToStorage();
-        renderAllScoreboards();
+        const turma = getActiveTurma();
+        if (turma) {
+            turma.equipes.forEach(t => t.score = 0);
+        }
+        refreshAll();
+        saveData();
     }
 }
 
+function refreshAll() {
+    syncTeamsRef();
+    syncActiveTeamId();
+    renderTurmaSelect();
+    renderAlunosList();
+    renderTeamsList();
+    renderAllScoreboards();
+}
+
+// ========== RENDER FUNCTIONS ==========
+function renderTurmaSelect() {
+    if (!turmaSelect) return;
+    turmaSelect.innerHTML = '';
+    turmas.forEach(turma => {
+        const opt = document.createElement('option');
+        opt.value = turma.id;
+        opt.textContent = turma.name + ' (' + turma.alunos.length + ' alunos, ' + turma.equipes.length + ' equipes)';
+        if (turma.id === activeTurmaId) opt.selected = true;
+        turmaSelect.appendChild(opt);
+    });
+}
+
+function renderAlunosList() {
+    if (!alunosListContainer) return;
+    const turma = getActiveTurma();
+    if (alunosTurmaName) alunosTurmaName.textContent = turma ? turma.name : '—';
+    alunosListContainer.innerHTML = '';
+    if (!turma) {
+        alunosListContainer.innerHTML = '<p class="empty-hint">Crie uma turma acima para começar.</p>';
+        return;
+    }
+    if (turma.alunos.length === 0) {
+        alunosListContainer.innerHTML = '<p class="empty-hint">Nenhum aluno cadastrado nesta turma ainda.</p>';
+        return;
+    }
+    turma.alunos.forEach(aluno => {
+        const row = document.createElement('div');
+        row.className = 'aluno-row';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'aluno-name';
+        nameSpan.contentEditable = true;
+        nameSpan.textContent = aluno.name;
+        nameSpan.title = 'Clique para renomear';
+        nameSpan.addEventListener('blur', () => renameAluno(turma.id, aluno.id, nameSpan.textContent));
+
+        const xpSpan = document.createElement('span');
+        xpSpan.className = 'aluno-xp';
+        xpSpan.textContent = (aluno.xp || 0) + ' XP';
+
+        const buttons = document.createElement('div');
+        buttons.className = 'aluno-xp-buttons';
+        [5, 10, 20].forEach(v => {
+            const btn = document.createElement('button');
+            btn.className = 'xp-add-btn';
+            btn.textContent = '+' + v;
+            btn.title = 'Adicionar ' + v + ' XP';
+            btn.addEventListener('click', () => addXpToAluno(turma.id, aluno.id, v));
+            buttons.appendChild(btn);
+        });
+        const delBtn = document.createElement('button');
+        delBtn.className = 'remove-member-btn';
+        delBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        delBtn.title = 'Remover aluno da turma';
+        delBtn.addEventListener('click', () => {
+            if (confirm('Remover o aluno "' + aluno.name + '" da turma?')) {
+                deleteAluno(turma.id, aluno.id);
+            }
+        });
+        buttons.appendChild(delBtn);
+
+        row.appendChild(nameSpan);
+        row.appendChild(xpSpan);
+        row.appendChild(buttons);
+        alunosListContainer.appendChild(row);
+    });
+}
+
 function renderTeamsList() {
+    if (!teamsListContainer) return;
     teamsListContainer.innerHTML = '';
-    teams.forEach(team => {
+    const turma = getActiveTurma();
+    if (teamsTurmaLabel) {
+        teamsTurmaLabel.textContent = turma ? '- ' + turma.name : '';
+    }
+    if (!turma) {
+        teamsListContainer.innerHTML = '<p class="empty-hint">Crie uma turma primeiro (ícone de turmas no topo).</p>';
+        return;
+    }
+    if (turma.equipes.length === 0) {
+        teamsListContainer.innerHTML = '<p class="empty-hint">Nenhuma equipe nesta turma. Adicione a primeira equipe acima!</p>';
+        return;
+    }
+    turma.equipes.forEach(team => {
         const teamCard = document.createElement('div');
         teamCard.className = 'team-card';
-        
+
         const teamHeader = document.createElement('div');
         teamHeader.className = 'team-card-header';
-        
+
         const nameDisplay = document.createElement('div');
         nameDisplay.className = 'team-card-name';
         nameDisplay.contentEditable = true;
         nameDisplay.textContent = team.name;
+        nameDisplay.title = 'Clique para renomear';
         nameDisplay.addEventListener('blur', () => {
             updateTeamName(team.id, nameDisplay.textContent);
         });
-        
+
         const actionsDiv = document.createElement('div');
         actionsDiv.className = 'team-card-actions';
-        
+
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
         deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
         deleteBtn.title = 'Deletar Equipe';
         deleteBtn.addEventListener('click', () => deleteTeam(team.id));
-        
+
         actionsDiv.appendChild(deleteBtn);
         teamHeader.appendChild(nameDisplay);
         teamHeader.appendChild(actionsDiv);
-        
+
         const membersSection = document.createElement('div');
         membersSection.className = 'team-members-section';
-        
-        if (team.members.length > 0) {
+
+        if (team.memberIds.length > 0) {
             const membersLabel = document.createElement('div');
             membersLabel.textContent = 'Alunos:';
             membersLabel.style.fontWeight = 'bold';
             membersLabel.style.marginBottom = '0.3rem';
             membersSection.appendChild(membersLabel);
-            
+
             const membersList = document.createElement('div');
             membersList.className = 'team-members-list';
-            
-            team.members.forEach((member, idx) => {
+
+            team.memberIds.forEach(memberId => {
+                const aluno = turma.alunos.find(a => a.id === memberId);
+                if (!aluno) return;
                 const memberDiv = document.createElement('div');
                 memberDiv.className = 'team-member';
-                memberDiv.textContent = member;
-                
+                memberDiv.textContent = aluno.name + ' (' + (aluno.xp || 0) + ' XP)';
+
                 const removeBtn = document.createElement('button');
                 removeBtn.className = 'remove-member-btn';
                 removeBtn.innerHTML = '<i class="fas fa-times"></i>';
-                removeBtn.addEventListener('click', () => removeMemberFromTeam(team.id, idx));
-                
+                removeBtn.title = 'Remover da equipe';
+                removeBtn.addEventListener('click', () => removeMemberFromTeam(team.id, memberId));
+
                 memberDiv.appendChild(removeBtn);
                 membersList.appendChild(memberDiv);
             });
             membersSection.appendChild(membersList);
         }
-        
+
         const addMemberControls = document.createElement('div');
         addMemberControls.className = 'add-member-controls';
-        
+
         const memberInput = document.createElement('input');
         memberInput.className = 'add-member-input';
-        memberInput.placeholder = 'Nome do aluno';
-        
+        memberInput.placeholder = 'Nome do aluno (novo ou existente)';
+
         const addMemberBtn = document.createElement('button');
         addMemberBtn.className = 'add-member-btn';
         addMemberBtn.textContent = 'Adicionar Aluno';
@@ -419,11 +778,11 @@ function renderTeamsList() {
                 addMemberBtn.click();
             }
         });
-        
+
         addMemberControls.appendChild(memberInput);
         addMemberControls.appendChild(addMemberBtn);
         membersSection.appendChild(addMemberControls);
-        
+
         teamCard.appendChild(teamHeader);
         teamCard.appendChild(membersSection);
         teamsListContainer.appendChild(teamCard);
@@ -436,21 +795,25 @@ function renderAllScoreboards() {
 }
 
 function renderInGameScoreboard() {
+    if (!scoreboardContainer) return;
     scoreboardContainer.innerHTML = '';
-    if (teams.length === 0) {
+    const turma = getActiveTurma();
+    if (!turma || (!turma.equipes.length && !turma.alunos.length)) {
         scoreboardSection.style.display = 'none';
+        scoreboardTurmaLabel.textContent = '';
         return;
     }
     scoreboardSection.style.display = 'block';
-    
+    scoreboardTurmaLabel.textContent = turma ? '- ' + turma.name : '';
+
     teams.forEach(team => {
         const teamDiv = document.createElement('div');
         teamDiv.className = 'scoreboard-team' + (team.id === activeTeamId ? ' active' : '');
-        
+
         const nameDiv = document.createElement('div');
         nameDiv.className = 'scoreboard-team-name';
         nameDiv.textContent = team.name;
-        
+
         const scoreDiv = document.createElement('div');
         scoreDiv.className = 'scoreboard-team-score';
         scoreDiv.contentEditable = 'true';
@@ -464,8 +827,8 @@ function renderInGameScoreboard() {
             const newScore = (normalized === '' || normalized === '-') ? 0 : parseInt(normalized, 10);
             team.score = Number.isFinite(newScore) ? newScore : 0;
             e.target.textContent = String(team.score);
-            saveTeamsToStorage();
-            renderAllScoreboards();
+            refreshAll();
+            saveData();
         });
         scoreDiv.addEventListener('keydown', (e) => {
             if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
@@ -485,19 +848,19 @@ function renderInGameScoreboard() {
         scoreDiv.addEventListener('click', (e) => {
             e.stopPropagation();
         });
-        
+
         teamDiv.appendChild(nameDiv);
         teamDiv.appendChild(scoreDiv);
         teamDiv.style.cursor = 'pointer';
         teamDiv.addEventListener('click', () => setActiveTeam(team.id));
-        
+
         scoreboardContainer.appendChild(teamDiv);
     });
-    
+
     if (activeTeamId) {
         const activeTeam = teams.find(t => t.id === activeTeamId);
         if (activeTeam) {
-            currentTeamDisplay.innerHTML = `<strong>Equipe jogando:</strong> ${activeTeam.name} <span style="font-size: 0.8em; color: #00ffff;"></span>`;
+            currentTeamDisplay.innerHTML = '<strong>Equipe jogando:</strong> ' + activeTeam.name + ' <span style="font-size: 0.8em; color: #00ffff;"></span>';
         }
     } else {
         currentTeamDisplay.innerHTML = 'Clique em uma equipe para selecionar <span style="font-size: 0.8em; color: #00ffff;"></span>';
@@ -505,25 +868,27 @@ function renderInGameScoreboard() {
 }
 
 function renderTrackerScoreboard() {
+    if (!trackerScoreboardContainer) return;
     trackerScoreboardContainer.innerHTML = '';
-    if (teams.length === 0) {
-        trackerScoreboardContainer.innerHTML = '<p style="color: #fff; text-align: center;">Nenhuma equipe cadastrada. Adicione equipes no menu de gerenciamento!</p>';
+    const turma = getActiveTurma();
+    if (!turma || turma.equipes.length === 0) {
+        trackerScoreboardContainer.innerHTML = '<p style="color: #fff; text-align: center;">Nenhuma equipe cadastrada na turma ativa. Adicione equipes no menu de gerenciamento!</p>';
         return;
     }
-    
+
     const pointValue = parseInt(pointValueSelect.value);
-    
-    teams.forEach(team => {
+
+    turma.equipes.forEach(team => {
         const teamCard = document.createElement('div');
         teamCard.className = 'tracker-team-card' + (team.id === activeTeamId ? ' active' : '');
-        
+
         const header = document.createElement('div');
         header.className = 'tracker-team-header';
-        
+
         const nameDiv = document.createElement('div');
         nameDiv.className = 'tracker-team-name';
         nameDiv.textContent = team.name;
-        
+
         const scoreDiv = document.createElement('div');
         scoreDiv.className = 'tracker-team-score';
         scoreDiv.contentEditable = 'true';
@@ -537,8 +902,8 @@ function renderTrackerScoreboard() {
             const newScore = (normalized === '' || normalized === '-') ? 0 : parseInt(normalized, 10);
             team.score = Number.isFinite(newScore) ? newScore : 0;
             e.target.textContent = String(team.score);
-            saveTeamsToStorage();
-            renderAllScoreboards();
+            refreshAll();
+            saveData();
         });
         scoreDiv.addEventListener('keydown', (e) => {
             if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
@@ -558,59 +923,206 @@ function renderTrackerScoreboard() {
         scoreDiv.addEventListener('click', (e) => {
             e.stopPropagation();
         });
-        
+
         header.appendChild(nameDiv);
         header.appendChild(scoreDiv);
-        
+
         const controls = document.createElement('div');
         controls.className = 'tracker-team-controls';
-        
+
         const pointBtns = document.createElement('div');
         pointBtns.className = 'tracker-point-buttons';
-        
+
         const addBtn = document.createElement('button');
         addBtn.className = 'tracker-point-btn add';
-        addBtn.innerHTML = `<i class="fas fa-plus"></i> +${pointValue}`;
+        addBtn.innerHTML = '<i class="fas fa-plus"></i> +' + pointValue;
         addBtn.addEventListener('click', () => addPointsToTeam(team.id, pointValue));
-        
+
         const subtractBtn = document.createElement('button');
         subtractBtn.className = 'tracker-point-btn subtract';
-        subtractBtn.innerHTML = `<i class="fas fa-minus"></i> -${pointValue}`;
+        subtractBtn.innerHTML = '<i class="fas fa-minus"></i> -' + pointValue;
         subtractBtn.addEventListener('click', () => addPointsToTeam(team.id, -pointValue));
-        
+
         pointBtns.appendChild(addBtn);
         pointBtns.appendChild(subtractBtn);
-        
+
         const activeBtn = document.createElement('button');
         activeBtn.className = 'tracker-set-active-btn' + (team.id === activeTeamId ? ' active' : '');
         activeBtn.textContent = team.id === activeTeamId ? 'Jogando' : 'Selecionar';
         activeBtn.addEventListener('click', () => setActiveTeam(team.id));
-        
+
         controls.appendChild(pointBtns);
         controls.appendChild(activeBtn);
-        
+
         teamCard.appendChild(header);
         teamCard.appendChild(controls);
         trackerScoreboardContainer.appendChild(teamCard);
     });
 }
 
+// ========== XP MODAL ==========
+function openXpModal(type) {
+    const turma = getActiveTurma();
+    if (!turma) {
+        alert('Crie uma turma e adicione alunos primeiro (ícone de turmas no topo).');
+        return;
+    }
+    xpModalType = type || 'aluno';
+    updateXpTypeButtons();
+    renderXpTargets();
+    if (xpAmountInput) xpAmountInput.value = 5;
+    if (xpModal) xpModal.style.display = 'flex';
+}
+
+function closeXpModal() {
+    if (xpModal) xpModal.style.display = 'none';
+}
+
+function updateXpTypeButtons() {
+    if (!xpTypeAlunoBtn || !xpTypeEquipeBtn) return;
+    xpTypeAlunoBtn.classList.toggle('active', xpModalType === 'aluno');
+    xpTypeEquipeBtn.classList.toggle('active', xpModalType === 'equipe');
+}
+
+function renderXpTargets() {
+    if (!xpTargetSelect) return;
+    const turma = getActiveTurma();
+    xpTargetSelect.innerHTML = '';
+    if (!turma) return;
+
+    if (xpModalType === 'aluno') {
+        if (xpModalHint) xpModalHint.textContent = 'XP individual do aluno.';
+        if (turma.alunos.length === 0) {
+            xpTargetSelect.innerHTML = '<option value="">Nenhum aluno cadastrado</option>';
+            return;
+        }
+        turma.alunos.forEach(aluno => {
+            const opt = document.createElement('option');
+            opt.value = aluno.id;
+            opt.textContent = aluno.name + ' (' + (aluno.xp || 0) + ' XP)';
+            xpTargetSelect.appendChild(opt);
+        });
+    } else {
+        const teamsWithMembers = turma.equipes.filter(e => e.memberIds.length > 0);
+        if (teamsWithMembers.length === 0) {
+            xpTargetSelect.innerHTML = '<option value="">Nenhuma equipe com alunos</option>';
+            if (xpModalHint) xpModalHint.textContent = 'Adicione alunos às equipes para atribuir XP em conjunto.';
+            return;
+        }
+        teamsWithMembers.forEach(equipe => {
+            const opt = document.createElement('option');
+            opt.value = equipe.id;
+            opt.textContent = equipe.name + ' (' + equipe.memberIds.length + ' alunos)';
+            xpTargetSelect.appendChild(opt);
+        });
+        if (xpModalHint) xpModalHint.textContent = 'O XP será atribuído a todos os alunos da equipe ao mesmo tempo.';
+    }
+}
+
+function applyXp(amount) {
+    const turma = getActiveTurma();
+    if (!turma) return;
+    const targetId = xpTargetSelect.value;
+    if (!targetId) {
+        alert('Selecione um destino primeiro.');
+        return;
+    }
+    let value;
+    if (Number.isFinite(amount)) {
+        value = amount;
+    } else {
+        value = parseInt(xpAmountInput.value, 10);
+    }
+    if (!Number.isFinite(value) || value === 0) {
+        alert('Informe uma quantidade válida de XP.');
+        return;
+    }
+    if (xpModalType === 'aluno') {
+        addXpToAluno(turma.id, targetId, value);
+    } else {
+        const count = addXpToTeam(turma.id, targetId, value);
+        if (count === 0) {
+            alert('Esta equipe não tem alunos. Adicione alunos à equipe primeiro.');
+            return;
+        }
+    }
+    renderXpTargets();
+    if (xpAmountInput) xpAmountInput.value = 5;
+}
+
 // ========== INITIALIZATION ==========
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
-    // Load teams from storage
-    loadTeamsFromStorage();
-    
-    // Initialize active team if not set
-    if (!activeTeamId && teams.length > 0) {
-        activeTeamId = teams[0].id;
-        saveTeamsToStorage();
+    // Carrega os dados (turmas/equipes/alunos), migrando os dados antigos automaticamente
+    loadData();
+
+    // Turma management event listeners
+    addTurmaBtn.addEventListener('click', () => {
+        if (turmaNameInput.value.trim()) {
+            addTurma(turmaNameInput.value.trim());
+            turmaNameInput.value = '';
+        }
+    });
+    turmaNameInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            addTurmaBtn.click();
+        }
+    });
+    turmaSelect.addEventListener('change', (e) => setActiveTurma(e.target.value));
+    addAlunoBtn.addEventListener('click', () => {
+        if (alunoNameInput.value.trim()) {
+            addAluno(alunoNameInput.value.trim());
+            alunoNameInput.value = '';
+        }
+    });
+    alunoNameInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            addAlunoBtn.click();
+        }
+    });
+    openXpBtn.addEventListener('click', () => openXpModal('aluno'));
+    goTeamsFromTurmaBtn.addEventListener('click', () => {
+        hideAllSections();
+        teamsSection.style.display = 'block';
+        renderTeamsList();
+        if (hasGameData()) scoreboardSection.style.display = 'block';
+    });
+
+    // XP modal event listeners
+    if (xpTypeAlunoBtn) {
+        xpTypeAlunoBtn.addEventListener('click', () => {
+            xpModalType = 'aluno';
+            updateXpTypeButtons();
+            renderXpTargets();
+        });
     }
-    
-    // Render initial state
-    renderTeamsList();
-    renderAllScoreboards();
-    
+    if (xpTypeEquipeBtn) {
+        xpTypeEquipeBtn.addEventListener('click', () => {
+            xpModalType = 'equipe';
+            updateXpTypeButtons();
+            renderXpTargets();
+        });
+    }
+    if (xpApplyBtn) {
+        xpApplyBtn.addEventListener('click', () => applyXp(null));
+    }
+    if (xpCancelBtn) {
+        xpCancelBtn.addEventListener('click', closeXpModal);
+    }
+    if (xpModal) {
+        xpModal.addEventListener('click', (e) => {
+            if (e.target === xpModal) closeXpModal();
+        });
+    }
+    if (scoreboardXpBtn) {
+        scoreboardXpBtn.addEventListener('click', () => openXpModal('aluno'));
+    }
+    document.querySelectorAll('#xp-modal .xp-presets button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            applyXp(parseInt(btn.dataset.xp, 10));
+        });
+    });
+
     // Team management event listeners
     addTeamBtn.addEventListener('click', () => {
         if (teamNameInput.value.trim()) {
@@ -625,17 +1137,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     pointValueSelect.addEventListener('change', renderTrackerScoreboard);
     resetAllScoresBtn.addEventListener('click', resetAllScores);
-    
-    // Header navigation for teams and tracker
+
+    // Header navigation for turmas, teams and tracker
+    const turmasIconBtn = document.getElementById('turmas-icon');
+    if (turmasIconBtn) {
+        turmasIconBtn.addEventListener('click', () => {
+            hideAllSections();
+            turmasSection.style.display = 'block';
+            renderAlunosList();
+            if (hasGameData()) scoreboardSection.style.display = 'block';
+        });
+    }
     teamsIconBtn.addEventListener('click', () => {
         hideAllSections();
         teamsSection.style.display = 'block';
-        scoreboardSection.style.display = teams.length > 0 ? 'block' : 'none';
+        renderTeamsList();
+        if (hasGameData()) scoreboardSection.style.display = 'block';
     });
     gameTrackerIconBtn.addEventListener('click', () => {
         hideAllSections();
         gameTrackerSection.style.display = 'block';
-        scoreboardSection.style.display = teams.length > 0 ? 'block' : 'none';
+        if (hasGameData()) scoreboardSection.style.display = 'block';
     });
     
     // Popular seletor do Quiz 2 Alternativas com todas as categorias
@@ -656,7 +1178,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'none';
             categoriesSection.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
         });
     }
     if (modeConversationBtn) {
@@ -665,7 +1187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'none';
             conversationContainer.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
         });
     }
     if (modePhrasesBtn) {
@@ -674,7 +1196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'none';
             phrasesCategoriesSection.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
         });
     }
     // Conversation: eventos dos tópicos
@@ -728,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 phrasesCategoriesSection.style.display = 'none';
             }
             gameSelectionSection.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
         });
     });
     
@@ -746,7 +1268,7 @@ document.addEventListener('DOMContentLoaded', () => {
     memoryGameBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         memoryGameContainer.style.display = 'block';
-        if (teams.length > 0) scoreboardSection.style.display = 'block';
+        if (hasGameData()) scoreboardSection.style.display = 'block';
         setupMemoryGame(currentCategory);
     });
 
@@ -762,28 +1284,28 @@ document.addEventListener('DOMContentLoaded', () => {
     wordMatchBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         wordMatchContainer.style.display = 'block';
-        if (teams.length > 0) scoreboardSection.style.display = 'block';
+        if (hasGameData()) scoreboardSection.style.display = 'block';
         setupWordMatchGame(currentCategory);
     });
     
     categorizationGameBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         categorizationGameContainer.style.display = 'block';
-        if (teams.length > 0) scoreboardSection.style.display = 'block';
+        if (hasGameData()) scoreboardSection.style.display = 'block';
         setupCategorizationGame();
     });
     
     pronunciationGameBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         pronunciationGameContainer.style.display = 'block';
-        if (teams.length > 0) scoreboardSection.style.display = 'block';
+        if (hasGameData()) scoreboardSection.style.display = 'block';
         setupPronunciationGame(currentCategory);
     });
     
     learnModeBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         learnModeContainer.style.display = 'block';
-        if (teams.length > 0) scoreboardSection.style.display = 'block';
+        if (hasGameData()) scoreboardSection.style.display = 'block';
         setupLearnMode(currentCategory);
     });
 
@@ -791,7 +1313,7 @@ document.addEventListener('DOMContentLoaded', () => {
     listeningQuizBtn.addEventListener('click', () => {
         gameSelectionSection.style.display = 'none';
         listeningQuizContainer.style.display = 'block';
-        if (teams.length > 0) scoreboardSection.style.display = 'block';
+        if (hasGameData()) scoreboardSection.style.display = 'block';
         startListeningQuiz();
     });
 
@@ -800,7 +1322,7 @@ document.addEventListener('DOMContentLoaded', () => {
         wordSearchBtn.addEventListener('click', () => {
             gameSelectionSection.style.display = 'none';
             wordSearchContainer.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
             setupWordSearchGame(currentCategory);
         });
     }
@@ -810,7 +1332,7 @@ document.addEventListener('DOMContentLoaded', () => {
         twoChoiceQuizBtn.addEventListener('click', () => {
             gameSelectionSection.style.display = 'none';
             twoChoiceQuizContainer.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
             startTwoChoiceQuiz();
         });
     }
@@ -818,7 +1340,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imageQuizBtn.addEventListener('click', () => {
             gameSelectionSection.style.display = 'none';
             imageQuizContainer.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
             startImageQuiz();
         });
     }
@@ -826,7 +1348,7 @@ document.addEventListener('DOMContentLoaded', () => {
         wordFindPuzzleBtn.addEventListener('click', () => {
             gameSelectionSection.style.display = 'none';
             wordFindPuzzleContainer.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
             startWordFindPuzzle();
         });
     }
@@ -957,6 +1479,7 @@ function handleBackButton(event) {
         parentSection.classList.contains('phrases-categories') ||
         parentSection.id === 'conversation-container' ||
         parentSection.id === 'game-selection' ||
+        parentSection.id === 'turmas-management' ||
         parentSection.id === 'teams-management' ||
         parentSection.id === 'game-tracker'
     )) {
@@ -1011,21 +1534,21 @@ function handleBackButton(event) {
     if (parentSection.classList.contains('game-container')) {
         // Voltando de um jogo: mostrar seleção de jogos
         gameSelectionSection.style.display = 'block';
-        // Keep scoreboard visible if we have teams
-        if (teams.length > 0) {
+        // Keep scoreboard visible if we have data
+        if (hasGameData()) {
             scoreboardSection.style.display = 'block';
         }
     } else {
         // Outras seções: voltar para o menu do modo atual, ou home se não definido
         if (currentMode === 'vocabulary') {
             categoriesSection.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
         } else if (currentMode === 'phrases') {
             phrasesCategoriesSection.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
         } else if (currentMode === 'conversation') {
             conversationContainer.style.display = 'block';
-            if (teams.length > 0) scoreboardSection.style.display = 'block';
+            if (hasGameData()) scoreboardSection.style.display = 'block';
         } else {
             const homeMenu = document.querySelector('.home-menu');
             if (homeMenu) homeMenu.style.display = 'block';
@@ -3297,6 +3820,11 @@ function goBackPage() {
     const visibleGameSection = document.querySelector('.game-container:not([style*="display: none"])');
     if (visibleGameSection) {
         const id = visibleGameSection.id;
+        // Seções de gerenciamento voltam para a Home
+        if (id === 'turmas-management' || id === 'teams-management' || id === 'game-tracker') {
+            goHome();
+            return;
+        }
         if (id === 'memory-game-container') {
             resetMemoryGame();
         } else if (id === 'word-match-container') {
