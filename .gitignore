@@ -23,9 +23,3 @@ Thumbs.db
 .vscode/
 
 .superpowers/
-.models/
-test-results/
-playwright-report/
-.wrangler/
-*.log
-*.tsbuildinfo
