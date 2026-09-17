@@ -1,0 +1,33 @@
+import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { Search, ArrowRight, ArrowLeft, Download, Check, Sparkles, BookOpen } from 'lucide-react';
+import { categories, activities, categoryById } from '../data/catalog';
+import { useData } from '../App';
+import { formatBytes, packs } from '../lib/offline';
+import styles from './Pages.module.css';
+export function Home(){
+  const {progress,downloads,online}=useData();
+  const [query,setQuery]=useState('');const [filter,setFilter]=useState('all');
+  const normalize=(s:string)=>s.toLocaleLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  const filtered=categories.filter(c=>(filter!=='downloaded'||downloads[c.id]==='ready') && normalize(`${c.title} ${c.words.map(w=>w.english+' '+w.portuguese).join(' ')}`).includes(normalize(query)));
+  const latest=progress.results.at(-1);const resume=categoryById(latest?.categoryId||'fruits')!;
+  return <>
+    <section className={styles.hero}>
+      <div className={styles.heroCopy}><span className={styles.eyebrow}><Sparkles size={14}/> APRENDER PODE SER UMA BRINCADEIRA</span><h1>Um mundo de palavras<br/>para <em>descobrir.</em></h1><p>Explore, ouça e jogue. Seu inglês cresce<br className={styles.desktopBreak}/> a cada nova descoberta!</p><Link className="primary" to={`/category/${resume.id}`}><BookOpen size={18}/>{latest?'Continuar aprendendo':'Vamos começar'}<ArrowRight size={18}/></Link><span className={styles.heroNote}>No seu ritmo. Onde você estiver.</span></div>
+      <div className={styles.heroArt} aria-hidden="true"><div className={styles.orbit}/><span className={styles.starOne}>✦</span><span className={styles.starTwo}>✧</span><div className={styles.wordCardOne}><img src={categories[0].words[0].image} alt=""/><span>apple <small>maçã</small></span></div><div className={styles.wordCardTwo}><img src={categoryById('pets')!.words[0].image} alt=""/><span>dog <small>cachorro</small></span></div><div className={styles.hello}>Hello! <span>👋</span></div><div className={styles.abc}>Aa<span>Bb</span>Cc</div></div>
+    </section>
+    <div className={styles.quickStats}><span><span className={styles.statIcon}>🧭</span><strong>{categories.length}</strong> categorias para explorar</span><span><span className={styles.statIcon}>🎮</span><strong>9</strong> maneiras de aprender</span><span><span className={styles.statIcon}>✨</span><strong>{progress.visitedWordIds.length}</strong> palavras visitadas</span></div>
+    <section aria-labelledby="categories-heading"><div className={styles.sectionHeading}><div><span className={styles.eyebrow}>QUAL VAI SER A DESCOBERTA DE HOJE?</span><h2 id="categories-heading">Explore as categorias <span>🌈</span></h2><p>Escolha um tema e deixe a curiosidade guiar você.</p></div><label className={styles.search}><Search size={19}/><input type="search" placeholder="Buscar categoria ou palavra" aria-label="Buscar categoria ou palavra" value={query} onChange={e=>setQuery(e.target.value)}/></label></div>
+    <div className={styles.filters}><div><button aria-pressed={filter==='all'} className={filter==='all'?styles.selectedFilter:''} onClick={()=>setFilter('all')}>Todas as categorias <span>{categories.length}</span></button><button aria-pressed={filter==='downloaded'} className={filter==='downloaded'?styles.selectedFilter:''} onClick={()=>setFilter('downloaded')}><Download size={15}/> Disponíveis offline</button></div><small>{filtered.length} {filtered.length===1?'categoria':'categorias'}</small></div>
+    {!online && <p className="notice">Você está offline. Abra uma categoria baixada para continuar aprendendo.</p>}
+    <div className={styles.categoryGrid}>{filtered.map(c=>{const visited=c.words.filter(w=>progress.visitedWordIds.includes(w.id)).length;return <Link key={c.id} to={`/category/${c.id}`} className={`${styles.categoryCard} ${c.color}`}><div className={styles.categoryArtwork}><span aria-hidden="true">{c.emoji}</span><span className={styles.cardArrow}><ArrowRight size={17}/></span>{downloads[c.id]==='ready'&&<span className={styles.downloadBadge} title="Disponível offline"><Check size={13}/> Offline</span>}</div><div className={styles.categoryText}><h3>{c.title}</h3><p>{c.words.length} palavras <span>•</span> 9 atividades</p><div className={styles.cardProgress}><div><i style={{width:`${visited/c.words.length*100}%`}}/></div><span>{visited?`${visited}/${c.words.length} visitadas`:'Vamos explorar?'}</span></div></div></Link>;})}</div>
+    {!filtered.length && <div className="empty"><span>🔎</span><h3>{filter==='downloaded'?'Sua mochila está vazia':'Ainda não encontramos esse tema'}</h3><p>{filter==='downloaded'?'Baixe uma categoria para levar suas palavras com você.':'Experimente buscar por outra palavra ou categoria.'}</p>{filter==='downloaded'&&<Link className="primary" to="/downloads">Escolher downloads</Link>}</div>}</section>
+    <div className={styles.offlineBanner}><span aria-hidden="true">🎒</span><div><h3>Seu inglês vai com você.</h3><p>Baixe suas categorias favoritas e continue a brincadeira sem internet.</p></div><Link className="secondary" to="/downloads">Preparar minha mochila <ArrowRight size={17}/></Link></div>
+  </>;
+}
+export function CategoryPage(){
+  const {categoryId=''}=useParams();const c=categoryById(categoryId);const {downloads,online}=useData();
+  if(!c)return <div className="empty"><h1>Categoria não encontrada</h1><Link to="/">Voltar às categorias</Link></div>;
+  const available=online||downloads[c.id]==='ready';
+  return <><Link className="backLink" to="/"><ArrowLeft size={17}/> Todas as categorias</Link><section className={`${styles.categoryHeader} ${c.color}`}><span className={styles.categoryEmoji}>{c.emoji}</span><div><span className={styles.eyebrow}>UMA NOVA DESCOBERTA</span><h1>{c.title}</h1><p>{c.words.length} palavras para conhecer, ouvir e praticar.</p></div><Link className="secondary" to={`/downloads#${c.id}`}><Download size={17}/>{downloads[c.id]==='ready'?'Disponível offline':`Baixar • ${formatBytes(packs[c.id].bytes)}`}</Link></section><div className={styles.sectionHeading}><div><h2>Como você quer aprender?</h2><p>Comece conhecendo as palavras ou escolha sua brincadeira favorita.</p></div></div>{!available&&<p className="notice">Esta categoria ainda não está disponível offline. Conecte-se para baixar seu conteúdo.</p>}<div className={styles.activitiesGrid}>{activities.map(a=><Link aria-disabled={!available} onClick={e=>{if(!available)e.preventDefault();}} to={`/category/${c.id}/play/${a.id}`} key={a.id} className={styles.activityCard}><span className={`${styles.activityIcon} ${a.color}`}>{a.icon}</span><div><h3>{a.title}</h3><p>{a.description}</p></div><ArrowRight size={18}/></Link>)}</div></>;
+}

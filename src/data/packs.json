@@ -1,0 +1,2484 @@
+{
+  "fruits": {
+    "categoryId": "fruits",
+    "version": "1a8d340b6a16c718",
+    "bytes": 135996,
+    "assets": [
+      {
+        "url": "/media/fruits-apple.webp",
+        "bytes": 7952,
+        "hash": "d1f5791dc3993ca66345f0a639f337934cbb97e9d198cd3a6c4c9f3ac57a0f54"
+      },
+      {
+        "url": "/audio/apple.mp3",
+        "bytes": 12864,
+        "hash": "b1479f8fb00e997282777247b61b078df1c36c58e497e7f8e666539d0cbe86db"
+      },
+      {
+        "url": "/media/fruits-banana.svg",
+        "bytes": 3003,
+        "hash": "49c5050a9ee66171baed385223b73a3bb8a23c9565035e7833d56711ec078abf"
+      },
+      {
+        "url": "/audio/banana.mp3",
+        "bytes": 13440,
+        "hash": "5181b3b4ec62dc4c438ad0eaa20628be309d42ef7163fc9f9f770d7428586946"
+      },
+      {
+        "url": "/media/fruits-orange.webp",
+        "bytes": 8560,
+        "hash": "a370103db5f422f1375d9c1438b0fc3e79296575969fb9270000c82c799c2b1c"
+      },
+      {
+        "url": "/audio/orange.mp3",
+        "bytes": 13056,
+        "hash": "82178ee983614165625ca8209612086c0b032294bcad235d4ef7cc8cf592f292"
+      },
+      {
+        "url": "/media/fruits-strawberry.svg",
+        "bytes": 4795,
+        "hash": "f7de620915d1b34aed85302ce729188dea3562adfa892fbd93b575523067936b"
+      },
+      {
+        "url": "/audio/strawberry.mp3",
+        "bytes": 13824,
+        "hash": "85471a9c38de7ff644d40cea0d9a4923f94670c2569909f0f0a0349d04503ac9"
+      },
+      {
+        "url": "/media/fruits-grape.svg",
+        "bytes": 557,
+        "hash": "f412e94a29f51a156ef30627d34edc05858a4e941e0fdc51a48b9e675e442ab9"
+      },
+      {
+        "url": "/audio/grape.mp3",
+        "bytes": 11904,
+        "hash": "e34d4cffa00df07f16fddd96f147182bf98737ac7b455b2455e7d73f7720811f"
+      },
+      {
+        "url": "/media/fruits-watermelon.svg",
+        "bytes": 2836,
+        "hash": "f354cf1af05932c9d65d57f44282ce6c6102d8b56bb976a9e19a05fcf1a86e9a"
+      },
+      {
+        "url": "/audio/watermelon.mp3",
+        "bytes": 14208,
+        "hash": "7a0c48cdee7aa14f0e477c9eb411bd9c7cb901a886d8e54435eb24683e5c8ddf"
+      },
+      {
+        "url": "/media/fruits-pineapple.svg",
+        "bytes": 2441,
+        "hash": "a45746db443fd49a4ed006e0fd1a47a95fe0dc5e04bd25adaafa7d292a8a28b9"
+      },
+      {
+        "url": "/audio/pineapple.mp3",
+        "bytes": 13440,
+        "hash": "bff5fa8fe188ae728aa371022658d6b8c9aa4de24540db7a505ce8cc50c27fcd"
+      },
+      {
+        "url": "/media/fruits-pear.svg",
+        "bytes": 1020,
+        "hash": "2657d03ebd2c2b5b5f43c0fd764d27a61b6fe6c731e61d0d5a8eec7667997420"
+      },
+      {
+        "url": "/audio/pear.mp3",
+        "bytes": 12096,
+        "hash": "654e179489e0789ee811cf46e9016f888414ce0810fdb39e55c0bff443fbd3f1"
+      }
+    ]
+  },
+  "colors": {
+    "categoryId": "colors",
+    "version": "05dc4033dee7b3e5",
+    "bytes": 98742,
+    "assets": [
+      {
+        "url": "/media/colors-red.svg",
+        "bytes": 147,
+        "hash": "bd6f41cb1bb836f7ff2fdf233a785ec44ec511e3ae61bc0cbf1020cd2c682f76"
+      },
+      {
+        "url": "/audio/red.mp3",
+        "bytes": 10944,
+        "hash": "3e1bdd7179be674cb755f1dd66e8e0d2ff96a9d34e6ed781c4fbf1e10267eda1"
+      },
+      {
+        "url": "/media/colors-blue.svg",
+        "bytes": 147,
+        "hash": "e0c61428086a1abc02e8bbdf4220b737d01c3f3865c488f052928a871102b3bb"
+      },
+      {
+        "url": "/audio/blue.mp3",
+        "bytes": 12096,
+        "hash": "3e915ff109d8fdef44fd8258797fc2027178ad6f13597501d61ea3ca8d4ceafb"
+      },
+      {
+        "url": "/media/colors-yellow.svg",
+        "bytes": 152,
+        "hash": "89dc840ff603a25347d22b3f146753a6a7aebc583c08ff9f07229ca9a159fef1"
+      },
+      {
+        "url": "/audio/yellow.mp3",
+        "bytes": 12480,
+        "hash": "50015af0c62b9e5858e1ad14fc621fe8598bf38a5f81b2f82699fd62abf65bea"
+      },
+      {
+        "url": "/media/colors-green.svg",
+        "bytes": 152,
+        "hash": "45a4d330697cbb384aa49184cef44bcb3711f0aa57a8db196c67fc2f58129940"
+      },
+      {
+        "url": "/audio/green.mp3",
+        "bytes": 13056,
+        "hash": "5c336ef73e15c3689266ccd0fa2b2ad71ea05cfbbf3db9d40e5256a86f968cbe"
+      },
+      {
+        "url": "/media/colors-black.svg",
+        "bytes": 152,
+        "hash": "2664080d762b1f9c62c4391f1105ea4da0f4c13de97086c35916c343cd60b4dd"
+      },
+      {
+        "url": "/audio/black.mp3",
+        "bytes": 11712,
+        "hash": "cb8c8dc208484e5db2de12fc511afc9f0eb09239bd325cf624476f7f1b7710b3"
+      },
+      {
+        "url": "/media/colors-white.svg",
+        "bytes": 152,
+        "hash": "6ff0605df12ed3fdb8550b7bdbf695017731a7962214e4d37530f64928b3e145"
+      },
+      {
+        "url": "/audio/white.mp3",
+        "bytes": 11712,
+        "hash": "efaba9cf51e19c228e1557e21b742cd1bc939967614ca754a4ae8dfe32a8b1d5"
+      },
+      {
+        "url": "/media/colors-purple.svg",
+        "bytes": 152,
+        "hash": "c07ea5d6bc6a3bdf62b2009c0771f79d302c3dc495eb8d14a8ad3aa801ac8d21"
+      },
+      {
+        "url": "/audio/purple.mp3",
+        "bytes": 12480,
+        "hash": "d9272a3e6e605b5ed2df51b613c23d7ab447d53d7dd4e8e31a652ebf20831b29"
+      },
+      {
+        "url": "/media/colors-orange.svg",
+        "bytes": 152,
+        "hash": "1c70068267ac778edafce66908c6756c770f04da6acebc12e5711d63b3bbaa03"
+      },
+      {
+        "url": "/audio/orange.mp3",
+        "bytes": 13056,
+        "hash": "82178ee983614165625ca8209612086c0b032294bcad235d4ef7cc8cf592f292"
+      }
+    ]
+  },
+  "numbers-10": {
+    "categoryId": "numbers-10",
+    "version": "9fafd9103592a89a",
+    "bytes": 138372,
+    "assets": [
+      {
+        "url": "/media/numbers-10-zero.svg",
+        "bytes": 284,
+        "hash": "d094cdb41f6800740348230789430d7851c4cd64d89853132c9059d33bbc42e2"
+      },
+      {
+        "url": "/audio/zero.mp3",
+        "bytes": 12672,
+        "hash": "32f989072931ffccf931fa2187a48cc8a0c262102706b369e8dda85b87fcb8a2"
+      },
+      {
+        "url": "/media/numbers-10-one.svg",
+        "bytes": 271,
+        "hash": "63e37c9fd27104ec8795116b16c6c83c7661cbf8b376d3ef49ca5da09fb4449f"
+      },
+      {
+        "url": "/audio/one.mp3",
+        "bytes": 11904,
+        "hash": "2601b5e0031aba89529b3337a9b1bf90eb11840b8ad53906bb485c7bbb77811b"
+      },
+      {
+        "url": "/media/numbers-10-two.svg",
+        "bytes": 284,
+        "hash": "c33c07b4c37de8fa8e00306be11dc5ce7901e0393f968645068cf6192afe68f8"
+      },
+      {
+        "url": "/audio/two.mp3",
+        "bytes": 12288,
+        "hash": "2f50d8137578d09cf909352f852272c76552d8a622c0bb283ba9b5544355f9c4"
+      },
+      {
+        "url": "/media/numbers-10-three.svg",
+        "bytes": 284,
+        "hash": "178c687edf4054b8a57337b2f2a947cf20118685d057f89534de4d3d08bcc3ed"
+      },
+      {
+        "url": "/audio/three.mp3",
+        "bytes": 12288,
+        "hash": "20aff84cbccaa54d6457c1072233aa03140eace4beb16c29ceb438afb479c04e"
+      },
+      {
+        "url": "/media/numbers-10-four.svg",
+        "bytes": 284,
+        "hash": "c76b218892a892ff9ca3e1ddc3f603e815266925c3a0bf33b00d870485cc2547"
+      },
+      {
+        "url": "/audio/four.mp3",
+        "bytes": 12096,
+        "hash": "ed938d94ae0f77da083bb339355c5572bbf44c9f5a9337c2956369c700e5cc8a"
+      },
+      {
+        "url": "/media/numbers-10-five.svg",
+        "bytes": 284,
+        "hash": "dfd2b20fbf39d9d32f031f212e044435d4d556d485378078a3f2ed2ddd2d5b41"
+      },
+      {
+        "url": "/audio/five.mp3",
+        "bytes": 12672,
+        "hash": "a2abed9153d15f8eda0f64d6be9f0a08f26ca464de9ecea69a030cfcb6da1f4c"
+      },
+      {
+        "url": "/media/numbers-10-six.svg",
+        "bytes": 254,
+        "hash": "a642553c26bd72393029b1da51d963df14fdec19ef52bf64d89c7c3d82db9e5a"
+      },
+      {
+        "url": "/audio/six.mp3",
+        "bytes": 11904,
+        "hash": "36e67c05cd4b15f5b9be84bce4f52bd75a4a903342577074fc028fad6e4e8121"
+      },
+      {
+        "url": "/media/numbers-10-seven.svg",
+        "bytes": 254,
+        "hash": "48cab988c7f140f99802a3170862876607d2700a793be530694b2554fccd6a46"
+      },
+      {
+        "url": "/audio/seven.mp3",
+        "bytes": 12672,
+        "hash": "6ffbbde61d972f1667ffd40403264e5d6e8468bc75390d8bce71245aa2a03ea1"
+      },
+      {
+        "url": "/media/numbers-10-eight.svg",
+        "bytes": 254,
+        "hash": "fc6a2e2d5e022eee197abf08a23a25af5031a3a58e69d424aed43c52d46b3c37"
+      },
+      {
+        "url": "/audio/eight.mp3",
+        "bytes": 11520,
+        "hash": "611ccc55cd54c378a63efbad3c9c3f6acccc2f1717e432e1dc92512f67b2ddec"
+      },
+      {
+        "url": "/media/numbers-10-nine.svg",
+        "bytes": 254,
+        "hash": "730b731766db05bd0aa1817d32363ecd290ba3fb8963961afec87f43f299f465"
+      },
+      {
+        "url": "/audio/nine.mp3",
+        "bytes": 12672,
+        "hash": "dd19cc74357262a348f12fe4ab545a130219b1122d1bf8f25a53b9fb14b30d16"
+      },
+      {
+        "url": "/media/numbers-10-ten.svg",
+        "bytes": 305,
+        "hash": "9c07360bd2fc61f7493f29a443e20cb4164ef6f99cdb715eedf5831ca55f4726"
+      },
+      {
+        "url": "/audio/ten.mp3",
+        "bytes": 12672,
+        "hash": "e936a1592f186c8a10c8d818068da5d64be15cf8e5448536e31428d70e1ac143"
+      }
+    ]
+  },
+  "numbers-29": {
+    "categoryId": "numbers-29",
+    "version": "d571f257cf7ddd0b",
+    "bytes": 266549,
+    "assets": [
+      {
+        "url": "/media/numbers-29-eleven.svg",
+        "bytes": 274,
+        "hash": "06fa120189ef24c27108c51a91597d1daa60c7e33a4aa19ca2fd0a38c176bd8f"
+      },
+      {
+        "url": "/audio/eleven.mp3",
+        "bytes": 12864,
+        "hash": "537aac51834a98dd2331d86642d8f6173c1d6e314d12d496c0a96cc049269a38"
+      },
+      {
+        "url": "/media/numbers-29-twelve.svg",
+        "bytes": 274,
+        "hash": "c61672a806ef15ec3ba18c7d8a9de3dbf3b43a6d30b300f14afca077463712fb"
+      },
+      {
+        "url": "/audio/twelve.mp3",
+        "bytes": 12480,
+        "hash": "6db8c4f53cc98fe70534827bc5ee59f4264eb69e8de3b50441120980db61f69f"
+      },
+      {
+        "url": "/media/numbers-29-thirteen.svg",
+        "bytes": 274,
+        "hash": "8a369acb7804414eb8f0a0b0538169424a746f1def189d0724828b40ffd5258c"
+      },
+      {
+        "url": "/audio/thirteen.mp3",
+        "bytes": 13248,
+        "hash": "6b8c3553ffe8f2ab2f36c7afcfedd0c88e342d2e481d7e79917c472ef88862b2"
+      },
+      {
+        "url": "/media/numbers-29-fourteen.svg",
+        "bytes": 274,
+        "hash": "9fb6d2c54a4d07f90432ebf0b6ae9dadfada3a5c38c1ffade01e07bd2273daeb"
+      },
+      {
+        "url": "/audio/fourteen.mp3",
+        "bytes": 13632,
+        "hash": "1e9f87c5386a2766e32c03a15ae486c5dd6ee2dbaae71504bc535a2d73285e78"
+      },
+      {
+        "url": "/media/numbers-29-fifteen.svg",
+        "bytes": 274,
+        "hash": "829d6664bcb8bf90197cb02accb23cc9a9962008671711e66769c54dd9a02ce6"
+      },
+      {
+        "url": "/audio/fifteen.mp3",
+        "bytes": 13440,
+        "hash": "57983372a0147262cc090b2ab8749c68a9ad8728f923cb1f6ca79c715fa39e19"
+      },
+      {
+        "url": "/media/numbers-29-sixteen.svg",
+        "bytes": 274,
+        "hash": "2423bffa3bf33d2680449f014d74036cbe7031486444b613609168e3253bbb4c"
+      },
+      {
+        "url": "/audio/sixteen.mp3",
+        "bytes": 13824,
+        "hash": "c4aff0939a577b7616281954cc076f865c4019c866cab0005519e94bfe404a9b"
+      },
+      {
+        "url": "/media/numbers-29-seventeen.svg",
+        "bytes": 274,
+        "hash": "81b744d0928e8a192e1ad5f85280c3393c94c0edab9f3dd645be5e5d9f728bc8"
+      },
+      {
+        "url": "/audio/seventeen.mp3",
+        "bytes": 14016,
+        "hash": "c12e3067b71f742e0079aa084021d743d3e829d9a9c5652331f3f206f8a09106"
+      },
+      {
+        "url": "/media/numbers-29-eighteen.svg",
+        "bytes": 274,
+        "hash": "662067f4b9545fb046cde6494d221bc2833ac33c19601f56becbb4383909743d"
+      },
+      {
+        "url": "/audio/eighteen.mp3",
+        "bytes": 13632,
+        "hash": "ea18de6e168fe6e706aeca02d9cd5970458440aa384ba002e63a4fee5f1f8a50"
+      },
+      {
+        "url": "/media/numbers-29-nineteen.svg",
+        "bytes": 274,
+        "hash": "d58b56b9ecc0e16504b5ebaa4ad6a980ccfdefac13c6d4046b125041205ff8f6"
+      },
+      {
+        "url": "/audio/nineteen.mp3",
+        "bytes": 14016,
+        "hash": "4b76d61cd6af168bb8d2c6ef5ea85ad6b70fd539ceee0452f9537363c42ae9fc"
+      },
+      {
+        "url": "/media/numbers-29-twenty.svg",
+        "bytes": 305,
+        "hash": "c1a84f31e88f7e995125de3ab7e1df66c548d0b2ca747e669ae8c844a91d63d7"
+      },
+      {
+        "url": "/audio/twenty.mp3",
+        "bytes": 14016,
+        "hash": "3c497cdc49e9cb11a25b13edbfa94f9a880c160d4aff7fabf61c74ebf30e361e"
+      },
+      {
+        "url": "/media/numbers-29-twenty-one.svg",
+        "bytes": 274,
+        "hash": "8891b77301da5eafcfc35a13dac92b7770a848041fd1278142af239b12decda4"
+      },
+      {
+        "url": "/audio/twenty-one.mp3",
+        "bytes": 14016,
+        "hash": "51830fbedd97a240b0f4a14bc0b853e1592c4ebe5ce9d9d67b233232fc98eefe"
+      },
+      {
+        "url": "/media/numbers-29-twenty-two.svg",
+        "bytes": 274,
+        "hash": "c1edaa7b84255fd9bb4c6af3ae67987dafc0da43ea7e529820fb3c424ff71542"
+      },
+      {
+        "url": "/audio/twenty-two.mp3",
+        "bytes": 14208,
+        "hash": "970619d00512687676bc27df2907c3182d3329dc71ffaba8448b3abb8974e6c1"
+      },
+      {
+        "url": "/media/numbers-29-twenty-three.svg",
+        "bytes": 274,
+        "hash": "b8d471b7016d1a7c5655eaf871fb1930d56f3865c98bdebe84ffc58b8c23aa35"
+      },
+      {
+        "url": "/audio/twenty-three.mp3",
+        "bytes": 14784,
+        "hash": "0a129a9e61fbe2aaaa6508305d7e22b909e02da576198ccc96590be76a9e7322"
+      },
+      {
+        "url": "/media/numbers-29-twenty-four.svg",
+        "bytes": 274,
+        "hash": "015cac05931454ed551ed46b7846d905fdbaf3535cde1bb6208637fdc951426c"
+      },
+      {
+        "url": "/audio/twenty-four.mp3",
+        "bytes": 14016,
+        "hash": "10d65a874c45173cae1cd3ee0e4397fd527bdac1d936fa3b20b0dbb1c6e3f01d"
+      },
+      {
+        "url": "/media/numbers-29-twenty-five.svg",
+        "bytes": 274,
+        "hash": "050411d2ce97c62b1f1c8b5ff09e1e0ebd59de3b74d2a23f91d2cec8f5dfff89"
+      },
+      {
+        "url": "/audio/twenty-five.mp3",
+        "bytes": 14016,
+        "hash": "9c9964253e98e6a7e94d702edcf329e67959612820353b7f5cad45e8b3cce79f"
+      },
+      {
+        "url": "/media/numbers-29-twenty-six.svg",
+        "bytes": 274,
+        "hash": "1929dfcb6678f6423b4521f6c4371a5043b3c03859c9158e3c2bd77054161233"
+      },
+      {
+        "url": "/audio/twenty-six.mp3",
+        "bytes": 13824,
+        "hash": "7c2f1112ecd74269e10ca9977b519d27fd59aff2fe8cf962de2c045919e7d43b"
+      },
+      {
+        "url": "/media/numbers-29-twenty-seven.svg",
+        "bytes": 274,
+        "hash": "22fef562d272e2f64ba8abba6b40a826c2e38df3601e89f3e07053ec25fe2ba9"
+      },
+      {
+        "url": "/audio/twenty-seven.mp3",
+        "bytes": 14592,
+        "hash": "260874abea50075f7016a62d9099d58347a90480465930d68a1c4ce82e0a459e"
+      },
+      {
+        "url": "/media/numbers-29-twenty-eight.svg",
+        "bytes": 274,
+        "hash": "6d2dad27c891e3a50141e6672088b1661966582b8e09baf6e6ad5f969e413937"
+      },
+      {
+        "url": "/audio/twenty-eight.mp3",
+        "bytes": 13248,
+        "hash": "0d637082c765dcd51077938c4f260024be5ec7643aa7549659a6800baa1fd169"
+      },
+      {
+        "url": "/media/numbers-29-twenty-nine.svg",
+        "bytes": 274,
+        "hash": "e4f9a9fb92ac54660343a010032e1afa2d7f50c406c9173a9a0e61c6466e59c4"
+      },
+      {
+        "url": "/audio/twenty-nine.mp3",
+        "bytes": 13440,
+        "hash": "196ea258a99831d199375910442aa3daa0e04e35c096df5049874c0d090654bf"
+      }
+    ]
+  },
+  "numbers-100": {
+    "categoryId": "numbers-100",
+    "version": "bf456d565a094966",
+    "bytes": 150407,
+    "assets": [
+      {
+        "url": "/media/numbers-100-zero.svg",
+        "bytes": 284,
+        "hash": "d094cdb41f6800740348230789430d7851c4cd64d89853132c9059d33bbc42e2"
+      },
+      {
+        "url": "/audio/zero.mp3",
+        "bytes": 12672,
+        "hash": "32f989072931ffccf931fa2187a48cc8a0c262102706b369e8dda85b87fcb8a2"
+      },
+      {
+        "url": "/media/numbers-100-ten.svg",
+        "bytes": 305,
+        "hash": "9c07360bd2fc61f7493f29a443e20cb4164ef6f99cdb715eedf5831ca55f4726"
+      },
+      {
+        "url": "/audio/ten.mp3",
+        "bytes": 12672,
+        "hash": "e936a1592f186c8a10c8d818068da5d64be15cf8e5448536e31428d70e1ac143"
+      },
+      {
+        "url": "/media/numbers-100-twenty.svg",
+        "bytes": 305,
+        "hash": "c1a84f31e88f7e995125de3ab7e1df66c548d0b2ca747e669ae8c844a91d63d7"
+      },
+      {
+        "url": "/audio/twenty.mp3",
+        "bytes": 14016,
+        "hash": "3c497cdc49e9cb11a25b13edbfa94f9a880c160d4aff7fabf61c74ebf30e361e"
+      },
+      {
+        "url": "/media/numbers-100-thirty.svg",
+        "bytes": 305,
+        "hash": "dd79136c517d30b093ecb60e4cc6f8954b6caf7556ce9bb95f0b95494b16a848"
+      },
+      {
+        "url": "/audio/thirty.mp3",
+        "bytes": 12672,
+        "hash": "b298691485d7fb3e0190aac32354aea3dedb8f999452164490172086a9efd66a"
+      },
+      {
+        "url": "/media/numbers-100-forty.svg",
+        "bytes": 305,
+        "hash": "7b5d65fd51dd116e937c3e9c0bf3872bcaf287ba50b9fb2dbe93850d6cc02d6a"
+      },
+      {
+        "url": "/audio/forty.mp3",
+        "bytes": 12864,
+        "hash": "26988dabb1534a51eac194658218f25084535e9611793f82b67c27fb412a0e94"
+      },
+      {
+        "url": "/media/numbers-100-fifty.svg",
+        "bytes": 305,
+        "hash": "5274aede929a77d3f505b0dc713d43e20126ab5872356499ff390c79d4fee949"
+      },
+      {
+        "url": "/audio/fifty.mp3",
+        "bytes": 13440,
+        "hash": "80b818f8d8024490ad166464a7158e2e093420bfd77d3cc94e32e26288e93a09"
+      },
+      {
+        "url": "/media/numbers-100-sixty.svg",
+        "bytes": 305,
+        "hash": "b1b929064b26cad8efc8dd1cf08c56ca7557c1a65eee0df724743186b72ad571"
+      },
+      {
+        "url": "/audio/sixty.mp3",
+        "bytes": 13824,
+        "hash": "70ad24bcd25a2cd74f7049211d75f45f35f31a9408cc46311be748458161cb8f"
+      },
+      {
+        "url": "/media/numbers-100-seventy.svg",
+        "bytes": 305,
+        "hash": "07e1ecac0705ef7eb6e64c41f67a23aed29649fb067c2d0f4e75e829ed9ad347"
+      },
+      {
+        "url": "/audio/seventy.mp3",
+        "bytes": 14208,
+        "hash": "4e3c6750cfca33f26f3d2e64fe4278e140ddc8895ee12705cde90d1959f4d714"
+      },
+      {
+        "url": "/media/numbers-100-eighty.svg",
+        "bytes": 305,
+        "hash": "9ff10f27a2527218bf85944973a23bc33e2ba798d12b12abf762de3c98295ee0"
+      },
+      {
+        "url": "/audio/eighty.mp3",
+        "bytes": 12672,
+        "hash": "86727c968e8c6683053ff85a32bacd75d58bc3bca15033de6483e290c0f9ba62"
+      },
+      {
+        "url": "/media/numbers-100-ninety.svg",
+        "bytes": 305,
+        "hash": "0e4b10b65e5d7a1308d646948b267f99531c875bb67cf0ce368685ec9d8c3612"
+      },
+      {
+        "url": "/audio/ninety.mp3",
+        "bytes": 14016,
+        "hash": "cd6e1f1a11cc917efd94fee3a6a51fe8840ef83808b2830675635a52f5c98c68"
+      },
+      {
+        "url": "/media/numbers-100-one-hundred.svg",
+        "bytes": 306,
+        "hash": "d861516f1d2d59b22ac0866165819dd7acaf6f38d873a0564a1c9fe44a4e0e92"
+      },
+      {
+        "url": "/audio/one-hundred.mp3",
+        "bytes": 14016,
+        "hash": "fe3404c05fc7cc0cdef14606d0d3604cf64905b576791ce0b1c6f7ce56167cdf"
+      }
+    ]
+  },
+  "farm-animals": {
+    "categoryId": "farm-animals",
+    "version": "37619c68e28c23c7",
+    "bytes": 200476,
+    "assets": [
+      {
+        "url": "/media/farm-animals-cow.webp",
+        "bytes": 12670,
+        "hash": "b08babab5bd84d10255a58d5aa460cf0daa869fc8091d189d3a5aca6d701bf4c"
+      },
+      {
+        "url": "/audio/cow.mp3",
+        "bytes": 11904,
+        "hash": "e3af6ed9e21249e99ad4494ae0e76f048668690e84a2f9b065aa0d9e66406ed2"
+      },
+      {
+        "url": "/media/farm-animals-horse.webp",
+        "bytes": 12712,
+        "hash": "e7df03a349fca4c2d17e7291724663bdcfb0c12d58bf40309ad18e449125a7b5"
+      },
+      {
+        "url": "/audio/horse.mp3",
+        "bytes": 12480,
+        "hash": "3453a1b2b4fe94476581c8c914d4394b3526037c56d4aa88d6da93a9cb692216"
+      },
+      {
+        "url": "/media/farm-animals-pig.webp",
+        "bytes": 10684,
+        "hash": "58b094122f8113eca1cc3a44abeed6f88c0bd93ca066b6b44ef2b2afc7075e40"
+      },
+      {
+        "url": "/audio/pig.mp3",
+        "bytes": 12096,
+        "hash": "b6443d4e7161e218712cc1330e1b9ffb5f79c78c87e3f39aba8e79cb9048a7fb"
+      },
+      {
+        "url": "/media/farm-animals-chicken.webp",
+        "bytes": 13376,
+        "hash": "9ea48c9bda1c49bd9021578abaf833d2f4dc8a5a9896eb9e6dd574d28dc6e7e8"
+      },
+      {
+        "url": "/audio/chicken.mp3",
+        "bytes": 13440,
+        "hash": "b8777f74e20401f1e6c2d545ebd0e9a0dbceb917649336b2401b8a4481b8466c"
+      },
+      {
+        "url": "/media/farm-animals-sheep.webp",
+        "bytes": 13934,
+        "hash": "cd94e229fcf8b7341f2f4e2ebe93afe618b6e24095182eb29b0187230fb9ed99"
+      },
+      {
+        "url": "/audio/sheep.mp3",
+        "bytes": 11328,
+        "hash": "b88b09afec2aea70cf6c0a9875e105c3ffb3c4b685683d0ac57dc103781b63a1"
+      },
+      {
+        "url": "/media/farm-animals-goat.webp",
+        "bytes": 10874,
+        "hash": "7ad7987e52ade8d663c0461eb3e88ff32528f18e00e39c1d7bc4614301074b85"
+      },
+      {
+        "url": "/audio/goat.mp3",
+        "bytes": 11904,
+        "hash": "a52e001d1eb6181c1dd98e7b33c6ff4d599d6818e718e32ad3c83aaf106417d1"
+      },
+      {
+        "url": "/media/farm-animals-duck.webp",
+        "bytes": 12130,
+        "hash": "0a3eb0b57775b219e64e0e5c7f50216ef694d5aa209b18786a04f6a9d3f02ae6"
+      },
+      {
+        "url": "/audio/duck.mp3",
+        "bytes": 11328,
+        "hash": "1972ca62f247f496266018ef633067a865ffcafb04df18f9a956c735d886fe28"
+      },
+      {
+        "url": "/media/farm-animals-rabbit.webp",
+        "bytes": 17328,
+        "hash": "2da0e13f9eef3c23ef9fd17de06e4956a55ac1b26f2d49408b8f58cb85bf9362"
+      },
+      {
+        "url": "/audio/rabbit.mp3",
+        "bytes": 12288,
+        "hash": "ef4000b85789423dc42515c6eaf3a253f7bb581eb260e35831fd5288668e0ada"
+      }
+    ]
+  },
+  "zoo-animals": {
+    "categoryId": "zoo-animals",
+    "version": "886630ecd6f23517",
+    "bytes": 237260,
+    "assets": [
+      {
+        "url": "/media/zoo-animals-lion.webp",
+        "bytes": 13090,
+        "hash": "77d14ab0fbba84f1cc8911b16398beff22177430d6cbc51c7b407306122576fa"
+      },
+      {
+        "url": "/audio/lion.mp3",
+        "bytes": 12672,
+        "hash": "b5fb7f53f5372e2bfbe29778a292fa63564110d66dd98c0c61c6da7b2fdfa9ac"
+      },
+      {
+        "url": "/media/zoo-animals-elephant.webp",
+        "bytes": 18474,
+        "hash": "9947f15b78065a05ae62fcdbba507a5412f64ced2f937d17e6031532daee24e6"
+      },
+      {
+        "url": "/audio/elephant.mp3",
+        "bytes": 13056,
+        "hash": "4c735eed3f6edb797eedb3251a22616873f3081769684eadcef1f34e79e1d2a3"
+      },
+      {
+        "url": "/media/zoo-animals-monkey.webp",
+        "bytes": 11672,
+        "hash": "9630b2cab0f6f17e0232673dad60244eb6ae1b9f7e9ccb49face54be00f757a3"
+      },
+      {
+        "url": "/audio/monkey.mp3",
+        "bytes": 14208,
+        "hash": "2165b4b038a23860aa31f6cfe5f33d3967b372c5a5c12d2947e706087179104b"
+      },
+      {
+        "url": "/media/zoo-animals-tiger.webp",
+        "bytes": 13864,
+        "hash": "27cf39590acb0eb4202a97e1af2d23bdebc15c2c139f7920f67f2a4d887ab432"
+      },
+      {
+        "url": "/audio/tiger.mp3",
+        "bytes": 13056,
+        "hash": "c827e7ca94c5821352acd6f4542dcb9954abd18953fb56aea2647ad4e9acee54"
+      },
+      {
+        "url": "/media/zoo-animals-snake.webp",
+        "bytes": 8606,
+        "hash": "562ef445b22f9c59839d0c36ba4d7822fc39b06ecfad7cc72bae734ca55035c5"
+      },
+      {
+        "url": "/audio/snake.mp3",
+        "bytes": 12480,
+        "hash": "f40283c8c67ae11dc5e883674695eb51ef0f1cbecc122fadd77dc99b408d4708"
+      },
+      {
+        "url": "/media/zoo-animals-bird.webp",
+        "bytes": 13976,
+        "hash": "4cf02f2eca8554e53067644ad85fcc2cca95b6a44891ed0712b4e00d351c124c"
+      },
+      {
+        "url": "/audio/bird.mp3",
+        "bytes": 11712,
+        "hash": "bac6bba9106b1581e19e7a5c487c2950760d5cc85afca5cc498621ee22e39338"
+      },
+      {
+        "url": "/media/zoo-animals-zebra.webp",
+        "bytes": 17452,
+        "hash": "53bf2a2d5ed078ff8d8fb8f3008384b9bf84a545c7b458ebb19c425a1368d9d8"
+      },
+      {
+        "url": "/audio/zebra.mp3",
+        "bytes": 13440,
+        "hash": "5f6981c4411ae15023994335abd33ba142cf8eed66885a049879a407da9964ef"
+      },
+      {
+        "url": "/media/zoo-animals-bear.webp",
+        "bytes": 10854,
+        "hash": "293a7ba5a86ccea90a8b708eb34dab618f12639a5199fb1c6f0f272afa2fa38b"
+      },
+      {
+        "url": "/audio/bear.mp3",
+        "bytes": 12096,
+        "hash": "f691098848faaecd836c756accdfa420c73b2238843b7c2461b9f2ee9c70c99f"
+      },
+      {
+        "url": "/media/zoo-animals-panda.webp",
+        "bytes": 13304,
+        "hash": "c74c04be726bcdbee423fb9f573876c2c8a579423e1f9d3917a91c53cd7ce0b5"
+      },
+      {
+        "url": "/audio/panda.mp3",
+        "bytes": 13248,
+        "hash": "ca967441ee3796105c943fec93888afd20d2a4b3d8dd21c3f622ece98d7a67ee"
+      }
+    ]
+  },
+  "school-supplies": {
+    "categoryId": "school-supplies",
+    "version": "b6d3260e69ac83fc",
+    "bytes": 197766,
+    "assets": [
+      {
+        "url": "/media/school-supplies-pencil.webp",
+        "bytes": 11072,
+        "hash": "94bbf5f42284c8c40f5badd4e93eda76c7f2c5abd7e9f37b9d69329052972492"
+      },
+      {
+        "url": "/audio/pencil.mp3",
+        "bytes": 13056,
+        "hash": "7c0bb76083626a996cbf191c787fdc0476394a39aa50648cb6abc4280bd14c47"
+      },
+      {
+        "url": "/media/school-supplies-pen.webp",
+        "bytes": 16078,
+        "hash": "64211fc57ca952c74de9775528ec866918707621fdd8b693d426610446e725e4"
+      },
+      {
+        "url": "/audio/pen.mp3",
+        "bytes": 12288,
+        "hash": "854b3b1b1a45d7c6feed7e213582d3c5e26b3ba6e129df7cf412e4ba4a7741dd"
+      },
+      {
+        "url": "/media/school-supplies-notebook.webp",
+        "bytes": 9794,
+        "hash": "71751581f47af3f951afd4d2934d4991e84a084d6a3de38bea7657fa6be5b515"
+      },
+      {
+        "url": "/audio/notebook.mp3",
+        "bytes": 13248,
+        "hash": "9be406acd506cc6cf65cf42df9632563dc63ff36f72d24764c5ca53f68f32054"
+      },
+      {
+        "url": "/media/school-supplies-eraser.webp",
+        "bytes": 8228,
+        "hash": "02c274ee7542af06a0e8cf95fef76e78fcead499bd6c784405e35ad62530cd35"
+      },
+      {
+        "url": "/audio/eraser.mp3",
+        "bytes": 14784,
+        "hash": "fc24be98aef137baf070b17c3d95c2654213213087647705ac312d5d05a713c5"
+      },
+      {
+        "url": "/media/school-supplies-ruler.webp",
+        "bytes": 10074,
+        "hash": "05662632d722e61472fbfc7f06e017a5127feaf2e114c46f9b0c6880bb9e02f7"
+      },
+      {
+        "url": "/audio/ruler.mp3",
+        "bytes": 12864,
+        "hash": "b64178c1e0d96a6c292c1f3f62133b239ceccc6416111861f910ea7df9095bbd"
+      },
+      {
+        "url": "/media/school-supplies-scissors.webp",
+        "bytes": 7896,
+        "hash": "3479252096c6bb2c85657da53f1d12a6b854cd8c46c962bc9e76b9dcf6cd1a7a"
+      },
+      {
+        "url": "/audio/scissors.mp3",
+        "bytes": 13824,
+        "hash": "a478d5ac0c59514e7e43f87fe3f65c8255c0d5e2fda79b6d1bbc8d449758925d"
+      },
+      {
+        "url": "/media/school-supplies-backpack.webp",
+        "bytes": 21742,
+        "hash": "e7bb860183337b99bc819bc4f2df5a566370624141bad2394a66f7a13090a0cc"
+      },
+      {
+        "url": "/audio/backpack.mp3",
+        "bytes": 13056,
+        "hash": "1ca1bc7a0c3d65fa219e2df19e1ef75be8df883327d9adf7943b7eb93ee54f76"
+      },
+      {
+        "url": "/media/school-supplies-book.webp",
+        "bytes": 9010,
+        "hash": "56c0c4d723002c7c05564f9d44da6b894c423a1fc61855c450f740533cf8f1a3"
+      },
+      {
+        "url": "/audio/book.mp3",
+        "bytes": 10752,
+        "hash": "c95be72d74585154fd6a763cbd679e2da1adb7eb500212514de96f544583fc07"
+      }
+    ]
+  },
+  "toys": {
+    "categoryId": "toys",
+    "version": "0645d6d4151117ed",
+    "bytes": 215258,
+    "assets": [
+      {
+        "url": "/media/toys-ball.webp",
+        "bytes": 12280,
+        "hash": "dfd4fb73443bff748e1151a892930d72ebdc257fbf56cd4ee0226c0d3e0808d3"
+      },
+      {
+        "url": "/audio/ball.mp3",
+        "bytes": 9600,
+        "hash": "6c1f0e7e7d25c7178a77b8356a7a4c0feff4ae14f372216f44ea763e77e8a78c"
+      },
+      {
+        "url": "/media/toys-doll.webp",
+        "bytes": 18672,
+        "hash": "cb1a467634b1bb5e87ddcfae926a86325e464b756b1dc9ebbee154df777aa884"
+      },
+      {
+        "url": "/audio/doll.mp3",
+        "bytes": 12096,
+        "hash": "ef8d2e9dece378df04088234efe8169df71f33c8b11d24df87baa4df6eb733d8"
+      },
+      {
+        "url": "/media/toys-car.webp",
+        "bytes": 21242,
+        "hash": "2335e471051f41d099c0bf8b256bb5cdee0c1376310e2ff4242ccbbab7694406"
+      },
+      {
+        "url": "/audio/car.mp3",
+        "bytes": 12096,
+        "hash": "7029a28b13d694ab3bf7d7ba95219b0ad79a8bd767329f810c0fc57ed694de18"
+      },
+      {
+        "url": "/media/toys-teddy-bear.webp",
+        "bytes": 17694,
+        "hash": "8fea1d45496fc1134668a9c64f52b4f9a4d2a4d70d5dd419db0a5c4ac75d1827"
+      },
+      {
+        "url": "/audio/teddy-bear.mp3",
+        "bytes": 14208,
+        "hash": "51a1293be20d2967b681a62f0cea3f9274bdad5bee4a1c238192d5aa1e8abf13"
+      },
+      {
+        "url": "/media/toys-robot.webp",
+        "bytes": 10810,
+        "hash": "46d86eadefc18519ecb5f84b8f823f397af62772fd1fa5232a48dac8cce3df65"
+      },
+      {
+        "url": "/audio/robot.mp3",
+        "bytes": 13056,
+        "hash": "b865f8cfea51b28e98b5c634e691862d426faf49b3d688b47db4ba745dfecedf"
+      },
+      {
+        "url": "/media/toys-blocks.webp",
+        "bytes": 18280,
+        "hash": "f9d00f05c8890cca2e2143ff8e9915ef139d4c848b32462cf0994414eb040c10"
+      },
+      {
+        "url": "/audio/blocks.mp3",
+        "bytes": 12672,
+        "hash": "1bde4bebc9d175b67bb5911cac498e0f3d3a67d9d086c20691b1cc7a0b5d8477"
+      },
+      {
+        "url": "/media/toys-puzzle.webp",
+        "bytes": 8360,
+        "hash": "28d17a4327b75076cb7c06e68f1a21888a9319092bbfeb94ea449b4f2c61f7d7"
+      },
+      {
+        "url": "/audio/puzzle.mp3",
+        "bytes": 12480,
+        "hash": "aee6537f239939fbbf02124bf91f10f59fe4da0efbf912c3d0ab32b4c1ee0cbc"
+      },
+      {
+        "url": "/media/toys-kite.webp",
+        "bytes": 10000,
+        "hash": "63091ecad41adac19f846b9c3d26d03c5964c992066bfb77561d98105309d421"
+      },
+      {
+        "url": "/audio/kite.mp3",
+        "bytes": 11712,
+        "hash": "e6f985f8b7e7407517f4ef3e395f156fb74a18d6caf5403923e12fc73898b18c"
+      }
+    ]
+  },
+  "body-parts": {
+    "categoryId": "body-parts",
+    "version": "6eea770ad21ed8b2",
+    "bytes": 172466,
+    "assets": [
+      {
+        "url": "/media/body-parts-head.webp",
+        "bytes": 9664,
+        "hash": "3823f137669973b742e96b4deec48c1b17d5ccca7e073e8a5714aecbaedbc5c3"
+      },
+      {
+        "url": "/audio/head.mp3",
+        "bytes": 11328,
+        "hash": "454401050f3650c7fedcc8f4c722a191b038f47ec6b83738fa7d05a44fba0606"
+      },
+      {
+        "url": "/media/body-parts-eye.webp",
+        "bytes": 21272,
+        "hash": "1b908157da819c91a0226150785a9212f0d46c2a9e4da8440fb0fe52bfc38f63"
+      },
+      {
+        "url": "/audio/eye.mp3",
+        "bytes": 12096,
+        "hash": "6a5a919bc1617234846c3f93bd9f0c1e181633eb8f2cf08a78e3dc42639c80d1"
+      },
+      {
+        "url": "/media/body-parts-nose.webp",
+        "bytes": 5732,
+        "hash": "bfd38be67027fb453616ef74917c3f224f656db14dc53e82988773099977f607"
+      },
+      {
+        "url": "/audio/nose.mp3",
+        "bytes": 13248,
+        "hash": "3e4bdb339e3175e396456bcfb0cd1fece8fc542fd61002bce67a16a767114cf4"
+      },
+      {
+        "url": "/media/body-parts-mouth.webp",
+        "bytes": 6598,
+        "hash": "1a419be442639d181b06fccc8e54ca9aa72da2e1cfefd8ac702ee7735757756f"
+      },
+      {
+        "url": "/audio/mouth.mp3",
+        "bytes": 12288,
+        "hash": "ae979873e875ba282431f9a13dbc614e51844548575fac53616ad65e2c4be108"
+      },
+      {
+        "url": "/media/body-parts-ear.webp",
+        "bytes": 6848,
+        "hash": "453b7198af540fa746c39649742d18a505eca83be275b4b4c732be53985640ef"
+      },
+      {
+        "url": "/audio/ear.mp3",
+        "bytes": 11712,
+        "hash": "9aa3737da673fba9408587cb3debfd7dfab9658d048b234758b5741a834b55bf"
+      },
+      {
+        "url": "/media/body-parts-hand.webp",
+        "bytes": 10348,
+        "hash": "6a6ebc8a73c83c553a59f4cab914512fb6212eadb8e00b036aedd34b0f066803"
+      },
+      {
+        "url": "/audio/hand.mp3",
+        "bytes": 12480,
+        "hash": "526bcabf7e444a0945261dcb1c17fccacc081632571475f6dafc7d0177aa03d4"
+      },
+      {
+        "url": "/media/body-parts-foot.webp",
+        "bytes": 9048,
+        "hash": "f213b12928d82149e8e45ea8a379ec65c02bebf19196ef15946d3b94c3ced3df"
+      },
+      {
+        "url": "/audio/foot.mp3",
+        "bytes": 11136,
+        "hash": "6f788d9ff272ddd0196112b489bd1209e7ed666a0af2c6d289b2353146237283"
+      },
+      {
+        "url": "/media/body-parts-arm.webp",
+        "bytes": 10412,
+        "hash": "15c1de3a19293289d7a89d77299d83c52ec2e9d199e3c425c2fa964176a0e18b"
+      },
+      {
+        "url": "/audio/arm.mp3",
+        "bytes": 8256,
+        "hash": "9d153e75ec920496a1ed857e3eea3ec697ea8dfd1614fc03dc3063a973566fc3"
+      }
+    ]
+  },
+  "nature": {
+    "categoryId": "nature",
+    "version": "d5d012bf13f2be34",
+    "bytes": 193450,
+    "assets": [
+      {
+        "url": "/media/nature-tree.webp",
+        "bytes": 13474,
+        "hash": "5dcb4cef69875d53b2cf38272c15586c9c70cd2f6dc8bde9d786281474391617"
+      },
+      {
+        "url": "/audio/tree.mp3",
+        "bytes": 12480,
+        "hash": "26efe1cf9e1b4cf26d3a420c7949677811feeea5fc5f42005cb3f2e4730e0a3a"
+      },
+      {
+        "url": "/media/nature-flower.webp",
+        "bytes": 14800,
+        "hash": "31dfd87c9cfa101412db32db18426e205caeea18537faa2b999a643bdea31fd9"
+      },
+      {
+        "url": "/audio/flower.mp3",
+        "bytes": 13056,
+        "hash": "56b0ca08cd77463472226d4c1b65badef9718ebabe3277119869983aa90ff4a9"
+      },
+      {
+        "url": "/media/nature-mountain.webp",
+        "bytes": 6102,
+        "hash": "a690f5be9ec837d8c125857ca21bfbc11fb7826e6cd54a5942c5a2938dcb70d5"
+      },
+      {
+        "url": "/audio/mountain.mp3",
+        "bytes": 13632,
+        "hash": "d9aef2e7b634792ed50c145372a07403ba6a38575411fa0cd53c2aaf10ffa7f2"
+      },
+      {
+        "url": "/media/nature-river.webp",
+        "bytes": 19456,
+        "hash": "880bd7dd91990b201d0e03073aa5a4d039c29f4cefeb44300882b825056d1c24"
+      },
+      {
+        "url": "/audio/river.mp3",
+        "bytes": 12480,
+        "hash": "c6885ba1452a3335819ae45f8ee422835b386614777d802d2ef2d5781e4d75a5"
+      },
+      {
+        "url": "/media/nature-sun.webp",
+        "bytes": 10498,
+        "hash": "f646a006fdeebc07195eeace4ee02c30c57ff9774059c0798cb2c0f4fe833da0"
+      },
+      {
+        "url": "/audio/sun.mp3",
+        "bytes": 12864,
+        "hash": "16274f4208b55a9b9bcd919988f9ccebfe739f913ccb116b4896e5f61578c097"
+      },
+      {
+        "url": "/media/nature-moon.webp",
+        "bytes": 6148,
+        "hash": "f13bfee4537ec3357e3f2bceb6b93cfe89f0a1693b2bb9cd464c333611f92d75"
+      },
+      {
+        "url": "/audio/moon.mp3",
+        "bytes": 12480,
+        "hash": "a794885f9f8a5c1d0453f7301259585130d6cba8d6d007d91f6caf0b2543464f"
+      },
+      {
+        "url": "/media/nature-star.webp",
+        "bytes": 11298,
+        "hash": "4af2c2ba6f3fa335f049efe633d97a8b584cbf6bec38c1615acb106c5404f706"
+      },
+      {
+        "url": "/audio/star.mp3",
+        "bytes": 12480,
+        "hash": "d3d9a4abb26a555b1001b0b26b94feb412eecc41557bd439aac101420b1b75a0"
+      },
+      {
+        "url": "/media/nature-cloud.webp",
+        "bytes": 9530,
+        "hash": "d0614db448d6511dd9df03ae7d2645dd6218f5a668f06d507c76cfd977117bc7"
+      },
+      {
+        "url": "/audio/cloud.mp3",
+        "bytes": 12672,
+        "hash": "5066e9024a56b2c32ab71b6ba64900750697a60d804255ff2021b3fdc9501bd3"
+      }
+    ]
+  },
+  "clothes": {
+    "categoryId": "clothes",
+    "version": "35c2cf3105911cf9",
+    "bytes": 208326,
+    "assets": [
+      {
+        "url": "/media/clothes-shirt.webp",
+        "bytes": 10236,
+        "hash": "52233fbd8026e91711ee2c97209c201e6df92f6284249a5c462ab229f291b791"
+      },
+      {
+        "url": "/audio/shirt.mp3",
+        "bytes": 11712,
+        "hash": "af9c264d5b6bcbecf4b1636abdacbbb989ade4ed1aab59cee51f459e0b9c0b06"
+      },
+      {
+        "url": "/media/clothes-pants.webp",
+        "bytes": 15172,
+        "hash": "b610a3d25556f5773a8250aeebc7105ae3f8c5a25ba7f123da351072e5b85517"
+      },
+      {
+        "url": "/audio/pants.mp3",
+        "bytes": 12096,
+        "hash": "813a78e7bb19bb76ed59f3069d8a6745f535a3eb7524817e33d5259998ba3deb"
+      },
+      {
+        "url": "/media/clothes-dress.webp",
+        "bytes": 12492,
+        "hash": "d36a7254abd33f7f534bf6e6f9c685ac0568bed2efe266647281f9a7e04e289f"
+      },
+      {
+        "url": "/audio/dress.mp3",
+        "bytes": 12288,
+        "hash": "9d1b8df1b19c13505a748966b8d28dc2562ae82cc6d888e18516ff220b419bfa"
+      },
+      {
+        "url": "/media/clothes-shoes.webp",
+        "bytes": 17288,
+        "hash": "5cf90e5b7e90de119209a04c7e8a5ecbbefd9f6ffd55e029688fe0097566346d"
+      },
+      {
+        "url": "/audio/shoes.mp3",
+        "bytes": 12672,
+        "hash": "11ec87533c5538adb475be7f9f5c7228fbe9b11bcfaf2c9e63efe100fa31ea20"
+      },
+      {
+        "url": "/media/clothes-hat.webp",
+        "bytes": 16016,
+        "hash": "aa20832f3417a89ce41e2c7cd81118834050fbf10b4b530aed16ee3f8fd4b55d"
+      },
+      {
+        "url": "/audio/hat.mp3",
+        "bytes": 10752,
+        "hash": "1547028e9e044aa7a05b3fa600f92fc4eb243f811b51ac01dcff7c1f67035164"
+      },
+      {
+        "url": "/media/clothes-socks.webp",
+        "bytes": 15926,
+        "hash": "4b2e48b943389e484e253e0219aaa35363cee1d89ba60b5fd06a98e14084167d"
+      },
+      {
+        "url": "/audio/socks.mp3",
+        "bytes": 12096,
+        "hash": "2c18b20840e04f9d3fa9031acd5bac60d9ad58213595b7e41f0f2d578ea64501"
+      },
+      {
+        "url": "/media/clothes-jacket.webp",
+        "bytes": 13156,
+        "hash": "12263d678c122b65ac00a8a532d698821470512afc71bf14c7703b76437da38a"
+      },
+      {
+        "url": "/audio/jacket.mp3",
+        "bytes": 13056,
+        "hash": "47a30739280e1e14cc99c28b2b0c6975590a48e83c3a7d63541387839911c257"
+      },
+      {
+        "url": "/media/clothes-scarf.webp",
+        "bytes": 10888,
+        "hash": "dccbfd15cc57c690ae529b85ac1e7ac694bcb6a20a08e3fcd13b2a3f363e7d21"
+      },
+      {
+        "url": "/audio/scarf.mp3",
+        "bytes": 12480,
+        "hash": "366c8e5d1f4fd8761b52cfd9597354528139bed97e6aecd11bc3ade3ab587291"
+      }
+    ]
+  },
+  "weather": {
+    "categoryId": "weather",
+    "version": "94f54237aaf8e481",
+    "bytes": 219074,
+    "assets": [
+      {
+        "url": "/media/weather-sunny.webp",
+        "bytes": 9964,
+        "hash": "c68275d4819b366db96226ec0f8dca45497e90491c7da1a9d473bf105ff5cc6d"
+      },
+      {
+        "url": "/audio/sunny.mp3",
+        "bytes": 13056,
+        "hash": "393383c7145ffed67c63cb55fdbb4a876b41f0877fe75624063c4beffc844268"
+      },
+      {
+        "url": "/media/weather-rainy.webp",
+        "bytes": 19930,
+        "hash": "2f4e0df122809efc3240335629684b6b59742b6d1b209c1e976b79b265b86e5f"
+      },
+      {
+        "url": "/audio/rainy.mp3",
+        "bytes": 13056,
+        "hash": "c61772a866466f968dc6f9a2b4304f19d12e32390deaf7eac4608e3385c37bd0"
+      },
+      {
+        "url": "/media/weather-cloudy.webp",
+        "bytes": 12650,
+        "hash": "c9f0a70975a9a0082d3ed6aed269a8ce9a0de59e449a37824fb33f4db0663eeb"
+      },
+      {
+        "url": "/audio/cloudy.mp3",
+        "bytes": 12864,
+        "hash": "67a5e65dd63f677820a0a5cbe9da56531e3e0e35a46648fcf3f50ef8209e1db6"
+      },
+      {
+        "url": "/media/weather-snowy.webp",
+        "bytes": 26290,
+        "hash": "7ed3c4c54c36f4685fe642c0aaa451e524c9698564f0b8fee32cab1bf0f51365"
+      },
+      {
+        "url": "/audio/snowy.mp3",
+        "bytes": 13248,
+        "hash": "23311e808cb0f6a2113e8fa7805326da05bfcacec3068beea0216644427c70de"
+      },
+      {
+        "url": "/media/weather-windy.webp",
+        "bytes": 11988,
+        "hash": "2391945bfc61412fe9207d56a3f10ecc10152c31bb7123d2026317b7aefaead9"
+      },
+      {
+        "url": "/audio/windy.mp3",
+        "bytes": 12864,
+        "hash": "9d38edd2604ed5d0a503d91c0952dd603688aa8a6217cd1029bffe75476d260f"
+      },
+      {
+        "url": "/media/weather-stormy.webp",
+        "bytes": 9188,
+        "hash": "4fcaf2035cdd29d7e1e139d3241097ccc7533d3f8f4e2637beebe0b16078d63e"
+      },
+      {
+        "url": "/audio/stormy.mp3",
+        "bytes": 13056,
+        "hash": "476de131e193eee3ac56033ba0bc2dcf00442711cac1f6ee88bf6c40ad8abcd8"
+      },
+      {
+        "url": "/media/weather-foggy.webp",
+        "bytes": 10606,
+        "hash": "172812f439b93d4f79e693d01c3e25884fd869dd9fb3395e9b7f71ee29e7491b"
+      },
+      {
+        "url": "/audio/foggy.mp3",
+        "bytes": 13248,
+        "hash": "7a1f4fb487e5c6a2a3472bf7be924de8b2532b9c118819476832d75fb30b0c3e"
+      },
+      {
+        "url": "/media/weather-rainbow.webp",
+        "bytes": 13626,
+        "hash": "27b8ab9a083797dc15eefde8c6c1d6380525bbb802823b3f6556edb465f5fd2e"
+      },
+      {
+        "url": "/audio/rainbow.mp3",
+        "bytes": 13440,
+        "hash": "93861676d2e21975aa3dd2a6454e97affa6f4933a9e8e9d32107fa6ae39355dc"
+      }
+    ]
+  },
+  "weekdays": {
+    "categoryId": "weekdays",
+    "version": "324dc28b187cf25d",
+    "bytes": 96814,
+    "assets": [
+      {
+        "url": "/media/weekdays-monday.svg",
+        "bytes": 770,
+        "hash": "0f750658dcad9da18c22a48faaa5650a535627143a143d00d5f1dd1a34be90e0"
+      },
+      {
+        "url": "/audio/monday.mp3",
+        "bytes": 13440,
+        "hash": "c51001baab92f1ca767e620cd92cce98787ad922407b0f34019a8281d2e275ac"
+      },
+      {
+        "url": "/media/weekdays-tuesday.svg",
+        "bytes": 666,
+        "hash": "aede07fa4e4fc855f9ab38c3a3e9599792e1a3200dfc4e7496386e35803c164b"
+      },
+      {
+        "url": "/audio/tuesday.mp3",
+        "bytes": 12672,
+        "hash": "da01c5a9ea1fb6c34230c26e88edb460fdedb71184fb68ecebfc2b791cacd9e0"
+      },
+      {
+        "url": "/media/weekdays-wednesday.svg",
+        "bytes": 539,
+        "hash": "a91a0a4fdf397408654986fb6344ead1b8f7d089be614ff35e119947f7f2a918"
+      },
+      {
+        "url": "/audio/wednesday.mp3",
+        "bytes": 13632,
+        "hash": "21e5a35dd4b9db2f2af6a79d4c0b5ffe53a4bc17fc4fdabb6eff7a1e2a03de82"
+      },
+      {
+        "url": "/media/weekdays-thursday.svg",
+        "bytes": 539,
+        "hash": "65423ccf559cfe03cc85f91a269858300c6c2c8e27d9714beb9efb9b46becfa3"
+      },
+      {
+        "url": "/audio/thursday.mp3",
+        "bytes": 13440,
+        "hash": "aafe937beb7a23a4272673fd0efbc39dc4d7124c056b1c420fb1936ef6029c82"
+      },
+      {
+        "url": "/media/weekdays-friday.svg",
+        "bytes": 539,
+        "hash": "2f44db3d97d8dfef9619e5aa861c9d382cd06105ce687c1c7251c3e1393e3595"
+      },
+      {
+        "url": "/audio/friday.mp3",
+        "bytes": 12864,
+        "hash": "1a4494ef4b057f59c9c25423d4827db9a48f986180fe0649b6de964e1f684c11"
+      },
+      {
+        "url": "/media/weekdays-saturday.svg",
+        "bytes": 627,
+        "hash": "6987464809515784fdaf7526efa7e4350ccef20d05cee745fbfc8bf147c67a39"
+      },
+      {
+        "url": "/audio/saturday.mp3",
+        "bytes": 13056,
+        "hash": "569c5262a42bee1b6a653694d5116f1db76f52f236c1caa72ec1e4ac7e060e9c"
+      },
+      {
+        "url": "/media/weekdays-sunday.svg",
+        "bytes": 590,
+        "hash": "9a0ccc35d364b85e6000f085ddd08178797fb1d428f5ee657aa763814421f7db"
+      },
+      {
+        "url": "/audio/sunday.mp3",
+        "bytes": 13440,
+        "hash": "76dcf8643d2f5a30f73f083219ae5f8430fe7c64636d29b9760f3854f160fab4"
+      }
+    ]
+  },
+  "months": {
+    "categoryId": "months",
+    "version": "7558a0bc15c2e484",
+    "bytes": 683636,
+    "assets": [
+      {
+        "url": "/media/months-january.svg",
+        "bytes": 608,
+        "hash": "477d318920da6b8a25355ae6dc7da5b2be19a665aa404030f8887ec0c7e9ca30"
+      },
+      {
+        "url": "/audio/january.mp3",
+        "bytes": 13440,
+        "hash": "1b70185cdb0bf7230377f6990b83bc1f1829f075bf57fbabb15d35fe721f7a75"
+      },
+      {
+        "url": "/media/months-february.svg",
+        "bytes": 5039,
+        "hash": "0e68935ce95b05adb67472621519a725fabd5b0f4414fba0c621f39f53951183"
+      },
+      {
+        "url": "/audio/february.mp3",
+        "bytes": 13440,
+        "hash": "485e48b1cd2a935360bac0b12dfa2ab19b0c3b09c1289673ac6b24738dc2fa43"
+      },
+      {
+        "url": "/media/months-march.svg",
+        "bytes": 513887,
+        "hash": "462ad6332f7ca8c016861970c5a763bd2921bfd7e7c6858c8ffc77b5d098d6a7"
+      },
+      {
+        "url": "/audio/march.mp3",
+        "bytes": 12096,
+        "hash": "7647240ec750ff4b98c4df22bbe76e912943a02f6ad9895f401e02025a749442"
+      },
+      {
+        "url": "/media/months-april.svg",
+        "bytes": 550,
+        "hash": "7bae8cc3462644481f911ed4f68033088fbe0f796d2f47c4351586a6289d0bdd"
+      },
+      {
+        "url": "/audio/april.mp3",
+        "bytes": 12480,
+        "hash": "c0ea8511ed2ecfab298753b849f04e1deba309fd2834931bed5700da4a7e8e6a"
+      },
+      {
+        "url": "/media/months-may.svg",
+        "bytes": 567,
+        "hash": "b6d4da5e827fc12be49985d2c113a73d8b50562f7085a281df09c98b322cc36b"
+      },
+      {
+        "url": "/audio/may.mp3",
+        "bytes": 12288,
+        "hash": "162a2ec6265d675cf5a7ea3a7f5b80826273723a202e72d4b60c25a7b353e88c"
+      },
+      {
+        "url": "/media/months-june.svg",
+        "bytes": 1429,
+        "hash": "d33a4cbd48f821bd40dba9c435c5655de4ad2ea47ce99eef82c6ed9d3658fa04"
+      },
+      {
+        "url": "/audio/june.mp3",
+        "bytes": 12480,
+        "hash": "d7167fc8167e1a0b2220f35d7a6ddbe405b535b4dc219dca7e57b4ab8b640801"
+      },
+      {
+        "url": "/media/months-july.svg",
+        "bytes": 692,
+        "hash": "192cfbe7c69074640783e43538a766570b40731a1291d0f78f6b5fc5d02dacc0"
+      },
+      {
+        "url": "/audio/july.mp3",
+        "bytes": 12864,
+        "hash": "c945966d6174a5951b5936f1eee826720caa6028b18082a4272e2e03d346dfb1"
+      },
+      {
+        "url": "/media/months-august.svg",
+        "bytes": 1174,
+        "hash": "abff0a91cea1189cfa52933e4fdbe922f05598338d7c42ac225754f20b8f3769"
+      },
+      {
+        "url": "/audio/august.mp3",
+        "bytes": 12672,
+        "hash": "4f1ed613c7329c8c4744ea358bf761ee24534322056931cd0d51e30acdbea37d"
+      },
+      {
+        "url": "/media/months-september.svg",
+        "bytes": 480,
+        "hash": "92f487fe27076482e91eed553c226feeeb496e294b5fef54779f66ba852f65ff"
+      },
+      {
+        "url": "/audio/september.mp3",
+        "bytes": 14016,
+        "hash": "776574e3357f6fb1f8816964f1ba942f5a4a4f5d1e81623932e41b434991ff39"
+      },
+      {
+        "url": "/media/months-october.svg",
+        "bytes": 455,
+        "hash": "e72c292248030dd3733cbe344733c60be13b051b90b1da907135f180f1d33423"
+      },
+      {
+        "url": "/audio/october.mp3",
+        "bytes": 14400,
+        "hash": "c93625349e6a9eeb634ad12a47c84d025946bc53c645b90c9a86bc706fecc3ef"
+      },
+      {
+        "url": "/media/months-november.svg",
+        "bytes": 435,
+        "hash": "9e024757c8025dadaf4dff1190ebd32e48d2710ca498d5ceddc81e40f631eed0"
+      },
+      {
+        "url": "/audio/november.mp3",
+        "bytes": 13632,
+        "hash": "6ce435b4ccb807ebc7301d7082d0876249338f7297a309fcc5d7fac06be21fad"
+      },
+      {
+        "url": "/media/months-december.svg",
+        "bytes": 496,
+        "hash": "72523fac9224751978c02049414876256af69635ce3bb980034d7e69e41238b1"
+      },
+      {
+        "url": "/audio/december.mp3",
+        "bytes": 14016,
+        "hash": "6356f1d243cdf7b1876f89143317f06f5ab4ec5f76bc39c2d6534e53956bbb9b"
+      }
+    ]
+  },
+  "vegetables": {
+    "categoryId": "vegetables",
+    "version": "d4b5f30d62103c41",
+    "bytes": 193562,
+    "assets": [
+      {
+        "url": "/media/vegetables-carrot.webp",
+        "bytes": 7794,
+        "hash": "8acf71a3fac264efbcc4f31e4629bdcbbe71bb2307056b71a5fc956a33c95096"
+      },
+      {
+        "url": "/audio/carrot.mp3",
+        "bytes": 11904,
+        "hash": "a24e1743af11ff182ee6d623e1923055e58d7c6390d76cbc9263ef10c1c61f3a"
+      },
+      {
+        "url": "/media/vegetables-tomato.webp",
+        "bytes": 7024,
+        "hash": "b15d95fd34fe0520ac9d10bc8c0deb4fed69385b1b68efb37276c616eda9f285"
+      },
+      {
+        "url": "/audio/tomato.mp3",
+        "bytes": 13056,
+        "hash": "bfd3a7f48de8b6917fc29d3f1f906ce31cd511154d2d09156d6cb5c8449f7e17"
+      },
+      {
+        "url": "/media/vegetables-potato.webp",
+        "bytes": 8704,
+        "hash": "d7e28a61cba0ed1749fe6747298020e56e0a06901ea58ab1cde9c8d4b7f10127"
+      },
+      {
+        "url": "/audio/potato.mp3",
+        "bytes": 13056,
+        "hash": "c545ce27c319e962774991370764074c9d7491aea85e857a5baabe283e818fd6"
+      },
+      {
+        "url": "/media/vegetables-broccoli.webp",
+        "bytes": 14890,
+        "hash": "c6d36df5bbc39cf9b68f24528108330e311f4f80f053dedd04a29b202d0aa3eb"
+      },
+      {
+        "url": "/audio/broccoli.mp3",
+        "bytes": 13248,
+        "hash": "c28ce11bb72927ca2580aeac787cc73eee5053aa7382f7d6e2faabae9e3b59c0"
+      },
+      {
+        "url": "/media/vegetables-corn.webp",
+        "bytes": 11764,
+        "hash": "6c16935c6028b96acb91b5980f9279a1f147641aca2d463d4cf79df316d3af66"
+      },
+      {
+        "url": "/audio/corn.mp3",
+        "bytes": 13056,
+        "hash": "f1c643658c0f0aa301ec95f09df9a456bf31fdf0cbd87f8bcca0099cb1358bf5"
+      },
+      {
+        "url": "/media/vegetables-cucumber.webp",
+        "bytes": 9836,
+        "hash": "41086666c9e2bce75396b4cfd1da3c96a812b93b625c3e1bf403e707de328b47"
+      },
+      {
+        "url": "/audio/cucumber.mp3",
+        "bytes": 13440,
+        "hash": "1dc926257af2fcdbcad41953e512727c11907bd55dd9134c14df861f6d440f47"
+      },
+      {
+        "url": "/media/vegetables-lettuce.webp",
+        "bytes": 14258,
+        "hash": "bf4cbeb161dc6db83cee771366ab28292737c9e0a0dcf562fe75aa0d3ba29cbf"
+      },
+      {
+        "url": "/audio/lettuce.mp3",
+        "bytes": 13248,
+        "hash": "f2b8e5e52832ab92db98df3a7200308b1fd5c3a0b6d22d7b7ad1e691432bf538"
+      },
+      {
+        "url": "/media/vegetables-onion.webp",
+        "bytes": 15420,
+        "hash": "625c70f2c6b0fdb78c34c2b1b03f7ce730c08ef519fe2cdc1a49f5a41b74e480"
+      },
+      {
+        "url": "/audio/onion.mp3",
+        "bytes": 12864,
+        "hash": "7147c0e31c2a7a3e7be6e3ee92daced4308e7a4d1df330573f1f8676c17b8d6b"
+      }
+    ]
+  },
+  "emotions": {
+    "categoryId": "emotions",
+    "version": "1db0363618a519e2",
+    "bytes": 199258,
+    "assets": [
+      {
+        "url": "/media/emotions-happy.webp",
+        "bytes": 14618,
+        "hash": "e3eeadb456267eb17ce1bbbacfd3efcfef1a83976e87796c19ce6fba9b5d6e06"
+      },
+      {
+        "url": "/audio/happy.mp3",
+        "bytes": 12864,
+        "hash": "2eea7150cdd4dc8d7accacb37ea60f580ac7ca167aab6f045d7824f23d95751c"
+      },
+      {
+        "url": "/media/emotions-sad.webp",
+        "bytes": 13356,
+        "hash": "56eb12262d0d47c332d51f811f82df9f6f6c63b4635c68ddb783fd562ce033d4"
+      },
+      {
+        "url": "/audio/sad.mp3",
+        "bytes": 12096,
+        "hash": "830a8f47eb3909ddb63892e398651674c877f6797ae8e028a264158e307a399a"
+      },
+      {
+        "url": "/media/emotions-angry.webp",
+        "bytes": 13630,
+        "hash": "f43f8dd96b19d74c9b64b98bde527f839bbf1110b3e77d0dbcad49f271a17f19"
+      },
+      {
+        "url": "/audio/angry.mp3",
+        "bytes": 12864,
+        "hash": "235f229a6810ff07a1e4fbd883043fe85e6f7d89d9250c4a1abca405b2e8c6f9"
+      },
+      {
+        "url": "/media/emotions-scared.webp",
+        "bytes": 12512,
+        "hash": "a3012e652f04ac36175d05005d4d51657b633fb8f4cfe3506717b9c5e99c9690"
+      },
+      {
+        "url": "/audio/scared.mp3",
+        "bytes": 12672,
+        "hash": "e28111601b05ea247b37d253e66baefd9100492e2c085d7044e047e986deb2f9"
+      },
+      {
+        "url": "/media/emotions-surprised.webp",
+        "bytes": 7324,
+        "hash": "4d8b66a1842d8ce62b29226f9bb16572bba377af99869af02adbb2528e5f18fa"
+      },
+      {
+        "url": "/audio/surprised.mp3",
+        "bytes": 14208,
+        "hash": "bed1d46522f1b6285dd81a3fc8c0ac10fe881f41f214d235043609d23bdf4472"
+      },
+      {
+        "url": "/media/emotions-tired.webp",
+        "bytes": 11374,
+        "hash": "aefbfba970ec00b27340ae4ba72084fee958194b835bc2a746360b57da6485e4"
+      },
+      {
+        "url": "/audio/tired.mp3",
+        "bytes": 12864,
+        "hash": "d245803caf128e26270c455a2750246368a170a78486259b5793126f1d3da10c"
+      },
+      {
+        "url": "/media/emotions-excited.webp",
+        "bytes": 9852,
+        "hash": "8999418d4411c46bb37c4a3d4fca1fcf713b2dc685b8d0dc511e21c6ebf147b9"
+      },
+      {
+        "url": "/audio/excited.mp3",
+        "bytes": 14208,
+        "hash": "8ec514648f8d881b4c965af06da831689540bbc26526a5ae9f9399f84aa6a6b6"
+      },
+      {
+        "url": "/media/emotions-confused.webp",
+        "bytes": 10800,
+        "hash": "ae8d1c8009435f91091f54287d141180f3affec978b8f0d234bcc5bd8048b84a"
+      },
+      {
+        "url": "/audio/confused.mp3",
+        "bytes": 14016,
+        "hash": "5cacd1afb14c8b21b8c70afccdea81878fd6f460c72e83fa5510eff1cf2a5be6"
+      }
+    ]
+  },
+  "pets": {
+    "categoryId": "pets",
+    "version": "52005fb351a0dffd",
+    "bytes": 224954,
+    "assets": [
+      {
+        "url": "/media/pets-dog.webp",
+        "bytes": 13720,
+        "hash": "32de7df3da13dfc957391737daa186c9d4dacb061d704747307cdf2ef3ffbb00"
+      },
+      {
+        "url": "/audio/dog.mp3",
+        "bytes": 12096,
+        "hash": "553c62601137222baf866a3a578fb07613605af08aa17338dfcb12790d07e0a2"
+      },
+      {
+        "url": "/media/pets-cat.webp",
+        "bytes": 15630,
+        "hash": "977c8cf68447cfe81133a7a75defa7f43a3c19a7256ad4cb7fa3414ec8681c75"
+      },
+      {
+        "url": "/audio/cat.mp3",
+        "bytes": 11328,
+        "hash": "a80b856fa2c8e87ba5f7a444f4321bc5eb1c8ce848796634f8e16f48ba076ffb"
+      },
+      {
+        "url": "/media/pets-fish.webp",
+        "bytes": 20930,
+        "hash": "7cab4ca7307ebcff7347005f31f1dc3c4aab6a7054214ba4f2f8f68e7802a0cc"
+      },
+      {
+        "url": "/audio/fish.mp3",
+        "bytes": 12288,
+        "hash": "183d907227ba8874aec3c3694b9e396cb2b883651d883041999444b23d7b6de8"
+      },
+      {
+        "url": "/media/pets-bird.webp",
+        "bytes": 15000,
+        "hash": "5689d398f1a68e7eb4e85243f3d24f4bb8c1e728c89055d96cb342d138b317fe"
+      },
+      {
+        "url": "/audio/bird.mp3",
+        "bytes": 11712,
+        "hash": "bac6bba9106b1581e19e7a5c487c2950760d5cc85afca5cc498621ee22e39338"
+      },
+      {
+        "url": "/media/pets-rabbit.webp",
+        "bytes": 13782,
+        "hash": "f6d0179e6410282a6016e09c2ceb2534656dd611ce7cf45e5a336d7b84732722"
+      },
+      {
+        "url": "/audio/rabbit.mp3",
+        "bytes": 12288,
+        "hash": "ef4000b85789423dc42515c6eaf3a253f7bb581eb260e35831fd5288668e0ada"
+      },
+      {
+        "url": "/media/pets-hamster.webp",
+        "bytes": 14914,
+        "hash": "9a6f045e8ac917f3f4ce3e4ebc2466a19e652ceaa119bbc27d4d84519da8402f"
+      },
+      {
+        "url": "/audio/hamster.mp3",
+        "bytes": 14208,
+        "hash": "5c4b7a64934faa36699e32264ed1e9c52733daec2b57055407ca0d08d9a941b5"
+      },
+      {
+        "url": "/media/pets-turtle.webp",
+        "bytes": 14656,
+        "hash": "de23098b1a9a3c860b6e32ea9ed3f283d72ca456b7d9140495d33def233cb753"
+      },
+      {
+        "url": "/audio/turtle.mp3",
+        "bytes": 12096,
+        "hash": "f41e42db01b039f1e341082a2cf6434f791d3aee3b96713e29f23b45dd8d8e4e"
+      },
+      {
+        "url": "/media/pets-guinea-pig.webp",
+        "bytes": 16482,
+        "hash": "749285903664091b16264e9b8193321a332ddad3360319feeab55623560671dc"
+      },
+      {
+        "url": "/audio/guinea-pig.mp3",
+        "bytes": 13824,
+        "hash": "c6fe89a6a7b52826767c888214130b3bb818c0f604319d39c2cb614a3c745068"
+      }
+    ]
+  },
+  "action-verbs": {
+    "categoryId": "action-verbs",
+    "version": "e79c8c2919bdadc4",
+    "bytes": 189960,
+    "assets": [
+      {
+        "url": "/media/action-verbs-run.webp",
+        "bytes": 9400,
+        "hash": "40321531d800ebf0388444b3991fa90eaf235c9b9a65f250849404f39471ea22"
+      },
+      {
+        "url": "/audio/run.mp3",
+        "bytes": 12096,
+        "hash": "579cceeca0a59c9af3fe86013d28b2dfa91f41662efa3ddf999a02aa8f279298"
+      },
+      {
+        "url": "/media/action-verbs-jump.webp",
+        "bytes": 11532,
+        "hash": "b354029db882487c7c1f52be40fc8e517ac654d92d3e79945a438c7c29a823b0"
+      },
+      {
+        "url": "/audio/jump.mp3",
+        "bytes": 11712,
+        "hash": "a27767c23e2292f9e719daf06e7edac8128ac712dcbe1fe0f159980000468956"
+      },
+      {
+        "url": "/media/action-verbs-swim.webp",
+        "bytes": 13668,
+        "hash": "7a67926f6e01623a272799745c2ec228ac3d6e752ce8b6131229b3dcb06cef93"
+      },
+      {
+        "url": "/audio/swim.mp3",
+        "bytes": 12672,
+        "hash": "36749d597fb8dd1bea7f9aa400b27e1c44f6fcd60d1155a44a682cb89f7966d0"
+      },
+      {
+        "url": "/media/action-verbs-eat.webp",
+        "bytes": 12206,
+        "hash": "5ebda9ef6b8009536e7bd66ac43c1e69126b85bdefdbc2c0b4252f2790546326"
+      },
+      {
+        "url": "/audio/eat.mp3",
+        "bytes": 11328,
+        "hash": "3ef6c0912f210838c4dbf27e607e22c407d14cb2d764342302a6ddfb4af9ddc7"
+      },
+      {
+        "url": "/media/action-verbs-sleep.webp",
+        "bytes": 13130,
+        "hash": "c8d762adc313dad5a672cb825ecd2fcc4323a64a8ca7372aebc8b91bad8e7d9c"
+      },
+      {
+        "url": "/audio/sleep.mp3",
+        "bytes": 11712,
+        "hash": "24c9a7af62db898cd99f83bfa57de3871bc0bb607c93cb73261dfcb5f2f9d669"
+      },
+      {
+        "url": "/media/action-verbs-play.webp",
+        "bytes": 13932,
+        "hash": "b19326f3c85a5df33dc4b931bc3a43b3ba9c9d869583158fad891450cc25ffb5"
+      },
+      {
+        "url": "/audio/play.mp3",
+        "bytes": 12480,
+        "hash": "38ee387a81f8755f3989997e5063d81f6a99633fa0c5120b3ec061bde802b1bd"
+      },
+      {
+        "url": "/media/action-verbs-read.webp",
+        "bytes": 9536,
+        "hash": "393563a766b15d15b194ff972496d3002777e068e3d150cedb0cd2b0eac7a4ed"
+      },
+      {
+        "url": "/audio/read.mp3",
+        "bytes": 11136,
+        "hash": "14c62d8fa5edecfd88ab96dac34304838476b610175c7275f873af208e80c013"
+      },
+      {
+        "url": "/media/action-verbs-write.webp",
+        "bytes": 11516,
+        "hash": "ddc1823765a172584b775b6e0d33f079eacf60a4e63c1a02559ae326f495b72c"
+      },
+      {
+        "url": "/audio/write.mp3",
+        "bytes": 11904,
+        "hash": "616d609ec85bb2f7dac7f58d2d568094f0fa978ba02d0631aa0df41c295958b0"
+      }
+    ]
+  },
+  "adjectives": {
+    "categoryId": "adjectives",
+    "version": "ce101afd85387d15",
+    "bytes": 209982,
+    "assets": [
+      {
+        "url": "/media/adjectives-big.webp",
+        "bytes": 14000,
+        "hash": "9ee1208d00b768a9df8bb0cdbab0295949afbd047cfd12e44bf1e4dd00b7f0af"
+      },
+      {
+        "url": "/audio/big.mp3",
+        "bytes": 11712,
+        "hash": "4d8e9660b23a51e9a6ca06ba7056ebc6c17620ae2198dedf548046ca23cf41ad"
+      },
+      {
+        "url": "/media/adjectives-small.webp",
+        "bytes": 16178,
+        "hash": "51b296e10c622783399b29219dc08a04f88a5512e666ac713e716fee0952d24e"
+      },
+      {
+        "url": "/audio/small.mp3",
+        "bytes": 12480,
+        "hash": "d16aa692a0c4b492b56a1f7cb0fd66229441e02bdc0461dbcbf443f088e5f2e2"
+      },
+      {
+        "url": "/media/adjectives-hot.webp",
+        "bytes": 11204,
+        "hash": "87a26ba88f850347b9d0acb14869c55638056dabaf75d154ec99ac137305cd53"
+      },
+      {
+        "url": "/audio/hot.mp3",
+        "bytes": 11712,
+        "hash": "cd31b965b3cce54c7a0b2d2eaccb7c73caea7dab6e1dcfa7b49353d26e8aabee"
+      },
+      {
+        "url": "/media/adjectives-cold.webp",
+        "bytes": 15320,
+        "hash": "ca9416891a9b7f98ae0bc1acbe3cd725f13e76f6c42d67eaa3e133ec4fd96731"
+      },
+      {
+        "url": "/audio/cold.mp3",
+        "bytes": 12864,
+        "hash": "7f5a78bbfc73b7ac6ebd70c0a23bc590ee7bc29bed59d4203b7bcdee986942a5"
+      },
+      {
+        "url": "/media/adjectives-fast.webp",
+        "bytes": 15574,
+        "hash": "759e0c23b8229263cd1770a4943f7184d56b127c305d9b440997a7cdcf5cc6d7"
+      },
+      {
+        "url": "/audio/fast.mp3",
+        "bytes": 12672,
+        "hash": "b57f29398206762996a499c98ee639b2a90b18cb7d6c56e07a0cdb144976081e"
+      },
+      {
+        "url": "/media/adjectives-slow.webp",
+        "bytes": 19826,
+        "hash": "803b258018e5d36dd7372b98513a3ca8244c44c95978fb8fa09cb8299195a0e7"
+      },
+      {
+        "url": "/audio/slow.mp3",
+        "bytes": 12288,
+        "hash": "4a7ea4c161f3b1618a0b284c521ec934666efe1bf8138523cf15c3310b5b4a95"
+      },
+      {
+        "url": "/media/adjectives-tall.webp",
+        "bytes": 12472,
+        "hash": "2fe1907d7b7381d5ff36a767e6cb91e30e22651c464f8a21e9bfc862af92d034"
+      },
+      {
+        "url": "/audio/tall.mp3",
+        "bytes": 8640,
+        "hash": "5bcf79d4990ff145c0e9d5c634003344a8f9baf6aaea8e2cee422fcd883120a7"
+      },
+      {
+        "url": "/media/adjectives-short.webp",
+        "bytes": 10944,
+        "hash": "bbef1cd52d23a6772ca71ea7e08ff5afa76009025e5c1fc60a65a8ca1dc0ffce"
+      },
+      {
+        "url": "/audio/short.mp3",
+        "bytes": 12096,
+        "hash": "a3cb553779e78ec80ecb8a15cb6220b8b3496929b2a901be8c63bd6b996a7090"
+      }
+    ]
+  },
+  "shapes": {
+    "categoryId": "shapes",
+    "version": "8511c6a9f334137a",
+    "bytes": 151850,
+    "assets": [
+      {
+        "url": "/media/shapes-circle.webp",
+        "bytes": 7360,
+        "hash": "121258df7d6a3f2faa93e8639a3167066cb7386dcdc0b44f10ea957f2b0020f2"
+      },
+      {
+        "url": "/audio/circle.mp3",
+        "bytes": 12864,
+        "hash": "b33dcfbca72ef60add2c3b03db647db1f6bb821ed848c278f87e6993e8ba5d99"
+      },
+      {
+        "url": "/media/shapes-square.webp",
+        "bytes": 3170,
+        "hash": "a10d256794ee35c180faf4630119c856085f96938d8191af6d038f4f47c06d11"
+      },
+      {
+        "url": "/audio/square.mp3",
+        "bytes": 12480,
+        "hash": "0fe04ea0df9c1bf67265a57346d4dfb46f87614a1d081c111083e91ab66141e0"
+      },
+      {
+        "url": "/media/shapes-triangle.webp",
+        "bytes": 4706,
+        "hash": "989ba75019c3465cd48d1fd693bbd2c4bb6990955a5244d1c0451b7f2f73dcf7"
+      },
+      {
+        "url": "/audio/triangle.mp3",
+        "bytes": 13248,
+        "hash": "2958f3c6436f89ed1ac7745448268de670f8562f4cfe443c04f343c72b9e7035"
+      },
+      {
+        "url": "/media/shapes-rectangle.webp",
+        "bytes": 2204,
+        "hash": "40a13416444240c2cfd8c8219c414313d45c07cd80ccc7eb5d1741715c509618"
+      },
+      {
+        "url": "/audio/rectangle.mp3",
+        "bytes": 14208,
+        "hash": "b396048bf6367e2ddd1f411f080c75b9da9694a72efc8a032f855f1cd060e7bf"
+      },
+      {
+        "url": "/media/shapes-star.webp",
+        "bytes": 11458,
+        "hash": "a5f8ff55c73fad2d5393d89e0fde7807c2150bf9387ca002773cdc11737f1a67"
+      },
+      {
+        "url": "/audio/star.mp3",
+        "bytes": 12480,
+        "hash": "d3d9a4abb26a555b1001b0b26b94feb412eecc41557bd439aac101420b1b75a0"
+      },
+      {
+        "url": "/media/shapes-heart.webp",
+        "bytes": 7920,
+        "hash": "fcbe21e50f2384a63e37c33d47a3a7648453d7bf0768fc573156c3c2e542d24a"
+      },
+      {
+        "url": "/audio/heart.mp3",
+        "bytes": 11328,
+        "hash": "f49287f4f87ae7e35fa04f47541f34e1b60494d86add0c475ed9ad667d6ef143"
+      },
+      {
+        "url": "/media/shapes-diamond.webp",
+        "bytes": 4906,
+        "hash": "d683a7dcbb266d989d9e9a911d2f10eb34f87f3587bd8bf9dfe9e82dc57df2c4"
+      },
+      {
+        "url": "/audio/diamond.mp3",
+        "bytes": 12864,
+        "hash": "63cf268ddca5d9e66c89031d4a6b92fb0f3a68968be7eaf1ab85c4b5eb0a1ca4"
+      },
+      {
+        "url": "/media/shapes-oval.webp",
+        "bytes": 8174,
+        "hash": "9fc4783dbabade05d5bf45a7419b3076d0ed393a9a536766098d087561b74ea6"
+      },
+      {
+        "url": "/audio/oval.mp3",
+        "bytes": 12480,
+        "hash": "cde81dcba56df74f673df45754991afdcaf8c0724a9a4708a31d9802138c303f"
+      }
+    ]
+  },
+  "food": {
+    "categoryId": "food",
+    "version": "ff09bcb4f7c59508",
+    "bytes": 187354,
+    "assets": [
+      {
+        "url": "/media/food-bread.webp",
+        "bytes": 11462,
+        "hash": "afebb6e9a5f72223b5e0fdd762613bfd8744425c76b9faa21f1731b532782271"
+      },
+      {
+        "url": "/audio/bread.mp3",
+        "bytes": 11520,
+        "hash": "08207796325dca31d382fab1ea933cac9a24b55be5466ac553f4571f58e1ed99"
+      },
+      {
+        "url": "/media/food-cheese.webp",
+        "bytes": 7102,
+        "hash": "03a82d6365e55c652a39a47eca84be779b300b322f6467d6d53b6ce1ab9e1d28"
+      },
+      {
+        "url": "/audio/cheese.mp3",
+        "bytes": 12864,
+        "hash": "464a7a405254b8ad0645f030921644ebb83d0601fc3639e56756115db20c0089"
+      },
+      {
+        "url": "/media/food-egg.webp",
+        "bytes": 7760,
+        "hash": "eb56fd6e738c7da2d4633dd5ff67f15cd49bcef379e1902cd03f7ae843ccad81"
+      },
+      {
+        "url": "/audio/egg.mp3",
+        "bytes": 11136,
+        "hash": "f3071fe8e7fa1eb47be95dc031e2449f6a9faf5ec88e553c32c75b38c5cc5f9d"
+      },
+      {
+        "url": "/media/food-milk.webp",
+        "bytes": 8786,
+        "hash": "ec1ebd3ecbf01952ac5e49930ab6a38f1c0088c92832ed589d89289b42ce211a"
+      },
+      {
+        "url": "/audio/milk.mp3",
+        "bytes": 11904,
+        "hash": "c03cb8739f133dccc6678c8ae881d7c1195a918737a0323610b421edc25e8800"
+      },
+      {
+        "url": "/media/food-rice.webp",
+        "bytes": 14064,
+        "hash": "0b7e361dbd3a1820a8d307dbdd78fd432a2863c71687cd0c908af482a0fed137"
+      },
+      {
+        "url": "/audio/rice.mp3",
+        "bytes": 12480,
+        "hash": "af91def931d3b7fc5584d6efaef9dc4c89652d817a7a014a13e628b215e3502b"
+      },
+      {
+        "url": "/media/food-chicken.webp",
+        "bytes": 12064,
+        "hash": "031666d696ad00a9aea29c12f03b276d888252846ff6a69633fcb298d69196d6"
+      },
+      {
+        "url": "/audio/chicken.mp3",
+        "bytes": 13440,
+        "hash": "b8777f74e20401f1e6c2d545ebd0e9a0dbceb917649336b2401b8a4481b8466c"
+      },
+      {
+        "url": "/media/food-pizza.webp",
+        "bytes": 14504,
+        "hash": "bdaf1c82b2097a2014ee4246021b47e49f88c93e1ece7ca231f220a10d45f2f2"
+      },
+      {
+        "url": "/audio/pizza.mp3",
+        "bytes": 13824,
+        "hash": "5209f0ceb64ef868c29685ea4d65261df204a8d5d5d6d9118c786e223fa5935e"
+      },
+      {
+        "url": "/media/food-ice-cream.webp",
+        "bytes": 10236,
+        "hash": "f2b80ad7880a08b3306a8404a7cb51169230e23c1053cd8ddc7bf26ad991fd21"
+      },
+      {
+        "url": "/audio/ice-cream.mp3",
+        "bytes": 14208,
+        "hash": "fae59e7f1b2fce72a1cda7d9a5aca2a56f1d386e4353d4218284ca67135e9ba8"
+      }
+    ]
+  },
+  "family": {
+    "categoryId": "family",
+    "version": "b0fe837bf0928d00",
+    "bytes": 183748,
+    "assets": [
+      {
+        "url": "/media/family-mother.webp",
+        "bytes": 8126,
+        "hash": "153a26c5e93fca4b66c8fbc861c5ae41bb79d468503f7a1831805c9c239f28da"
+      },
+      {
+        "url": "/audio/mother.mp3",
+        "bytes": 9600,
+        "hash": "e191394068af4c3c8144cce0bdb70236972b8c6f9b4a6bc42f77e94bdb0196b8"
+      },
+      {
+        "url": "/media/family-father.webp",
+        "bytes": 8646,
+        "hash": "b0aa141dde52bb818f0965369e4a8655228faa63fa392fa11c99242cfdfe633f"
+      },
+      {
+        "url": "/audio/father.mp3",
+        "bytes": 13056,
+        "hash": "b0310740fa54b2d015935e9eb637985878e4b9962a0dea3c480b04bc7038cf5c"
+      },
+      {
+        "url": "/media/family-sister.webp",
+        "bytes": 7674,
+        "hash": "c87965d7fcc10df3e4468f4023fc5873c3a4afed5c3305d01d74d2037cc5df20"
+      },
+      {
+        "url": "/audio/sister.mp3",
+        "bytes": 13632,
+        "hash": "b13fcf63994a678226d8fc4af16ca47e4850aad7faf4c47abcfe021780c27e6a"
+      },
+      {
+        "url": "/media/family-brother.webp",
+        "bytes": 7846,
+        "hash": "baf362aa1095f78ac1523a9621ec3ba2c9d07395ed1e4f088b14379fb5d66524"
+      },
+      {
+        "url": "/audio/brother.mp3",
+        "bytes": 10944,
+        "hash": "ebef44135725c4243d32ca35cf96d8bdc580a17be78ce57ee83aa22187162fb3"
+      },
+      {
+        "url": "/media/family-grandmother.webp",
+        "bytes": 14410,
+        "hash": "c92a6694e43e843b8ba807d61349a8ce1bb00155ca94c9687288c3f863686e1c"
+      },
+      {
+        "url": "/audio/grandmother.mp3",
+        "bytes": 14208,
+        "hash": "73ef7b08d82c2ebbbc3bd9a8d9f7fdd08c662f05924515308cfccaeb457d4996"
+      },
+      {
+        "url": "/media/family-grandfather.webp",
+        "bytes": 7534,
+        "hash": "aaf1171664b0a59497b246d2965e3ee79ec3edc1144e04f0880f60f5ff6bf452"
+      },
+      {
+        "url": "/audio/grandfather.mp3",
+        "bytes": 14784,
+        "hash": "c5cbfe6458440b89a6fed12a5421609bfc3b9fc2c9035c7198b9c1be4208b3e4"
+      },
+      {
+        "url": "/media/family-baby.webp",
+        "bytes": 7912,
+        "hash": "44fc5639e8fc746915dd5db3bb5145d9d36c1383bad759c239fc796cab429f02"
+      },
+      {
+        "url": "/audio/baby.mp3",
+        "bytes": 12480,
+        "hash": "5bc81443899c706b61e7dd9a64702367b7e05eec16040e651cb059b540138206"
+      },
+      {
+        "url": "/media/family-family.webp",
+        "bytes": 19840,
+        "hash": "0771f2ce8957da980501cf4ddd90595789ba77390f110eeadc1fff57bf94a3ed"
+      },
+      {
+        "url": "/audio/family.mp3",
+        "bytes": 13056,
+        "hash": "2fb0841d1da81d2b6c03fb369fc6e26a1459c18c846bb5cbdb33c0d2a6657a0b"
+      }
+    ]
+  },
+  "jobs-occupations-1": {
+    "categoryId": "jobs-occupations-1",
+    "version": "af20401039c84259",
+    "bytes": 178876,
+    "assets": [
+      {
+        "url": "/media/jobs-occupations-1-doctor.webp",
+        "bytes": 8666,
+        "hash": "1cc8199171145456b780464d79db612c1cb34847d9fb287328c253b1bdc8f9e6"
+      },
+      {
+        "url": "/audio/doctor.mp3",
+        "bytes": 14016,
+        "hash": "6bcacc353340b6efa77c1bc908c41a3f60af51f0d5bd3d71576dbcf5685172f0"
+      },
+      {
+        "url": "/media/jobs-occupations-1-builder.webp",
+        "bytes": 10956,
+        "hash": "fd189a9ad1010912b0ed3c312df08b0517544745d07bebff64d02880217fa9a9"
+      },
+      {
+        "url": "/audio/builder.mp3",
+        "bytes": 13248,
+        "hash": "70a6b168e1378409a2fa244e39058636516b1df3165649c9f9ac8a3a8e4d4c14"
+      },
+      {
+        "url": "/media/jobs-occupations-1-chef.webp",
+        "bytes": 6658,
+        "hash": "ce62485e2e68d3a550ef2f7be195032a1ab1b674a29883855216180e1a552007"
+      },
+      {
+        "url": "/audio/chef.mp3",
+        "bytes": 11520,
+        "hash": "75e57a4b11b2721d0fdeb5e7a39e40e2eee123ba37325b0356bdaa97c92a2436"
+      },
+      {
+        "url": "/media/jobs-occupations-1-nurse.webp",
+        "bytes": 7498,
+        "hash": "da22049f69c020f7adf334df95de38c6d1ba950ecff37233905b7f8b6db12172"
+      },
+      {
+        "url": "/audio/nurse.mp3",
+        "bytes": 12672,
+        "hash": "22cb95937f98f0946d7d54ddb70cc1b6a2d42a1c61eb9cc5cf5e7ddb0250b1f8"
+      },
+      {
+        "url": "/media/jobs-occupations-1-veterinarian.webp",
+        "bytes": 9216,
+        "hash": "b98dfa56c29a011d847e00b38c0d0d8cfdbd2a29ef10d1c46c7e556f47e27495"
+      },
+      {
+        "url": "/audio/veterinarian.mp3",
+        "bytes": 14784,
+        "hash": "10ce228bae46571cfaed89fee80310d7b5e5880a2cc32db5b9677527f5a4620e"
+      },
+      {
+        "url": "/media/jobs-occupations-1-teacher.webp",
+        "bytes": 8016,
+        "hash": "f75e421c1c359590a675b9709708d9fe4a90bffb5e10a71513b2a0d88c1401a0"
+      },
+      {
+        "url": "/audio/teacher.mp3",
+        "bytes": 13632,
+        "hash": "c7ab0d02afb55485687562a7ccb54bf86ccdb41091786598131dd26c44be9721"
+      },
+      {
+        "url": "/media/jobs-occupations-1-police-officer.webp",
+        "bytes": 9416,
+        "hash": "6a63168ed897969d026d16eeaec6996838cf1bdd8abbde0e855242f05e89fcff"
+      },
+      {
+        "url": "/audio/police-officer.mp3",
+        "bytes": 16128,
+        "hash": "b74d78f0fd23f7af6295a39a6ab05184c2f706ee69ee9fb772c2d45be0dd04b2"
+      },
+      {
+        "url": "/media/jobs-occupations-1-farmer.webp",
+        "bytes": 9394,
+        "hash": "95de13fb9793119be02f6cc7c9710224076670560a6f056b057868ddf5ee7fc8"
+      },
+      {
+        "url": "/audio/farmer.mp3",
+        "bytes": 13056,
+        "hash": "124111ebfa027e25c4b9de13b24a932a9d8f285c14ece9a6e77795134117718f"
+      }
+    ]
+  },
+  "jobs-occupations-2": {
+    "categoryId": "jobs-occupations-2",
+    "version": "53d6f6dba9905711",
+    "bytes": 110541,
+    "assets": [
+      {
+        "url": "/media/jobs-occupations-2-engineer.svg",
+        "bytes": 308,
+        "hash": "5205f34449055b94cd40f80e4a4d496b985a4d559b8ae0903ee092cbabf4bc59"
+      },
+      {
+        "url": "/audio/engineer.mp3",
+        "bytes": 13632,
+        "hash": "f02ce01af857ca6b27d5bdc2f3f9259467166fb5c8bcf2f88cd54609b60c9877"
+      },
+      {
+        "url": "/media/jobs-occupations-2-dentist.svg",
+        "bytes": 305,
+        "hash": "6e1925807f46bfc91110869ef42d5b270a7b8192e1bb2e32786a6330031ebfb9"
+      },
+      {
+        "url": "/audio/dentist.mp3",
+        "bytes": 13248,
+        "hash": "cfafb7fa5c7deffb357c893ccc3fd97610fd6cfa2db4c802067834d865bc691f"
+      },
+      {
+        "url": "/media/jobs-occupations-2-driver.svg",
+        "bytes": 305,
+        "hash": "81cdf0584f5512def989c33c5f40c06af3bc10391919f181669d95ce279a7f60"
+      },
+      {
+        "url": "/audio/driver.mp3",
+        "bytes": 13056,
+        "hash": "0b5294dd1fca49559c8d0ce4ba3a0fdd05c1cb1e3e67ed30c869562a764d51ab"
+      },
+      {
+        "url": "/media/jobs-occupations-2-pilot.svg",
+        "bytes": 307,
+        "hash": "7f52d2fab3a8e65c587e2d71f3f1af5da52c6477c2054c120f64dbf072a4ee2b"
+      },
+      {
+        "url": "/audio/pilot.mp3",
+        "bytes": 12288,
+        "hash": "b7d83b32953711ec81b13a65e45b95291100a3c62c377105ba0444764fb633fb"
+      },
+      {
+        "url": "/media/jobs-occupations-2-scientist.svg",
+        "bytes": 305,
+        "hash": "92ab5ed46560f86f90b7a5a947b68bc56e0b0924a6706d0af8af629f07dbbb27"
+      },
+      {
+        "url": "/audio/scientist.mp3",
+        "bytes": 14208,
+        "hash": "36e466c8eb0f1946aeb490708c8753a718b963c99216475a6538a2d8a68b63c7"
+      },
+      {
+        "url": "/media/jobs-occupations-2-artist.svg",
+        "bytes": 305,
+        "hash": "0b129231fb685972854eaa454f03dd1c2d9896484fc7c517a18feaa245a517a0"
+      },
+      {
+        "url": "/audio/artist.mp3",
+        "bytes": 13056,
+        "hash": "fe99f33c9de0c8ace787c5a1c1a5381cd7484056ea662bb03786b688101405eb"
+      },
+      {
+        "url": "/media/jobs-occupations-2-mechanic.svg",
+        "bytes": 305,
+        "hash": "b167baa260035ea43d11f9d8d906aa9e2529fb6e2139e9a7745b09e7b2090c6a"
+      },
+      {
+        "url": "/audio/mechanic.mp3",
+        "bytes": 13440,
+        "hash": "4c8507d3b17076506e22289783ebd18fd4e3dd4c4c880f255bf29b750f1e4342"
+      },
+      {
+        "url": "/media/jobs-occupations-2-firefighter.svg",
+        "bytes": 305,
+        "hash": "63042b2b717cc38dc0b9b2fb90eed3952d64026953ab63fd5a836889508ded83"
+      },
+      {
+        "url": "/audio/firefighter.mp3",
+        "bytes": 15168,
+        "hash": "e336276987625dd9c53a43eabc1ec605f6632cbd06caa543d72c1568fcf50c67"
+      }
+    ]
+  },
+  "heart-fruits": {
+    "categoryId": "heart-fruits",
+    "version": "619e505cb4d8401b",
+    "bytes": 214572,
+    "assets": [
+      {
+        "url": "/media/heart-fruits-love.webp",
+        "bytes": 8516,
+        "hash": "d2a87f86d4d430b57b9638964e7ca3a019f87bb2a9ce5cd0bba9d69026a23fdf"
+      },
+      {
+        "url": "/audio/love.mp3",
+        "bytes": 12096,
+        "hash": "65b567390f43f5924cf46f72b79a48254c4f4f83fa668c894d497f1578f5172c"
+      },
+      {
+        "url": "/media/heart-fruits-joy.webp",
+        "bytes": 9288,
+        "hash": "a2c118c9937a9d9961ee91aa0be4b94c13dbe16ba2c843ab1a4c59f83757dbaa"
+      },
+      {
+        "url": "/audio/joy.mp3",
+        "bytes": 12288,
+        "hash": "5dba6bd9e9b406f9956f8189d5ed8d4e563e7930d6389b5cf28a83b29e9f2ead"
+      },
+      {
+        "url": "/media/heart-fruits-peace.webp",
+        "bytes": 7204,
+        "hash": "c2c68f11dfe4f4c80b18a0db4d3d2ff89d0a498c6f836dddb69ad3fb59c085ca"
+      },
+      {
+        "url": "/audio/peace.mp3",
+        "bytes": 12288,
+        "hash": "0b3ea2c1a918a09771b49722267daef3a8c1a0f591fdb2884e6bc0b883cbac20"
+      },
+      {
+        "url": "/media/heart-fruits-patience.webp",
+        "bytes": 11498,
+        "hash": "a2e49d09ea46f81c88e40ee13e9c62d189fc63ddb851bd256c04f01ab0815e1d"
+      },
+      {
+        "url": "/audio/patience.mp3",
+        "bytes": 13632,
+        "hash": "a2c0694f23e916df7f0e651de359414357801ec1db0bfc97ed5f96408015e292"
+      },
+      {
+        "url": "/media/heart-fruits-gentleness.webp",
+        "bytes": 11348,
+        "hash": "667928cff09e0a7250b30f6e0b412999881ed0719cc679cfc6b70aa430de7ad8"
+      },
+      {
+        "url": "/audio/gentleness.mp3",
+        "bytes": 13632,
+        "hash": "415bf900df0f1bb45eff452c485c3e9319d694ab374abde5996590dde03e4b5e"
+      },
+      {
+        "url": "/media/heart-fruits-kindness.webp",
+        "bytes": 8590,
+        "hash": "e50afb9a88d6f7af97eb3a0df9cc16a1171c19e095f72f6421e3ff8053009878"
+      },
+      {
+        "url": "/audio/kindness.mp3",
+        "bytes": 13248,
+        "hash": "4c907ee580f47f04b303712a5dc5fe7209af1bd126a7c5f0db70ac2b6dba6890"
+      },
+      {
+        "url": "/media/heart-fruits-faithfulness.webp",
+        "bytes": 12616,
+        "hash": "18f2bd52f1ccbc35da965239990f4ea39b4a5cb32d51d8b5bd48da9dbe02757f"
+      },
+      {
+        "url": "/audio/faithfulness.mp3",
+        "bytes": 14400,
+        "hash": "d40dfbcbe01fcedb6818557b2b0987fed48b874a3dd5730c00b552a97d3aa5bf"
+      },
+      {
+        "url": "/media/heart-fruits-meekness.webp",
+        "bytes": 13478,
+        "hash": "9f0860a9c075bd144fbe4cadb7a1070939fa88610f7702d774167cd8abc17665"
+      },
+      {
+        "url": "/audio/meekness.mp3",
+        "bytes": 13632,
+        "hash": "08aa7d30f34bd78f7427ffbb60e466edbe0f1dc42a4e5493a933ec1d154d8a90"
+      },
+      {
+        "url": "/media/heart-fruits-self-control.webp",
+        "bytes": 12226,
+        "hash": "ad4e6b098a446dd331fcccd3864844feeb2cc3f42abd3654a8f2fe3e58ea311e"
+      },
+      {
+        "url": "/audio/self-control.mp3",
+        "bytes": 14592,
+        "hash": "2261068a1c9917c63f57bd1b7f8accf75c03ef7991c3b580aa89a2f9c90e1e1a"
+      }
+    ]
+  }
+}
